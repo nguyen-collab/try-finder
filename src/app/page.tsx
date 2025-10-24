@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import Solution from '@/components/Solution';
 import Pricing from '@/components/Pricing';
 import Faq from '@/components/Faq';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
@@ -21,6 +22,9 @@ export default function Home() {
       </div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         <Faq />
+      </div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+        <Footer />
       </div>
     </div>
   );
