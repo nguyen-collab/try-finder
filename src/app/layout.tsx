@@ -26,8 +26,75 @@ const interVariable = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'TryFinder',
-  description: 'Find prospects in 5 seconds. Close deals- find contacts.',
+  title: {
+    default: 'TryFinder - Find Prospects in 5 Seconds',
+    template: '%s | TryFinder',
+  },
+  description:
+    'Find prospects in 5 seconds. Close deals faster with TryFinder - the fastest email finder and contact discovery platform for sales teams.',
+  keywords: [
+    'email finder',
+    'prospect finder',
+    'contact discovery',
+    'sales tools',
+    'lead generation',
+    'email verification',
+    'sales prospecting',
+    'B2B sales',
+    'contact database',
+    'sales automation',
+  ],
+  authors: [{ name: 'TryFinder Team' }],
+  creator: 'TryFinder',
+  publisher: 'TryFinder LLC',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://tryfinder-ai.vercel.com'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://tryfinder-ai.vercel.app',
+    siteName: 'TryFinder',
+    title: 'TryFinder - Find Prospects in 5 Seconds',
+    description:
+      'Find prospects in 5 seconds. Close deals faster with TryFinder - the fastest email finder and contact discovery platform for sales teams.',
+    images: [
+      {
+        url: '/og.png',
+        width: 1200,
+        height: 630,
+        alt: 'TryFinder - Find Prospects in 5 Seconds',
+        type: 'image/png',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'TryFinder - Find Prospects in 5 Seconds',
+    description:
+      'Find prospects in 5 seconds. Close deals faster with TryFinder - the fastest email finder and contact discovery platform for sales teams.',
+    images: ['/og.png', '/favicon.ico'],
+    creator: '@tryfinder',
+    site: '@tryfinder',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  category: 'technology',
 };
 
 export default function RootLayout({
