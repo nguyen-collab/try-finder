@@ -43,7 +43,13 @@ export default function Hero() {
         {/* Main Headline */}
         <header className="w-full text-center lg:text-left">
           <h1 className="text-4xl xl:text-5xl 2xl:text-[56px] tracking-[-0.03em] leading-12 xl:leading-14 2xl:leading-[62px] font-aeonik-pro">
-            <p className="m-0">Find prospects in 5 seconds.</p>
+            <p className="m-0">
+              Find prospects in{' '}
+              <span className="relative inline-block">
+                <span className="relative z-10">5 seconds.</span>
+                <span className="absolute inset-0 bg-gray-1200 transform -skew-y-2 opacity-80 rounded-sm"></span>
+              </span>
+            </p>
             <p className="m-0">Close deals- find contacts.</p>
           </h1>
         </header>
