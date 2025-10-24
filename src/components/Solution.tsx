@@ -8,9 +8,9 @@ import {
 
 export default function Solution() {
   return (
-    <section className="w-full min-h-[755px] text-left text-num-16 text-white font-inter relative overflow-hidden">
+    <section className="w-full h-auto xl:min-h-[835px] text-left text-num-16 text-white font-inter relative overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      <div className="hidden xl:block absolute top-40 z-0">
         <Image
           className="w-full h-full object-cover rounded-[15px]"
           width={1350}
@@ -22,14 +22,14 @@ export default function Solution() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-[755px]">
+      <div className="relative z-10 flex flex-col items-center justify-center">
         <div className="max-w-[1350px] w-full flex flex-col items-center gap-6 sm:gap-8 lg:gap-[15px]">
           {/* Header Section */}
           <header className="max-w-[942px] flex flex-col items-center gap-3 sm:gap-4 lg:gap-[15px] text-center">
             <div className="rounded-[15px] bg-gray-200 border-gray-1300 border-solid border-[1px] flex items-center justify-center py-1.5 px-num-10">
               <div className="flex items-center gap-[5px]">
                 <div className="h-2 w-2 rounded-[50%] bg-darkorange" />
-                <div className="tracking-num--0_01 leading-5 font-medium">
+                <div className="tracking-num--0_01 leading-5 font-medium text-sm xl:text-base 2xl:text-lg">
                   Solutions
                 </div>
               </div>
@@ -44,8 +44,8 @@ export default function Solution() {
           </header>
 
           {/* Team Categories */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 lg:gap-2.5 text-sm sm:text-base lg:text-[18px]">
-            <div className="rounded-[10px] bg-gray-200 border-gray-1200 border-solid border-[1px] flex flex-col items-start p-2 sm:p-3 lg:p-num-10 min-w-[120px] sm:min-w-[155px]">
+          <div className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-2 sm:gap-3 lg:gap-2.5 text-sm 2xl:text-[18px]">
+            <div className="rounded-[10px] bg-gray-200 border-gray-1200 border-solid border-[1px] flex flex-col items-start p-2 sm:p-3 lg:p-num-10 w-fit">
               <div className="flex items-center gap-2">
                 <StoreIcon />
                 <div className="tracking-num--0_01 leading-num-24 font-medium">
@@ -53,7 +53,7 @@ export default function Solution() {
                 </div>
               </div>
             </div>
-            <div className="rounded-[10px] bg-gray-200 border-gray-1200 border-solid border-[1px] flex flex-col items-start p-2 sm:p-3 lg:p-num-10 min-w-[140px] sm:min-w-[194px]">
+            <div className="rounded-[10px] bg-gray-200 border-gray-1200 border-solid border-[1px] flex flex-col items-start p-2 sm:p-3 lg:p-num-10 w-fit">
               <div className="flex items-center gap-2">
                 <PromotionIcon />
                 <div className="tracking-num--0_01 leading-num-24 font-medium">
@@ -61,7 +61,7 @@ export default function Solution() {
                 </div>
               </div>
             </div>
-            <div className="rounded-[10px] bg-gray-200 border-gray-1200 border-solid border-[1px] flex flex-col items-start p-2 sm:p-3 lg:p-num-10 min-w-[100px] sm:min-w-[135px]">
+            <div className="rounded-[10px] bg-gray-200 border-gray-1200 border-solid border-[1px] flex flex-col items-start p-2 sm:p-3 lg:p-num-10 w-fit">
               <div className="flex items-center gap-2">
                 <UserGroupIcon />
                 <div className="tracking-num--0_01 leading-num-24 font-medium">
@@ -69,7 +69,7 @@ export default function Solution() {
                 </div>
               </div>
             </div>
-            <div className="rounded-[10px] bg-gray-200 border-gray-1200 border-solid border-[1px] flex flex-col items-start p-2 sm:p-3 lg:p-num-10 min-w-[160px] sm:min-w-[220px]">
+            <div className="rounded-[10px] bg-gray-200 border-gray-1200 border-solid border-[1px] flex flex-col items-start p-2 sm:p-3 lg:p-num-10 w-fit">
               <div className="flex items-center gap-2">
                 <StartupIcon />
                 <div className="tracking-num--0_01 leading-num-24 font-medium">
@@ -80,14 +80,14 @@ export default function Solution() {
           </div>
 
           {/* Main Content Section */}
-          <main className="w-full max-w-[1350px] flex flex-col lg:flex-row items-start gap-6 sm:gap-8 lg:gap-12 mt-8 sm:mt-12 lg:mt-16">
+          <main className="w-full max-w-[1350px] flex flex-col xl:flex-row items-center xl:items-stretch justify-between gap-6 sm:gap-8 lg:gap-12 mt-8 xl:mt-10 2xl:mt-16 px-4 sm:px-6 lg:px-8 xl:px-12">
             {/* Left Content */}
-            <div className="flex-1 max-w-[606px] flex flex-col gap-4 sm:gap-5 lg:gap-5 text-lg sm:text-xl lg:text-[38px] font-aeonik-pro">
-              <div className="flex flex-col gap-2 sm:gap-3 lg:gap-2.5">
+            <div className="flex-1 max-w-[606px] flex flex-col gap-4 lg:gap-5 2xl:gap-20 text-3xl 2xl:text-[38px] font-aeonik-pro">
+              <div className="flex flex-col text-center xl:text-left gap-2 sm:gap-3 lg:gap-2.5">
                 <h3 className="tracking-[-0.03em] leading-tight sm:leading-tight lg:leading-[42px]">
                   Find decision-makers in seconds
                 </h3>
-                <div className="text-sm sm:text-base lg:text-num-16 tracking-num--0_01 leading-num-24 font-inter opacity-[0.6] space-y-2">
+                <div className="text-sm xl:text-sm 2xl:text-num-16 tracking-num--0_01 leading-num-24 font-inter opacity-[0.6] space-y-2">
                   <p>
                     Stop wasting hours on research, verify their emails
                     instantly, and sync directly to your CRM. More
@@ -101,8 +101,8 @@ export default function Solution() {
               </div>
 
               {/* Testimonial Card */}
-              <div className="rounded-[15px] bg-gray-500 border-gray-1200 border-solid border-[1px] flex items-center p-4 sm:p-5 lg:p-5 text-sm sm:text-base lg:text-num-16 font-inter-variable">
-                <div className="max-w-[414px] flex flex-col gap-3 sm:gap-4 lg:gap-[15px]">
+              <div className="rounded-[15px] bg-gray-500 border-gray-1200 border-solid border flex items-center p-4 sm:p-5 lg:p-5 text-sm xl:text-sm 2xl:text-num-16 font-inter-variable">
+                <div className="flex flex-col gap-3 sm:gap-4 lg:gap-[15px] flex-1">
                   <blockquote className="tracking-num--0_01 leading-num-24 opacity-[0.6]">
                     &quot;tryfinder tears the competition apart. I&apos;ve tried
                     almost every other search service, their speeds, success
@@ -132,8 +132,8 @@ export default function Solution() {
             </div>
 
             {/* Right Content - Decorative Element */}
-            <div className="hidden lg:block">
-              <div className="rounded-[15px] bg-gray-500 border-gray-1200 border-solid border-[1px] w-[558px] h-[376px] [transform:_rotate(180deg)] [transform-origin:0_0]" />
+            <div className="hidden xl:block flex-1">
+              <div className="rounded-[15px] bg-gray-500 border-gray-1200 border-solid border h-full" />
             </div>
           </main>
         </div>

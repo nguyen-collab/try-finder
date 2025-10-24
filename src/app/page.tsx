@@ -7,21 +7,31 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <div className="min-h-screen w-full bg-gray-200 overflow-x-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-        <Hero />
+    <div className="min-h-screen w-full overflow-x-hidden">
+      <div className="bg-gray-500">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+          <Hero />
+        </div>
       </div>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-        <Feature />
+      <div className="bg-gray-200">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 sm:py-20 lg:py-28">
+          <Feature />
+        </div>
       </div>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-        <Solution />
+      <div className="bg-gray-500">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 sm:py-20 lg:py-28">
+          <Solution />
+        </div>
       </div>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-        <Pricing />
+      <div className="bg-gray-500">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 sm:py-20 lg:py-28">
+          <Pricing />
+        </div>
       </div>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-        <Faq />
+      <div className="bg-gray-200">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+          <Faq />
+        </div>
       </div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         <Footer />

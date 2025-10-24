@@ -8,7 +8,7 @@ import {
 
 export default function Feature() {
   return (
-    <section className="w-full bg-gray-200 border-gray-1000 border-solid py-16 sm:py-20 lg:py-[120px] text-white font-inter">
+    <section className="w-full order-2 lg:order-1 text-white font-inter">
       <div className="max-w-[1350px] mx-auto flex flex-col gap-6 sm:gap-8 lg:gap-[30px]">
         {/* Header Section */}
         <header className="w-full lg:max-w-[942px] flex flex-col gap-3 sm:gap-4 lg:gap-[15px]">
@@ -36,8 +36,8 @@ export default function Feature() {
           <div className="flex flex-col gap-4 sm:gap-6 lg:gap-[18px]">
             {/* AI-Powered Algorithm Feature */}
             <div className="rounded-num-15 bg-gray-500 border-gray-1300 border-solid border flex flex-col sm:flex-row items-center p-4 sm:p-6 lg:p-num-40 gap-4 sm:gap-6 lg:gap-[30px]">
-              <div className="w-full sm:w-32 lg:w-auto h-24 sm:h-32 lg:h-[149px] flex-1 rounded-[10px] bg-gray-1400" />
-              <div className="w-full sm:max-w-[675px] flex flex-col gap-1 sm:gap-2 lg:gap-[5px]">
+              <div className="flex-1 w-full sm:w-32 lg:w-auto min-h-24 sm:min-h-32 lg:min-h-[149px] rounded-[10px] bg-gray-1400" />
+              <div className="flex-1 w-full sm:max-w-[675px] flex flex-col gap-1 sm:gap-2 lg:gap-[5px]">
                 <div className="flex items-center gap-2">
                   <GlobalSearch />
                   <h3 className="text-sm sm:text-base lg:text-lg tracking-num--0_01 leading-num-24 font-medium">
@@ -53,8 +53,8 @@ export default function Feature() {
 
             {/* Real-Time Verification Feature */}
             <div className="rounded-num-15 bg-gray-500 border-gray-1300 border-solid border flex flex-col sm:flex-row items-center p-4 sm:p-6 lg:p-num-40 gap-4 sm:gap-6 lg:gap-[30px]">
-              <div className="w-full sm:w-32 lg:w-auto h-24 sm:h-32 lg:h-[149px] flex-1 rounded-[10px] bg-gray-1400" />
-              <div className="w-full sm:max-w-[675px] flex flex-col gap-1 sm:gap-2 lg:gap-[5px]">
+              <div className="w-full sm:w-32 lg:w-auto min-h-24 sm:min-h-60 lg:min-h-[249px] flex-1 rounded-[10px] bg-gray-1400" />{' '}
+              <div className="flex-1 w-full sm:max-w-[675px] flex flex-col gap-1 sm:gap-2 lg:gap-[5px]">
                 <div className="flex items-center gap-2">
                   <CheckBadge />
                   <h3 className="text-sm sm:text-base lg:text-lg tracking-num--0_01 leading-num-24 font-medium">
@@ -62,7 +62,7 @@ export default function Feature() {
                   </h3>
                 </div>
                 <div className="text-xs sm:text-sm lg:text-num-16 tracking-num--0_01 leading-num-24 font-medium opacity-num-0_6">
-                  <ul className="pl-4 sm:pl-5 lg:pl-[21px] space-y-1">
+                  <ul className="pl-4 sm:pl-5 lg:pl-[21px] space-y-1 list-disc">
                     <li>Every email is verified for accuracy.</li>
                     <li>
                       Phone numbers are sourced from industry-leading,

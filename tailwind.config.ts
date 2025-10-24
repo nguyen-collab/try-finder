@@ -31,6 +31,7 @@ const config: Config = {
       spacing: {
         'num-942': '942px',
         'num-18': '18px',
+        'num-10': '10px',
         'num-23': '23px',
         'num-22': '22px',
         'num-12_7': '12.7px',
@@ -41,9 +42,9 @@ const config: Config = {
         'num-3': '1px solid rgba(24, 24, 24, 0)',
       },
       fontFamily: {
-        inter: 'Inter',
-        'aeonik-pro': 'Aeonik Pro',
-        'inter-variable': 'Inter Variable',
+        inter: 'var(--font-inter)',
+        'aeonik-pro': 'var(--font-aeonik-pro)',
+        'inter-variable': 'var(--font-inter-variable)',
         inherit: 'inherit',
       },
       borderRadius: {
@@ -65,21 +66,21 @@ const config: Config = {
         'num-0_8': '0.8',
         'num-0_75': '0.75',
       },
-    },
-    fontSize: {
-      'num-14': '14px',
-      'num-18': '18px',
-      'num-16': '16px',
-    },
-    lineHeight: {
-      'num-20': '20px',
-      'num-28': '28px',
-      'num-26': '26px',
-      'num-24': '24px',
-    },
-    letterSpacing: {
-      'num--0_01': '-0.01em',
-      'num--0_03': '-0.03em',
+      fontSize: {
+        'num-14': '14px',
+        'num-18': '18px',
+        'num-16': '16px',
+      },
+      lineHeight: {
+        'num-20': '20px',
+        'num-28': '28px',
+        'num-26': '26px',
+        'num-24': '24px',
+      },
+      letterSpacing: {
+        'num--0_01': '-0.01em',
+        'num--0_03': '-0.03em',
+      },
     },
   },
 };
