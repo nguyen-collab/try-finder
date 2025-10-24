@@ -1,5 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from 'tailwindcss';
+
+const config: Config = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
@@ -80,7 +81,6 @@ module.exports = {
       'num--0_03': '-0.03em',
     },
   },
-  corePlugins: {
-    preflight: false,
-  },
 };
+
+export default config;
