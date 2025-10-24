@@ -601,3 +601,65 @@ export const CancelCircleIcon = (): JSX.Element => {
     </svg>
   );
 };
+
+export const CloseIcon = (): JSX.Element => {
+  return (
+    <svg
+      width="11"
+      height="11"
+      viewBox="0 0 11 11"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0.75 0.75L9.75005 9.75005M0.75 9.75005L9.75005 0.75"
+        stroke="white"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const PlusIcon = (): JSX.Element => {
+  return (
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 15 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        opacity="0.75"
+        d="M7.11401 0.75V13.478M0.750015 7.114H13.478"
+        stroke="white"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const ArrowRightSmallIcon = (): JSX.Element => {
+  return (
+    <svg
+      width="5"
+      height="9"
+      viewBox="0 0 5 9"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        opacity="0.5"
+        d="M0.75 7.75L4.25 4.25L0.75 0.75"
+        stroke="white"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
