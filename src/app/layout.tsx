@@ -6,7 +6,8 @@ import './globals.css';
 const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
-  weight: ['400', '500'],
+  weight: ['400', '500', '600'],
+  display: 'swap',
 });
 
 const aeonikPro = localFont({
@@ -18,11 +19,13 @@ const aeonikPro = localFont({
       style: 'normal',
     },
   ],
+  display: 'swap',
 });
 
 const interVariable = localFont({
   variable: '--font-inter-variable',
   src: '../../public/fonts/Inter-Variable/InterVariable.ttf',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -70,7 +73,6 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: 'TryFinder - Find Prospects in 5 Seconds',
-        type: 'image/png',
       },
     ],
   },
@@ -79,7 +81,7 @@ export const metadata: Metadata = {
     title: 'TryFinder - Find Prospects in 5 Seconds',
     description:
       'Find prospects in 5 seconds. Close deals faster with TryFinder - the fastest email finder and contact discovery platform for sales teams.',
-    images: ['/og.png', '/favicon.ico'],
+    images: ['/og.png'],
     creator: '@tryfinder',
     site: '@tryfinder',
   },
@@ -94,7 +96,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  category: 'technology',
 };
 
 export default function RootLayout({
