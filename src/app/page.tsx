@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="min-h-screen w-full overflow-x-hidden">
       <div className="bg-gray-500">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-4 sm:pt-6 lg:pt-8 xl:pt-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-4 sm:py-6 lg:py-8 xl:py-12">
           <Header />
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">

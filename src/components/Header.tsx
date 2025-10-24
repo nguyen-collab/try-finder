@@ -2,41 +2,95 @@ import Image from 'next/image';
 
 export default function Header() {
   return (
-    <div className="w-full h-[38px] relative text-left text-num-16 text-white font-inter-variable">
-      <div className="absolute top-[-3.75px] left-[1192.25px] rounded-[9px] bg-white border-gray-900 border-solid border-[3.8px] flex items-center justify-center py-[9px] px-[18px] text-gray-100 hover:bg-gray-1100 transition-colors cursor-pointer">
-        <div className="relative tracking-num--0_01 leading-[19.5px] font-semibold">
-          Create Account
+    <header className="w-full h-12 md:h-14 lg:h-[38px] relative text-left text-sm md:text-base lg:text-num-16 text-white font-inter-variable">
+      {/* Mobile Layout */}
+      <div className="flex lg:hidden items-center justify-between h-full">
+        {/* Logo */}
+        <div className="flex items-center gap-1">
+          <Image
+            src="/header/tryfinder.svg"
+            className="h-6 w-auto"
+            width={114.1}
+            height={28}
+            sizes="100vw"
+            alt="TryFinder Logo"
+          />
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button className="p-2 text-white">
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+
+      {/* Desktop Layout */}
+      <div className="hidden lg:flex items-center justify-between h-full">
+        {/* Logo */}
+        <div className="flex items-center gap-1">
+          <Image
+            src="/header/tryfinder.svg"
+            className="h-6 md:h-7 w-auto"
+            width={114.1}
+            height={28}
+            sizes="100vw"
+            alt="TryFinder Logo"
+          />
+        </div>
+
+        {/* Navigation Menu */}
+        <nav className="flex items-center gap-4 md:gap-6 lg:gap-[30px] font-inter">
+          <a
+            href="#"
+            className="tracking-num--0_01 leading-[26px] font-medium opacity-num-0_8 hover:opacity-100 transition-opacity text-sm md:text-base"
+          >
+            Features
+          </a>
+          <a
+            href="#"
+            className="tracking-num--0_01 leading-[26px] font-medium opacity-num-0_8 hover:opacity-100 transition-opacity text-sm md:text-base"
+          >
+            Solutions
+          </a>
+          <a
+            href="#"
+            className="tracking-num--0_01 leading-[26px] font-medium opacity-num-0_8 hover:opacity-100 transition-opacity text-sm md:text-base"
+          >
+            Reviews
+          </a>
+          <a
+            href="#"
+            className="tracking-num--0_01 leading-[26px] font-medium opacity-num-0_8 hover:opacity-100 transition-opacity text-sm md:text-base"
+          >
+            Pricing
+          </a>
+        </nav>
+
+        {/* Auth Buttons */}
+        <div className="flex items-center gap-3 md:gap-4">
+          <button className="rounded-[9px] border-gray-1200 border-solid border flex items-center justify-center py-2 md:py-[9px] px-3 md:px-[18px] cursor-pointer hover:bg-gray-800 transition-colors">
+            <div className="tracking-num--0_01 leading-[19.5px] font-semibold text-sm md:text-base">
+              Sign In
+            </div>
+          </button>
+          <button className="rounded-[9px] bg-white border-gray-900 border-solid border-[3.8px] flex items-center justify-center py-2 md:py-[9px] px-3 md:px-[18px] text-gray-100 hover:bg-gray-1100 transition-colors cursor-pointer min-h-[44px] md:min-h-0">
+            <div className="tracking-num--0_01 leading-[19.5px] font-semibold text-sm md:text-base">
+              Create Account
+            </div>
+          </button>
         </div>
       </div>
-      <div className="absolute top-[-1px] left-[1095px] rounded-[9px] border-gray-1200 border-solid border- flex items-center justify-center py-[9px] px-[18px] cursor-pointer">
-        <div className="relative tracking-num--0_01 leading-[19.5px] font-semibold">
-          Sign In
-        </div>
-      </div>
-      <div className="absolute top-[calc(50%_-_14px)] left-[0px] flex items-center gap-[5px]">
-        <Image
-          src="/header/tryfinder.svg"
-          className="h-7 w-full relative"
-          width={114.1}
-          height={28}
-          sizes="100vw"
-          alt=""
-        />
-      </div>
-      <div className="absolute top-[6px] left-[calc(50%_-_223px)] flex items-center gap-[30px] font-inter">
-        <div className="relative tracking-num--0_01 leading-[26px] font-medium opacity-num-0_8">
-          Features
-        </div>
-        <div className="relative tracking-num--0_01 leading-[26px] font-medium opacity-num-0_8">
-          Solutions
-        </div>
-        <div className="relative tracking-num--0_01 leading-[26px] font-medium opacity-num-0_8">
-          Reviews
-        </div>
-        <div className="relative tracking-num--0_01 leading-[26px] font-medium opacity-num-0_8">
-          Pricing
-        </div>
-      </div>
-    </div>
+    </header>
   );
 }
