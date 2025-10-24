@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import {
   ArrowRightSmall2Icon,
-  ArrowRightSmallIcon,
   CancelCircle2Icon,
   ConfigurationIcon,
   SearchFocusIcon,
@@ -10,38 +9,13 @@ import {
 export default function Footer() {
   return (
     <footer className="w-full text-left text-num-14 text-white font-inter relative overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 [background:radial-gradient(50%_50%_at_50%_50%,_#0f0f0f,_#050505)]" />
-
-      {/* Background Images */}
-      <div className="absolute top-8 left-0 w-[540px] h-[540px] opacity-[0.05] overflow-hidden lg:flex items-center justify-center z-50">
-        <Image
-          src="/footer/subtract-left.png"
-          className="w-full h-full object-cover [transform:scale(1)] z-50"
-          width={540}
-          height={540}
-          sizes="100vw"
-          alt=""
-        />
-      </div>
-      <div className="absolute top-8 right-0 w-[540px] h-[540px] opacity-[0.05] overflow-hidden hidden lg:flex items-center justify-center">
-        <Image
-          src="/footer/subtract-right.png"
-          className="w-full h-full object-cover [transform:scale(1.038)]"
-          width={540}
-          height={540}
-          sizes="100vw"
-          alt=""
-        />
-      </div>
-
       {/* Main Content */}
       <div className="relative z-10 flex flex-col">
         {/* CTA Section */}
         <main className="flex-1 flex flex-col items-center justify-center">
           <div className="max-w-[942px] w-full flex flex-col items-center gap-6 sm:gap-8 lg:gap-[25px]">
             {/* Launch Offer Badge */}
-            <div className="rounded-[15px] bg-gray-1300 border-gray-1200 border-solid border flex items-center justify-center p-2 sm:p-3 lg:p-2.5 gap-2 sm:gap-3 lg:gap-2.5 text-gray-300">
+            <div className="rounded-[15px] bg-gray-1300 border-gray-1200 border-solid border flex flex-col sm:flex-row items-center justify-center p-2 sm:p-3 lg:p-2.5 gap-2 sm:gap-3 lg:gap-2.5 text-gray-300">
               <div className="rounded-[7px] bg-white flex items-center justify-center py-1 px-2">
                 <div className="tracking-num--0_01 leading-num-20 font-medium text-xs sm:text-sm lg:text-base">
                   Launch Offer
