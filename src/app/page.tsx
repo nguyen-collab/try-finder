@@ -29,12 +29,14 @@ export default function Home() {
         </div>
       </div>
       <div className="bg-gray-200">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 sm:py-20 lg:py-28">
           <Faq />
         </div>
       </div>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-        <Footer />
+      <div className="bg-gray-500">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 sm:py-20 lg:py-28">
+          <Footer />
+        </div>
       </div>
     </div>
   );

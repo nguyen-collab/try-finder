@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import {
+  ArrowRightSmall2Icon,
   ArrowRightSmallIcon,
   CancelCircle2Icon,
   ConfigurationIcon,
@@ -8,15 +9,15 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="w-full min-h-[669px] text-left text-num-14 text-white font-inter relative overflow-hidden">
+    <footer className="w-full text-left text-num-14 text-white font-inter relative overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 [background:radial-gradient(50%_50%_at_50%_50%,_#0f0f0f,_#050505)]" />
 
       {/* Background Images */}
-      <div className="absolute top-8 left-0 w-[540px] h-[540px] opacity-[0.05] overflow-hidden hidden lg:flex items-center justify-center">
+      <div className="absolute top-8 left-0 w-[540px] h-[540px] opacity-[0.05] overflow-hidden lg:flex items-center justify-center z-50">
         <Image
           src="/footer/subtract-left.png"
-          className="w-full h-full object-cover [transform:scale(1)]"
+          className="w-full h-full object-cover [transform:scale(1)] z-50"
           width={540}
           height={540}
           sizes="100vw"
@@ -35,9 +36,9 @@ export default function Footer() {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col min-h-[669px]">
+      <div className="relative z-10 flex flex-col">
         {/* CTA Section */}
-        <main className="flex-1 flex flex-col items-center justify-center py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
+        <main className="flex-1 flex flex-col items-center justify-center">
           <div className="max-w-[942px] w-full flex flex-col items-center gap-6 sm:gap-8 lg:gap-[25px]">
             {/* Launch Offer Badge */}
             <div className="rounded-[15px] bg-gray-1300 border-gray-1200 border-solid border flex items-center justify-center p-2 sm:p-3 lg:p-2.5 gap-2 sm:gap-3 lg:gap-2.5 text-gray-300">
@@ -51,7 +52,7 @@ export default function Footer() {
                   <div className="tracking-num--0_01 leading-num-20 font-medium">
                     Welcome to tryfinder.ai
                   </div>
-                  <div className="h-[19.1px] w-[1.5px] opacity-[0.25]" />
+                  <div className="h-[19.1px] w-[1.5px] opacity-[0.25] bg-gray-1100" />
                   <div className="tracking-num--0_01 leading-num-20 font-medium">
                     Get 2 Free Searches on us
                   </div>
@@ -78,7 +79,7 @@ export default function Footer() {
               <span className="tracking-num--0_01 leading-[26px] font-semibold">
                 Start Finding Buyers Now
               </span>
-              <ArrowRightSmallIcon />
+              <ArrowRightSmall2Icon />
             </button>
 
             {/* Features */}
@@ -106,35 +107,6 @@ export default function Footer() {
             </div>
           </div>
         </main>
-
-        {/* Footer Bottom */}
-        <div className="bg-gray-200 border-gray-900 border-solid border-t flex items-center justify-between py-6 px-4 sm:px-6 lg:px-[285px]">
-          <div className="tracking-num--0_01 leading-num-20 font-medium opacity-[0.8] text-xs sm:text-sm lg:text-base">
-            ©2025 Tryfinder LLC. All rights reserved.
-          </div>
-          <div className="flex items-center gap-3 sm:gap-4 lg:gap-5">
-            <a
-              href="#"
-              className="tracking-num--0_01 leading-num-20 font-medium opacity-[0.8] text-xs sm:text-sm lg:text-base hover:opacity-100 transition-opacity"
-            >
-              Terms of Service
-            </a>
-            <div className="h-0.5 w-0.5 rounded-[50%] bg-white opacity-[0.5]" />
-            <a
-              href="#"
-              className="tracking-num--0_01 leading-num-20 font-medium opacity-[0.8] text-xs sm:text-sm lg:text-base hover:opacity-100 transition-opacity"
-            >
-              Privacy Policy
-            </a>
-            <div className="h-0.5 w-0.5 rounded-[50%] bg-white opacity-[0.5]" />
-            <a
-              href="#"
-              className="tracking-num--0_01 leading-num-20 font-medium opacity-[0.8] text-xs sm:text-sm lg:text-base hover:opacity-100 transition-opacity"
-            >
-              Cookie Policy
-            </a>
-          </div>
-        </div>
       </div>
     </footer>
   );

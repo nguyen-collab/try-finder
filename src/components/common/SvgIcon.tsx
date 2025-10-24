@@ -664,6 +664,26 @@ export const ArrowRightSmallIcon = (): JSX.Element => {
   );
 };
 
+export const ArrowRightSmall2Icon = (): JSX.Element => {
+  return (
+    <svg
+      width="5"
+      height="9"
+      viewBox="0 0 5 9"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0.75 7.75L4.25 4.25L0.75 0.75"
+        stroke="#0A0A0A"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
+
 export const ConfigurationIcon = (): JSX.Element => {
   return (
     <svg
