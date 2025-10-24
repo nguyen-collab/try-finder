@@ -1,7 +1,6 @@
 import {
   AnonymousIcon,
   ArrowRightIcon,
-  GroupAccountsIcon,
   HeadphonesIcon,
   SearchIcon,
   SearchInsightIcon,
@@ -14,7 +13,7 @@ export default function Hero() {
       {/* Hero Content Section */}
       <section className="flex-1 flex flex-col items-start gap-6 lg:gap-[25px] text-left text-sm px-4 lg:px-0">
         {/* Launch Offer Badge */}
-        <div className="rounded-[15px] bg-gray-1300 border-gray-1200 border-solid border-[1px] flex items-center justify-center p-2.5 text-gray-500">
+        <div className="rounded-[15px] bg-gray-1300 border-gray-1200 border-solid border flex items-center justify-center p-2.5 text-gray-500">
           <div className="rounded-[7px] bg-white flex items-center justify-center py-1 px-2">
             <div className="tracking-num--0_01 leading-5 font-medium">
               Launch Offer
@@ -46,7 +45,7 @@ export default function Hero() {
         </div>
 
         {/* Search Input */}
-        <div className="w-full max-w-[535px] rounded-xl bg-gray-100 border-gray-1200 border-solid border-[1px] box-border flex items-center justify-between py-2.5 px-3 gap-5 text-lg font-inter-variable">
+        <div className="w-full max-w-[535px] rounded-xl bg-gray-100 border-gray-1200 border-solid border box-border flex items-center justify-between py-2.5 px-3 gap-5 text-lg font-inter-variable">
           <div className="flex items-center gap-2.5">
             <SearchIcon />
             <div className="tracking-num--0_01 leading-[26px] font-medium opacity-[0.25]">
@@ -81,10 +80,16 @@ export default function Hero() {
         </div>
 
         {/* Social Proof */}
-        <footer className="w-full max-w-[472px] rounded-xl bg-gray-100 border-gray-1200 border-solid border-[1px] box-border flex items-center justify-center py-2.5 px-3 text-base">
+        <footer className="w-full max-w-[472px] rounded-xl bg-gray-100 border-gray-1200 border-solid border box-border flex items-center justify-center py-2.5 px-3 text-base">
           <div className="flex items-center gap-[13px]">
             <div className="flex items-center">
-              <GroupAccountsIcon />
+              <Image
+                src="/hero/group-accounts.png"
+                alt="Group Accounts"
+                width={180}
+                height={180}
+                className="w-full h-full object-cover"
+              />
             </div>
             <div className="tracking-num--0_01 leading-5 font-medium">
               Vouched by 2.5k+ Business Owners
