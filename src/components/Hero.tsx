@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import {
   AnonymousIcon,
   ArrowRightIcon,
@@ -8,6 +11,22 @@ import {
 import Image from 'next/image';
 
 export default function Hero() {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = () => {
+    if (searchQuery.trim()) {
+      // Handle search functionality here
+      console.log('Searching for:', searchQuery);
+      // You can add navigation or API call here
+    }
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
   return (
     <main className="flex flex-col lg:flex-row items-center justify-between min-h-[706px] text-white font-inter">
       {/* Hero Content Section */}
@@ -45,13 +64,23 @@ export default function Hero() {
 
         {/* Search Input */}
         <div className="w-full max-w-[535px] rounded-xl bg-gray-100 border-gray-1200 border-solid border box-border flex items-center justify-between py-2.5 px-3 gap-5 text-sm xl:text-base 2xl:text-lg font-inter-variable">
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2.5 flex-1">
             <SearchIcon />
-            <div className="tracking-num--0_01 leading-[26px] font-medium opacity-[0.25]">
-              Search for any Business Contact
-            </div>
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={e => setSearchQuery(e.target.value)}
+              onKeyPress={handleKeyPress}
+              placeholder="Search for any Business Contact"
+              className="flex-1 bg-transparent border-none outline-none tracking-num--0_01 leading-[26px] font-medium text-white"
+            />
           </div>
-          <ArrowRightIcon />
+          <button
+            onClick={handleSearch}
+            className="cursor-pointer hover:opacity-80 transition-opacity"
+          >
+            <ArrowRightIcon />
+          </button>
         </div>
 
         {/* Feature List */}

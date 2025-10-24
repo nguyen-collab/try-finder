@@ -49,7 +49,7 @@ export default function Footer() {
             </div>
 
             {/* CTA Button */}
-            <button className="rounded-xl bg-white border-gray-1200 border-solid border-[5px] flex items-center justify-center py-3 sm:py-4 lg:py-3 px-6 sm:px-8 lg:px-6 gap-3 sm:gap-4 lg:gap-[15px] text-base sm:text-lg lg:text-[18px] text-gray-300 font-inter-variable hover:bg-gray-50 transition-colors">
+            <button className="rounded-xl bg-white border-gray-900 border-solid border-[5px] flex items-center justify-center py-3 sm:py-4 lg:py-3 px-6 sm:px-8 lg:px-6 gap-3 sm:gap-4 lg:gap-[15px] text-base sm:text-lg lg:text-[18px] text-gray-300 font-inter-variable hover:bg-gray-1100 transition-colors cursor-pointer">
               <span className="tracking-num--0_01 leading-[26px] font-semibold">
                 Start Finding Buyers Now
               </span>

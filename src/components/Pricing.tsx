@@ -110,7 +110,7 @@ export default function Pricing() {
               <div className="tracking-num--0_01 leading-num-24 font-medium opacity-[0.75] text-center sm:text-left">
                 Ready to supercharge your searches?
               </div>
-              <button className="rounded-[9px] bg-white border-gray-1200 border-solid border-[3.8px] flex items-center justify-center p-2 lg:p-3 text-gray-500 font-inter-variable hover:bg-gray-50 transition-colors">
+              <button className="rounded-[9px] bg-white border-gray-900 border-solid border-[3.8px] flex items-center justify-center p-2 lg:p-3 text-gray-500 font-inter-variable hover:bg-gray-1100 transition-colors cursor-pointer">
                 <div className="tracking-num--0_01 leading-[19.5px] font-semibold">
                   Get Started
                 </div>
