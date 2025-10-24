@@ -6,11 +6,15 @@ import Pricing from '@/components/Pricing';
 import Faq from '@/components/Faq';
 import Footer from '@/components/Footer';
 import CopyRight from '@/components/CopyRight';
+import Header from '@/components/Header';
 
 export default function Home() {
   return (
     <div className="min-h-screen w-full overflow-x-hidden">
       <div className="bg-gray-500">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-4 sm:pt-6 lg:pt-8 xl:pt-12">
+          <Header />
+        </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
           <Hero />
         </div>
