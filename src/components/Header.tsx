@@ -40,7 +40,7 @@ export default function Header() {
         container fixed top-0 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-700 ease-out 
         ${
           isScrolled
-            ? 'bg-gray-200/95 border border-solid border-gray-1300 backdrop-blur-lg shadow-2xl rounded-2xl p-3 w-[90%] md:w-[800px] mt-4 mx-auto'
+            ? 'bg-gray-200/95 border border-solid border-gray-1300 backdrop-blur-lg shadow-2xl rounded-2xl p-3 w-[90%] md:w-[900px] mt-4 mx-auto'
             : 'bg-transparent py-4 w-full border border-solid border-gray-200'
         } 
         text-left text-sm md:text-base lg:text-num-16 text-white font-inter-variable
@@ -195,15 +195,13 @@ export default function Header() {
 
           {/* Auth Buttons */}
           <div className="flex items-center gap-3 md:gap-4 transition-all duration-700 ease-out">
-            {!isScrolled && (
-              <Link href="/sign-in">
-                <button className="rounded-[9px] border-gray-1200 border-solid border flex items-center justify-center py-2 md:py-[9px] px-3 md:px-[18px] cursor-pointer transition-all duration-300 ease-out hover:bg-gray-800">
-                  <div className="tracking-num--0_01 leading-[19.5px] font-semibold text-sm md:text-base">
-                    Sign In
-                  </div>
-                </button>
-              </Link>
-            )}
+            <Link href="/sign-in">
+              <button className="rounded-[9px] border-gray-1200 border-solid border flex items-center justify-center py-2 md:py-[9px] px-3 md:px-[18px] cursor-pointer transition-all duration-300 ease-out hover:bg-gray-800">
+                <div className="tracking-num--0_01 leading-[19.5px] font-semibold text-sm md:text-base">
+                  Sign In
+                </div>
+              </button>
+            </Link>
             <Link href="/sign-up">
               <button className="shadow-[0px_0px_0px_4px_rgba(255,_255,_255,_0.25)] rounded-xl [background:linear-gradient(180deg,_rgba(0,_0,_0,_0),_rgba(0,_0,_0,_0.2)),_#fafafa] flex items-center justify-center py-2 md:py-[9px] px-3 md:px-[18px] text-gray-300 hover:[background:linear-gradient(180deg,_rgba(0,_0,_0,_0.3),_rgba(0,_0,_0,_0.1)),_#fafafa] transition-[background] duration-300 ease-in-out cursor-pointer min-h-[44px] md:min-h-0">
                 <div className="tracking-num--0_01 leading-[19.5px] font-semibold text-sm md:text-base">
