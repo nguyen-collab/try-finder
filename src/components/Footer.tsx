@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import {
   ArrowRightSmall2Icon,
   CancelCircle2Icon,
