@@ -88,12 +88,16 @@ export default function SignIn() {
                     <label className="block tracking-num--0_01 leading-[15px] font-medium opacity-[0.75]">
                       Email Address
                     </label>
-                    <div className="rounded-xl bg-gray-500 border-gray-1300 border border-solid flex items-center py-3.5 px-num-12 gap-2 text-num-16">
-                      <EmailIcon2 />
+                    <div className="group rounded-xl bg-gray-500 border-gray-1300 border border-solid flex items-center py-3.5 px-num-12 gap-2 text-num-16 focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
+                      <EmailIcon2
+                        className="group-focus-within:[&_path]:fill-gray-1100 group-focus-within:[&_g]:opacity-100 transition-all duration-200"
+                        color="white"
+                        opacity="0.25"
+                      />
                       <input
                         type="email"
                         placeholder="email@example.com"
-                        className="flex-1 bg-transparent tracking-num--0_01 leading-num-20 text-white placeholder:text-gray-10"
+                        className="flex-1 bg-transparent tracking-num--0_01 leading-num-20 text-white placeholder:text-gray-10 focus:outline-none"
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                         required
@@ -114,13 +118,13 @@ export default function SignIn() {
                         Forgot password?
                       </Link>
                     </div>
-                    <div className="rounded-xl bg-gray-500 border-gray-1300 border border-solid flex items-center justify-between py-3.5 px-num-12 gap-5 text-num-16">
+                    <div className="group rounded-xl bg-gray-500 border-gray-1300 border border-solid flex items-center justify-between py-3.5 px-num-12 gap-5 text-num-16 focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
                       <div className="flex items-center gap-2 flex-1">
-                        <KeyIcon />
+                        <KeyIcon className="group-focus-within:[&_path]:fill-gray-1100 group-focus-within:[&_g]:opacity-100 transition-all duration-200" />
                         <input
                           type={showPassword ? 'text' : 'password'}
                           placeholder="••••••••••••••••"
-                          className="flex-1 bg-transparent tracking-num--0_01 leading-num-20 text-white placeholder:text-gray-10"
+                          className="flex-1 bg-transparent tracking-num--0_01 leading-num-20 text-white placeholder:text-gray-10 focus:outline-none"
                           value={password}
                           onChange={e => setPassword(e.target.value)}
                           required
@@ -131,7 +135,13 @@ export default function SignIn() {
                         className="opacity-num-0_25 hover:opacity-50 transition-opacity"
                         onClick={() => setShowPassword(!showPassword)}
                       >
-                        <EyeOpenIcon />
+                        <EyeOpenIcon
+                          className={`transition-all duration-200 ${
+                            showPassword
+                              ? '[&_path]:fill-gray-1100 [&_g]:opacity-100'
+                              : ''
+                          }`}
+                        />
                       </button>
                     </div>
                   </div>
@@ -143,7 +153,7 @@ export default function SignIn() {
                       id="remember"
                       checked={rememberMe}
                       onChange={e => setRememberMe(e.target.checked)}
-                      className="h-[18px] w-[18px] rounded-[5.63px] bg-gray-200 border-gray-100 border-solid border-[1.1px] box-border appearance-none focus:outline-none focus:ring-2 relative after:content-['✓'] after:absolute after:top-1/2 after:left-1/2 after:transform after:-translate-x-1/2 after:-translate-y-1/2 after:text-white after:text-xs after:font-bold after:opacity-0 checked:after:opacity-100"
+                      className="h-[18px] w-[18px] rounded-[5.63px] bg-gray-200 border-gray-100 border-solid border-[1.1px] box-border appearance-none focus:outline-none relative after:content-['✓'] after:absolute after:top-1/2 after:left-1/2 after:transform after:-translate-x-1/2 after:-translate-y-1/2 after:text-white after:text-xs after:font-bold after:opacity-0 checked:after:opacity-100"
                     />
                     <label
                       htmlFor="remember"
@@ -164,7 +174,7 @@ export default function SignIn() {
                     type="submit"
                     onClick={handleSignIn}
                     disabled={isLoading}
-                    className="w-full shadow-[0px_0px_0px_4px_rgba(255,_255,_255,_0.25)] rounded-xl [background:linear-gradient(180deg,_rgba(0,_0,_0,_0),_rgba(0,_0,_0,_0.2)),_#fafafa] border-gray-1300 border border-solid flex items-center justify-center p-num-12 text-num-16 text-gray-300 hover:shadow-[0px_0px_0px_6px_rgba(255,_255,_255,_0.3)] transition-shadow cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="w-full shadow-[0px_0px_0px_4px_rgba(255,_255,_255,_0.25)] rounded-xl [background:linear-gradient(180deg,_rgba(0,_0,_0,_0),_rgba(0,_0,_0,_0.2)),_#fafafa] flex items-center justify-center p-num-12 text-num-16 text-gray-300 hover:[background:linear-gradient(180deg,_rgba(0,_0,_0,_0.3),_rgba(0,_0,_0,_0.1)),_#fafafa] transition-[background] duration-300 ease-in-out cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     <span className="tracking-num--0_01 leading-6 font-semibold">
                       {isLoading ? 'Signing In...' : 'Sign In'}
@@ -189,13 +199,13 @@ export default function SignIn() {
                     </p>
                   </div>
                   <div className="w-full flex gap-2.5">
-                    <button className="flex-1 rounded-[10px] bg-gray-1300 border-gray-1300 border border-solid flex items-center justify-center p-num-12 gap-2.5 hover:bg-gray-1200 transition-colors cursor-pointer">
+                    <button className="flex-1 rounded-[10px] bg-gray-1300 border-gray-1300 border border-solid flex items-center justify-center p-num-12 gap-2.5 hover:outline-none hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_0_0_4px_rgba(255,255,255,0.1)] transition-all duration-200 cursor-pointer">
                       <GoogleIcon />
                       <span className="tracking-num--0_01 leading-6 font-medium">
                         Google
                       </span>
                     </button>
-                    <button className="flex-1 rounded-[10px] bg-gray-1300 border-gray-1300 border border-solid flex items-center justify-center p-num-12 gap-2.5 hover:bg-gray-1200 transition-colors cursor-pointer">
+                    <button className="flex-1 rounded-[10px] bg-gray-1300 border-gray-1300 border border-solid flex items-center justify-center p-num-12 gap-2.5 hover:outline-none hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_0_0_4px_rgba(255,255,255,0.1)] transition-all duration-200 cursor-pointer">
                       <FacebookIcon />
                       <span className="tracking-num--0_01 leading-6 font-medium">
                         Facebook

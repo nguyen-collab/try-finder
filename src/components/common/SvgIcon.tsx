@@ -1,6 +1,10 @@
 import { JSX } from 'react';
 
-export const SearchIcon = (): JSX.Element => {
+export const SearchIcon = ({
+  className = '',
+}: {
+  className?: string;
+}): JSX.Element => {
   return (
     <svg
       width="26"
@@ -8,6 +12,7 @@ export const SearchIcon = (): JSX.Element => {
       viewBox="0 0 26 26"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <path
         d="M11.9166 16.2499C14.3098 16.2499 16.2499 14.3098 16.2499 11.9166C16.2499 9.52335 14.3098 7.58325 11.9166 7.58325C9.52335 7.58325 7.58325 9.52335 7.58325 11.9166C7.58325 14.3098 9.52335 16.2499 11.9166 16.2499Z"
@@ -756,7 +761,15 @@ export const CancelCircle2Icon = (): JSX.Element => {
   );
 };
 
-export const EmailIcon2 = (): JSX.Element => {
+export const EmailIcon2 = ({
+  color = 'white',
+  opacity = '0.25',
+  className = '',
+}: {
+  color?: string;
+  opacity?: string;
+  className?: string;
+}): JSX.Element => {
   return (
     <svg
       width="18"
@@ -764,22 +777,27 @@ export const EmailIcon2 = (): JSX.Element => {
       viewBox="0 0 18 18"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
-      <g opacity="0.25">
+      <g opacity={opacity}>
         <path
           d="M1.60425 5.21354C1.94978 3.93816 3.11539 3 4.5001 3H13.5001C14.8848 3 16.0504 3.93816 16.3959 5.21354L9.6709 8.5761C9.24865 8.78723 8.75155 8.78723 8.3293 8.5761L1.60425 5.21354Z"
-          fill="white"
+          fill={color}
         />
         <path
           d="M1.5 6.83854V12C1.5 13.6568 2.84314 15 4.5 15H13.5C15.1568 15 16.5 13.6568 16.5 12V6.83853L10.3416 9.91771C9.49703 10.34 8.5029 10.34 7.65832 9.91771L1.5 6.83854Z"
-          fill="white"
+          fill={color}
         />
       </g>
     </svg>
   );
 };
 
-export const KeyIcon = (): JSX.Element => {
+export const KeyIcon = ({
+  className = '',
+}: {
+  className?: string;
+}): JSX.Element => {
   return (
     <svg
       width="18"
@@ -787,6 +805,7 @@ export const KeyIcon = (): JSX.Element => {
       viewBox="0 0 18 18"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <g opacity="0.25">
         <path
@@ -800,7 +819,11 @@ export const KeyIcon = (): JSX.Element => {
   );
 };
 
-export const EyeOpenIcon = (): JSX.Element => {
+export const EyeOpenIcon = ({
+  className = '',
+}: {
+  className?: string;
+}): JSX.Element => {
   return (
     <svg
       width="18"
@@ -808,6 +831,7 @@ export const EyeOpenIcon = (): JSX.Element => {
       viewBox="0 0 18 18"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <g opacity="0.25">
         <path
@@ -821,7 +845,11 @@ export const EyeOpenIcon = (): JSX.Element => {
   );
 };
 
-export const LockIcon = (): JSX.Element => {
+export const LockIcon = ({
+  className = '',
+}: {
+  className?: string;
+}): JSX.Element => {
   return (
     <svg
       width="18"
@@ -829,6 +857,7 @@ export const LockIcon = (): JSX.Element => {
       viewBox="0 0 18 18"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <g opacity="0.25">
         <path

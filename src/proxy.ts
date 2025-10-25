@@ -28,9 +28,6 @@ export async function proxy(request: NextRequest) {
     request.nextUrl.pathname.startsWith(route)
   );
 
-  console.log('isProtectedRoute', isProtectedRoute);
-  console.log('isAuthRoute', isAuthRoute);
-
   // Redirect logic
   if (isProtectedRoute && !user) {
     // Redirect to sign-in if trying to access protected route without auth

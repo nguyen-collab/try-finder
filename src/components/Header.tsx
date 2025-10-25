@@ -141,7 +141,7 @@ export default function Header() {
                 </button>
               </Link>
               <Link href="/sign-up">
-                <button className="w-full rounded-[9px] bg-white border-gray-900 border-solid border-[3.8px] flex items-center justify-center py-2 px-3 text-gray-100 transition-all duration-300 ease-out cursor-pointer">
+                <button className="w-full shadow-[0px_0px_0px_4px_rgba(255,_255,_255,_0.25)] rounded-xl [background:linear-gradient(180deg,_rgba(0,_0,_0,_0),_rgba(0,_0,_0,_0.2)),_#fafafa] flex items-center justify-center py-2 px-3 text-gray-300 hover:[background:linear-gradient(180deg,_rgba(0,_0,_0,_0.3),_rgba(0,_0,_0,_0.1)),_#fafafa] transition-[background] duration-300 ease-in-out cursor-pointer">
                   <div className="tracking-num--0_01 leading-[19.5px] font-semibold">
                     Create Account
                   </div>
@@ -205,7 +205,7 @@ export default function Header() {
               </Link>
             )}
             <Link href="/sign-up">
-              <button className="rounded-[9px] bg-white border-gray-900 border-solid border-[3.8px] flex items-center justify-center py-2 md:py-[9px] px-3 md:px-[18px] text-gray-100 transition-all duration-300 ease-out hover:bg-gray-100 hover:text-gray-900 cursor-pointer min-h-[44px] md:min-h-0">
+              <button className="shadow-[0px_0px_0px_4px_rgba(255,_255,_255,_0.25)] rounded-xl [background:linear-gradient(180deg,_rgba(0,_0,_0,_0),_rgba(0,_0,_0,_0.2)),_#fafafa] flex items-center justify-center py-2 md:py-[9px] px-3 md:px-[18px] text-gray-300 hover:[background:linear-gradient(180deg,_rgba(0,_0,_0,_0.3),_rgba(0,_0,_0,_0.1)),_#fafafa] transition-[background] duration-300 ease-in-out cursor-pointer min-h-[44px] md:min-h-0">
                 <div className="tracking-num--0_01 leading-[19.5px] font-semibold text-sm md:text-base">
                   Create Account
                 </div>

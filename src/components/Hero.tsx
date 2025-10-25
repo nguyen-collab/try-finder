@@ -69,16 +69,16 @@ export default function Hero() {
         </div>
 
         {/* Search Input */}
-        <div className="w-full max-w-[535px] rounded-xl bg-gray-100 border-gray-1200 border-solid border box-border flex items-center justify-between py-2.5 px-3 gap-5 text-sm xl:text-base 2xl:text-lg font-inter-variable">
+        <div className="group w-full max-w-[535px] rounded-xl bg-gray-100 border-gray-1200 border-solid border box-border flex items-center justify-between py-2.5 px-3 gap-5 text-sm xl:text-base 2xl:text-lg font-inter-variable focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
           <div className="flex items-center gap-2.5 flex-1">
-            <SearchIcon />
+            <SearchIcon className="group-focus-within:[&_path]:fill-white transition-all duration-200" />
             <input
               type="text"
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder="Search for any Business Contact"
-              className="flex-1 bg-transparent border-none outline-none tracking-num--0_01 leading-[26px] font-medium text-white"
+              className="flex-1 bg-transparent border-none outline-none tracking-num--0_01 leading-[26px] font-medium text-white focus:outline-none"
             />
           </div>
           <button

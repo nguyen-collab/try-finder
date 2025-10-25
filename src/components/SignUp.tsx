@@ -111,7 +111,7 @@ export default function SignUp() {
           </header>
 
           {/* Hero content */}
-          <section className="max-w-full lg:max-w-[480px] mb-8 sm:mb-16 lg:mb-20">
+          <section className="max-w-full lg:max-w-[520px] mb-8 sm:mb-16 lg:mb-20">
             <h1 className="text-xl sm:text-2xl lg:text-[28px] tracking-num--0_01 leading-tight lg:leading-8 font-semibold mb-3 sm:mb-4">
               Ready to 10x Your Pipeline?
             </h1>
@@ -124,7 +124,7 @@ export default function SignUp() {
             </div>
 
             {/* Features - Stack on mobile, inline on larger screens */}
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-[15px] text-xs sm:text-sm lg:text-num-16 font-inter">
+            <div className="flex flex-col sm:flex-row flex-wrap sm:items-center gap-2 sm:gap-[15px] text-xs sm:text-sm lg:text-num-16 font-inter">
               <div className="flex items-center gap-2">
                 <ConfigurationIcon />
                 <span className="tracking-num--0_01 leading-tight lg:leading-num-24 font-medium opacity-[0.9] whitespace-nowrap">
@@ -224,12 +224,16 @@ export default function SignUp() {
                   <label className="block text-sm sm:text-[15px] tracking-num--0_01 leading-tight lg:leading-[15px] font-medium opacity-num-0_75">
                     Email Address
                   </label>
-                  <div className="rounded-xl bg-gray-500 border-gray-1300 border-solid border-[1px] flex items-center py-3 sm:py-3.5 px-3 sm:px-num-12 gap-2 text-sm sm:text-num-16">
-                    <EmailIcon2 />
+                  <div className="group rounded-xl bg-gray-500 border-gray-1300 border-solid border-[1px] flex items-center py-3 sm:py-3.5 px-3 sm:px-num-12 gap-2 text-sm sm:text-num-16 focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
+                    <EmailIcon2
+                      className="group-focus-within:[&_path]:fill-gray-1100 group-focus-within:[&_g]:opacity-100 transition-all duration-200"
+                      color="white"
+                      opacity="0.25"
+                    />
                     <input
                       type="email"
                       placeholder="email@example.com"
-                      className="flex-1 bg-transparent tracking-num--0_01 leading-tight lg:leading-num-20 text-white placeholder:text-gray-10"
+                      className="flex-1 bg-transparent tracking-num--0_01 leading-tight lg:leading-num-20 text-white placeholder:text-gray-10 focus:outline-none"
                       value={email}
                       onChange={e => setEmail(e.target.value)}
                       required
@@ -250,13 +254,13 @@ export default function SignUp() {
                       Forgot password?
                     </Link>
                   </div>
-                  <div className="rounded-xl bg-gray-500 border-gray-1300 border-solid border-[1px] flex items-center justify-between py-3 sm:py-3.5 px-3 sm:px-num-12 gap-3 sm:gap-5 text-sm sm:text-num-16">
+                  <div className="group rounded-xl bg-gray-500 border-gray-1300 border-solid border-[1px] flex items-center justify-between py-3 sm:py-3.5 px-3 sm:px-num-12 gap-3 sm:gap-5 text-sm sm:text-num-16 focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
                     <div className="flex items-center gap-2 flex-1">
-                      <KeyIcon />
+                      <KeyIcon className="group-focus-within:[&_path]:fill-gray-1100 group-focus-within:[&_g]:opacity-100 transition-all duration-200" />
                       <input
                         type={showPassword ? 'text' : 'password'}
                         placeholder="••••••••••••••••"
-                        className="flex-1 bg-transparent text-white placeholder-opacity-25 tracking-num--0_01 leading-tight lg:leading-num-20"
+                        className="flex-1 bg-transparent text-white placeholder-opacity-25 tracking-num--0_01 leading-tight lg:leading-num-20 focus:outline-none"
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                         required
@@ -267,7 +271,13 @@ export default function SignUp() {
                       className="opacity-num-0_25 hover:opacity-50 transition-opacity"
                       onClick={() => setShowPassword(!showPassword)}
                     >
-                      <EyeOpenIcon />
+                      <EyeOpenIcon
+                        className={`transition-all duration-200 ${
+                          showPassword
+                            ? '[&_path]:fill-gray-1100 [&_g]:opacity-100'
+                            : ''
+                        }`}
+                      />
                     </button>
                   </div>
                 </div>
@@ -285,13 +295,13 @@ export default function SignUp() {
                       Forgot password?
                     </Link>
                   </div>
-                  <div className="rounded-xl bg-gray-500 border-gray-1300 border-solid border-[1px] flex items-center justify-between py-3 sm:py-3.5 px-3 sm:px-num-12 gap-3 sm:gap-5 text-sm sm:text-num-16">
+                  <div className="group rounded-xl bg-gray-500 border-gray-1300 border-solid border-[1px] flex items-center justify-between py-3 sm:py-3.5 px-3 sm:px-num-12 gap-3 sm:gap-5 text-sm sm:text-num-16 focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
                     <div className="flex items-center gap-2 flex-1">
-                      <LockIcon />
+                      <LockIcon className="group-focus-within:[&_path]:fill-gray-1100 group-focus-within:[&_g]:opacity-100 transition-all duration-200" />
                       <input
                         type={showConfirmPassword ? 'text' : 'password'}
                         placeholder="••••••••••••••••"
-                        className="flex-1 bg-transparent text-white placeholder-opacity-25 tracking-num--0_01 leading-tight lg:leading-num-20"
+                        className="flex-1 bg-transparent text-white placeholder-opacity-25 tracking-num--0_01 leading-tight lg:leading-num-20 focus:outline-none"
                         value={confirmPassword}
                         onChange={e => setConfirmPassword(e.target.value)}
                         required
@@ -304,7 +314,13 @@ export default function SignUp() {
                         setShowConfirmPassword(!showConfirmPassword)
                       }
                     >
-                      <EyeOpenIcon />
+                      <EyeOpenIcon
+                        className={`transition-all duration-200 ${
+                          showConfirmPassword
+                            ? '[&_path]:fill-gray-1100 [&_g]:opacity-100'
+                            : ''
+                        }`}
+                      />
                     </button>
                   </div>
                 </div>
@@ -316,9 +332,12 @@ export default function SignUp() {
                     id="remember"
                     checked={agreeToTerms}
                     onChange={e => setAgreeToTerms(e.target.checked)}
-                    className="h-[18px] w-[18px] rounded-[5.63px] bg-gray-200 border-gray-100 border-solid border-[1.1px] box-border appearance-none focus:outline-none focus:ring-2 relative after:content-['✓'] after:absolute after:top-1/2 after:left-1/2 after:transform after:-translate-x-1/2 after:-translate-y-1/2 after:text-white after:text-xs after:font-bold after:opacity-0 checked:after:opacity-100"
+                    className="h-[18px] w-[18px] rounded-[5.63px] bg-gray-200 border-gray-100 border-solid border-[1.1px] box-border appearance-none focus:outline-none relative after:content-['✓'] after:absolute after:top-1/2 after:left-1/2 after:transform after:-translate-x-1/2 after:-translate-y-1/2 after:text-white after:text-xs after:font-bold after:opacity-0 checked:after:opacity-100"
                   />
-                  <span className="tracking-num--0_01 leading-tight lg:leading-num-20 font-medium">
+                  <label
+                    htmlFor="remember"
+                    className="tracking-num--0_01 leading-tight lg:leading-num-20 font-medium cursor-pointer"
+                  >
                     I agree to the{' '}
                     <Link href="#" className="underline cursor-pointer">
                       Terms and Conditions
@@ -327,7 +346,7 @@ export default function SignUp() {
                     <Link href="#" className="underline cursor-pointer">
                       Privacy Policy
                     </Link>
-                  </span>
+                  </label>
                 </div>
 
                 {/* Error message */}
@@ -341,7 +360,7 @@ export default function SignUp() {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full shadow-[0px_0px_0px_4px_rgba(255,_255,_255,_0.25)] rounded-xl [background:linear-gradient(180deg,_rgba(0,_0,_0,_0),_rgba(0,_0,_0,_0.2)),_#fafafa] border-gray-1300 border-solid border-[1px] py-3 sm:py-num-12 text-sm sm:text-num-16 text-gray-300 font-semibold tracking-num--0_01 leading-tight lg:leading-num-24 min-h-[44px] cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full shadow-[0px_0px_0px_4px_rgba(255,_255,_255,_0.25)] rounded-xl [background:linear-gradient(180deg,_rgba(0,_0,_0,_0),_rgba(0,_0,_0,_0.2)),_#fafafa] flex items-center justify-center p-num-12 text-num-16 text-gray-300 hover:[background:linear-gradient(180deg,_rgba(0,_0,_0,_0.3),_rgba(0,_0,_0,_0.1)),_#fafafa] transition-[background] duration-300 ease-in-out cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {isLoading ? 'Creating Account...' : 'Create Account'}
                 </button>
@@ -364,13 +383,13 @@ export default function SignUp() {
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-2 sm:gap-2.5">
-                  <button className="flex-1 rounded-[10px] bg-gray-1300 border-gray-1300 border-solid border-[1px] flex items-center justify-center p-3 sm:p-num-12 gap-2 sm:gap-2.5 min-h-[44px] cursor-pointer">
+                  <button className="flex-1 rounded-[10px] bg-gray-1300 border-gray-1300 border-solid border-[1px] flex items-center justify-center p-3 sm:p-num-12 gap-2 sm:gap-2.5 min-h-[44px] cursor-pointer hover:outline-none hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_0_0_4px_rgba(255,255,255,0.1)] transition-all duration-200">
                     <GoogleIcon />
                     <span className="text-sm sm:text-num-16 tracking-num--0_01 leading-tight lg:leading-num-24 font-medium">
                       Google
                     </span>
                   </button>
-                  <button className="flex-1 rounded-[10px] bg-gray-1300 border-gray-1300 border-solid border-[1px] flex items-center justify-center p-3 sm:p-num-12 gap-2 sm:gap-2.5 min-h-[44px] cursor-pointer">
+                  <button className="flex-1 rounded-[10px] bg-gray-1300 border-gray-1300 border-solid border-[1px] flex items-center justify-center p-3 sm:p-num-12 gap-2 sm:gap-2.5 min-h-[44px] cursor-pointer hover:outline-none hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_0_0_4px_rgba(255,255,255,0.1)] transition-all duration-200">
                     <FacebookIcon />
                     <span className="text-sm sm:text-num-16 tracking-num--0_01 leading-tight lg:leading-num-24 font-medium">
                       Facebook
