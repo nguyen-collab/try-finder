@@ -28,7 +28,7 @@ export default function Hero() {
   };
 
   return (
-    <main className="flex flex-col lg:flex-row items-center justify-between min-h-[706px] text-white font-inter">
+    <main className="flex flex-col mt-12 lg:mt-0 lg:flex-row items-center justify-between min-h-[706px] text-white font-inter">
       {/* Hero Content Section */}
       <section className="flex-1 flex flex-col items-center lg:items-start gap-6 lg:gap-[25px] text-left text-sm px-4 lg:px-0">
         {/* Launch Offer Badge */}

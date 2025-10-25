@@ -12,7 +12,7 @@ import {
 export default function Pricing() {
   return (
     <section className="w-full min-h-[574px] text-left text-num-18 text-white font-inter flex flex-col items-center justify-center">
-      <div className="max-w-[1350px] w-full flex flex-col items-center gap-12">
+      <div className="max-w-[1350px] w-full flex flex-col items-center gap-4">
         {/* Header Section */}
         <header className="max-w-[942px] flex flex-col items-center gap-3 sm:gap-4 lg:gap-[15px] text-center">
           <div className="rounded-[15px] bg-gray-200 border-gray-1300 border-solid border flex items-center justify-center py-1.5 px-2.5">
@@ -32,19 +32,16 @@ export default function Pricing() {
         </header>
 
         {/* Pricing Display */}
-        <main className="flex flex-col items-center gap-4 sm:gap-6 lg:gap-8 relative">
+        <main className="flex flex-col items-center gap-4 sm:gap-4 lg:gap-8 relative">
           {/* Price */}
           <div className="flex items-center justify-center px-12">
             <div className="relative">
               <Image
-                src="/pricing/mo.png"
+                src="/pricing/moper.png"
                 alt="Price Background"
                 width={393}
                 height={197}
               />
-              <div className="absolute top-0 -translate-y-1/2 right-[-60px] sm:right-[-70px] lg:right-[-80px] tracking-num--0_01 leading-num-24 font-medium text-sm sm:text-base lg:text-lg text-white">
-                Per user
-              </div>
             </div>
           </div>
 
@@ -104,7 +101,7 @@ export default function Pricing() {
         </main>
 
         {/* CTA Section */}
-        <footer className="w-fit">
+        <footer className="w-fit mt-8">
           <div className="rounded-xl bg-gray-100 border-gray-1200 border-solid border flex flex-col items-center p-3 lg:p-[15px] text-sm sm:text-base lg:text-[16px] text-white">
             <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 lg:gap-[15px]">
               <div className="tracking-num--0_01 leading-num-24 font-medium opacity-[0.75] text-center sm:text-left">

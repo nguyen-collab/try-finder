@@ -12,29 +12,29 @@ export default function Home() {
   return (
     <div className="min-h-screen w-full overflow-x-hidden">
       <div className="bg-gray-500">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-4 sm:py-6 lg:py-8 xl:py-12">
+        <div className="container mx-auto py-4 sm:py-6 lg:py-8 xl:py-12">
           <Header />
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
           <Hero />
         </div>
       </div>
-      <div className="bg-gray-200">
+      <div id="features" className="bg-gray-200">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 sm:py-20 lg:py-28">
           <Feature />
         </div>
       </div>
-      <div className="bg-gray-500">
+      <div id="solutions" className="bg-gray-500">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 sm:py-20 lg:py-28">
           <Solution />
         </div>
       </div>
-      <div className="bg-gray-500">
+      <div id="pricing" className="bg-gray-500">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 sm:py-20 lg:py-28">
           <Pricing />
         </div>
       </div>
-      <div className="bg-gray-200">
+      <div id="faqs" className="bg-gray-200">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 sm:py-20 lg:py-28">
           <Faq />
         </div>

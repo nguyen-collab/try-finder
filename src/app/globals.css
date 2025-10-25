@@ -4,6 +4,10 @@
 
 @config "../../tailwind.config.ts";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   @apply leading-[normal] m-0;
 }
