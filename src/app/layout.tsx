@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://tryfinder-ai.vercel.com'),
+  metadataBase: new URL('https://tryfinder-ai.vercel.app'),
   alternates: {
     canonical: '/',
   },
