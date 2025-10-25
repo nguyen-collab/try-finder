@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Header() {
   return (
@@ -79,16 +80,22 @@ export default function Header() {
 
         {/* Auth Buttons */}
         <div className="flex items-center gap-3 md:gap-4">
-          <button className="rounded-[9px] border-gray-1200 border-solid border flex items-center justify-center py-2 md:py-[9px] px-3 md:px-[18px] cursor-pointer hover:bg-gray-800 transition-colors">
+          <Link
+            href="/sign-in"
+            className="rounded-[9px] border-gray-1200 border-solid border flex items-center justify-center py-2 md:py-[9px] px-3 md:px-[18px] cursor-pointer hover:bg-gray-800 transition-colors"
+          >
             <div className="tracking-num--0_01 leading-[19.5px] font-semibold text-sm md:text-base">
               Sign In
             </div>
-          </button>
-          <button className="rounded-[9px] bg-white border-gray-900 border-solid border-[3.8px] flex items-center justify-center py-2 md:py-[9px] px-3 md:px-[18px] text-gray-100 hover:bg-gray-1100 transition-colors cursor-pointer min-h-[44px] md:min-h-0">
+          </Link>
+          <Link
+            href="/sign-up"
+            className="rounded-[9px] bg-white border-gray-900 border-solid border-[3.8px] flex items-center justify-center py-2 md:py-[9px] px-3 md:px-[18px] text-gray-100 hover:bg-gray-1100 transition-colors cursor-pointer min-h-[44px] md:min-h-0"
+          >
             <div className="tracking-num--0_01 leading-[19.5px] font-semibold text-sm md:text-base">
               Create Account
             </div>
-          </button>
+          </Link>
         </div>
       </div>
     </header>

@@ -98,6 +98,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { AuthProvider } from '@/context/AuthContext';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -108,7 +110,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${aeonikPro.variable} ${interVariable.variable} antialiased`}
       >
-        {children}
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );
