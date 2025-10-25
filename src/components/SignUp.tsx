@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
 import {
   CancelCircle2Icon,
@@ -11,8 +14,84 @@ import {
   SearchFocusIcon,
 } from './common/SvgIcon';
 import Link from 'next/link';
+import { useAuth } from '@/context/AuthContext';
+import { useRouter } from 'next/navigation';
 
 export default function SignUp() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [agreeToTerms, setAgreeToTerms] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const router = useRouter();
+  const { signUp } = useAuth();
+
+  const validateInputs = () => {
+    if (!email || !password || !confirmPassword) {
+      setErrorMessage('All fields are required');
+      return false;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setErrorMessage('Please enter a valid email address');
+      return false;
+    }
+
+    // Password validation (at least 6 characters)
+    if (password.length < 6) {
+      setErrorMessage('Password must be at least 6 characters');
+      return false;
+    }
+
+    // Password match validation
+    if (password !== confirmPassword) {
+      setErrorMessage('Passwords do not match');
+      return false;
+    }
+
+    // Terms agreement validation
+    if (!agreeToTerms) {
+      setErrorMessage('You must agree to the Terms and Conditions');
+      return false;
+    }
+
+    return true;
+  };
+
+  const handleSignUp = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setErrorMessage('');
+
+    if (!validateInputs()) {
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      const { error } = await signUp(email, password);
+
+      if (error) {
+        setErrorMessage(error.message);
+        return;
+      }
+
+      // Show success message and redirect
+      router.push('/verification');
+    } catch (error) {
+      console.error('Sign up error:', error);
+      setErrorMessage('An unexpected error occurred. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-500 text-left text-sm sm:text-base lg:text-num-16 text-white font-inter-variable">
       {/* Main content container */}
@@ -139,7 +218,7 @@ export default function SignUp() {
                 </p>
               </div>
 
-              <form className="space-y-4 sm:space-y-6">
+              <form className="space-y-4 sm:space-y-6" onSubmit={handleSignUp}>
                 {/* Email field */}
                 <div className="space-y-2 sm:space-y-2.5">
                   <label className="block text-sm sm:text-[15px] tracking-num--0_01 leading-tight lg:leading-[15px] font-medium opacity-num-0_75">
@@ -151,6 +230,9 @@ export default function SignUp() {
                       type="email"
                       placeholder="email@example.com"
                       className="flex-1 bg-transparent tracking-num--0_01 leading-tight lg:leading-num-20 text-white placeholder:text-gray-10"
+                      value={email}
+                      onChange={e => setEmail(e.target.value)}
+                      required
                     />
                   </div>
                 </div>
@@ -172,12 +254,21 @@ export default function SignUp() {
                     <div className="flex items-center gap-2 flex-1">
                       <KeyIcon />
                       <input
-                        type="password"
+                        type={showPassword ? 'text' : 'password'}
                         placeholder="••••••••••••••••"
                         className="flex-1 bg-transparent text-white placeholder-opacity-25 tracking-num--0_01 leading-tight lg:leading-num-20"
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
+                        required
                       />
                     </div>
-                    <EyeOpenIcon />
+                    <button
+                      type="button"
+                      className="opacity-num-0_25 hover:opacity-50 transition-opacity"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      <EyeOpenIcon />
+                    </button>
                   </div>
                 </div>
 
@@ -198,12 +289,23 @@ export default function SignUp() {
                     <div className="flex items-center gap-2 flex-1">
                       <LockIcon />
                       <input
-                        type="password"
+                        type={showConfirmPassword ? 'text' : 'password'}
                         placeholder="••••••••••••••••"
                         className="flex-1 bg-transparent text-white placeholder-opacity-25 tracking-num--0_01 leading-tight lg:leading-num-20"
+                        value={confirmPassword}
+                        onChange={e => setConfirmPassword(e.target.value)}
+                        required
                       />
                     </div>
-                    <EyeOpenIcon />
+                    <button
+                      type="button"
+                      className="opacity-num-0_25 hover:opacity-50 transition-opacity"
+                      onClick={() =>
+                        setShowConfirmPassword(!showConfirmPassword)
+                      }
+                    >
+                      <EyeOpenIcon />
+                    </button>
                   </div>
                 </div>
 
@@ -212,6 +314,8 @@ export default function SignUp() {
                   <input
                     type="checkbox"
                     id="remember"
+                    checked={agreeToTerms}
+                    onChange={e => setAgreeToTerms(e.target.checked)}
                     className="h-[18px] w-[18px] rounded-[5.63px] bg-gray-200 border-gray-100 border-solid border-[1.1px] box-border appearance-none focus:outline-none focus:ring-2 relative after:content-['✓'] after:absolute after:top-1/2 after:left-1/2 after:transform after:-translate-x-1/2 after:-translate-y-1/2 after:text-white after:text-xs after:font-bold after:opacity-0 checked:after:opacity-100"
                   />
                   <span className="tracking-num--0_01 leading-tight lg:leading-num-20 font-medium">
@@ -226,9 +330,20 @@ export default function SignUp() {
                   </span>
                 </div>
 
+                {/* Error message */}
+                {errorMessage && (
+                  <div className="text-red-500 text-sm mt-2">
+                    {errorMessage}
+                  </div>
+                )}
+
                 {/* Submit button */}
-                <button className="w-full shadow-[0px_0px_0px_4px_rgba(255,_255,_255,_0.25)] rounded-xl [background:linear-gradient(180deg,_rgba(0,_0,_0,_0),_rgba(0,_0,_0,_0.2)),_#fafafa] border-gray-1300 border-solid border-[1px] py-3 sm:py-num-12 text-sm sm:text-num-16 text-gray-300 font-semibold tracking-num--0_01 leading-tight lg:leading-num-24 min-h-[44px] cursor-pointer">
-                  Create Account
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className="w-full shadow-[0px_0px_0px_4px_rgba(255,_255,_255,_0.25)] rounded-xl [background:linear-gradient(180deg,_rgba(0,_0,_0,_0),_rgba(0,_0,_0,_0.2)),_#fafafa] border-gray-1300 border-solid border-[1px] py-3 sm:py-num-12 text-sm sm:text-num-16 text-gray-300 font-semibold tracking-num--0_01 leading-tight lg:leading-num-24 min-h-[44px] cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
+                >
+                  {isLoading ? 'Creating Account...' : 'Create Account'}
                 </button>
               </form>
 

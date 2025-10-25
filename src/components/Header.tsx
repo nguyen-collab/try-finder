@@ -40,7 +40,7 @@ export default function Header() {
         container fixed top-0 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-700 ease-out 
         ${
           isScrolled
-            ? 'bg-gray-200/95 border border-solid border-gray-1300 backdrop-blur-lg shadow-2xl rounded-2xl p-3 w-[90%] md:w-[800px] mt-8 mx-auto'
+            ? 'bg-gray-200/95 border border-solid border-gray-1300 backdrop-blur-lg shadow-2xl rounded-2xl p-3 w-[90%] md:w-[800px] mt-4 mx-auto'
             : 'bg-transparent py-4 w-full border border-solid border-gray-200'
         } 
         text-left text-sm md:text-base lg:text-num-16 text-white font-inter-variable

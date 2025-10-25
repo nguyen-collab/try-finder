@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
 import {
   EmailIcon2,
@@ -7,8 +10,43 @@ import {
   KeyIcon,
 } from './common/SvgIcon';
 import Link from 'next/link';
+import { useAuth } from '@/context/AuthContext';
+import { useRouter } from 'next/navigation';
 
 export default function SignIn() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const router = useRouter();
+  const { signIn } = useAuth();
+
+  const handleSignIn = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setErrorMessage('');
+    setIsLoading(true);
+
+    try {
+      const { error } = await signIn(email, password);
+
+      if (error) {
+        setErrorMessage(error.message);
+        return;
+      }
+
+      // Redirect to dashboard on successful login
+      router.push('/dashboard');
+    } catch (error) {
+      console.error('Sign in error:', error);
+      setErrorMessage('An unexpected error occurred. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen w-full bg-gray-500 text-white font-inter-variable">
       {/* Main layout container */}
@@ -56,6 +94,9 @@ export default function SignIn() {
                         type="email"
                         placeholder="email@example.com"
                         className="flex-1 bg-transparent tracking-num--0_01 leading-num-20 text-white placeholder:text-gray-10"
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                        required
                       />
                     </div>
                   </div>
@@ -77,12 +118,19 @@ export default function SignIn() {
                       <div className="flex items-center gap-2 flex-1">
                         <KeyIcon />
                         <input
-                          type="password"
+                          type={showPassword ? 'text' : 'password'}
                           placeholder="••••••••••••••••"
                           className="flex-1 bg-transparent tracking-num--0_01 leading-num-20 text-white placeholder:text-gray-10"
+                          value={password}
+                          onChange={e => setPassword(e.target.value)}
+                          required
                         />
                       </div>
-                      <button className="opacity-num-0_25 hover:opacity-50 transition-opacity">
+                      <button
+                        type="button"
+                        className="opacity-num-0_25 hover:opacity-50 transition-opacity"
+                        onClick={() => setShowPassword(!showPassword)}
+                      >
                         <EyeOpenIcon />
                       </button>
                     </div>
@@ -93,6 +141,8 @@ export default function SignIn() {
                     <input
                       type="checkbox"
                       id="remember"
+                      checked={rememberMe}
+                      onChange={e => setRememberMe(e.target.checked)}
                       className="h-[18px] w-[18px] rounded-[5.63px] bg-gray-200 border-gray-100 border-solid border-[1.1px] box-border appearance-none focus:outline-none focus:ring-2 relative after:content-['✓'] after:absolute after:top-1/2 after:left-1/2 after:transform after:-translate-x-1/2 after:-translate-y-1/2 after:text-white after:text-xs after:font-bold after:opacity-0 checked:after:opacity-100"
                     />
                     <label
@@ -104,9 +154,20 @@ export default function SignIn() {
                   </div>
 
                   {/* Sign in button */}
-                  <button className="w-full shadow-[0px_0px_0px_4px_rgba(255,_255,_255,_0.25)] rounded-xl [background:linear-gradient(180deg,_rgba(0,_0,_0,_0),_rgba(0,_0,_0,_0.2)),_#fafafa] border-gray-1300 border border-solid flex items-center justify-center p-num-12 text-num-16 text-gray-300 hover:shadow-[0px_0px_0px_6px_rgba(255,_255,_255,_0.3)] transition-shadow cursor-pointer">
+                  {errorMessage && (
+                    <div className="text-red-500 text-sm mt-2">
+                      {errorMessage}
+                    </div>
+                  )}
+
+                  <button
+                    type="submit"
+                    onClick={handleSignIn}
+                    disabled={isLoading}
+                    className="w-full shadow-[0px_0px_0px_4px_rgba(255,_255,_255,_0.25)] rounded-xl [background:linear-gradient(180deg,_rgba(0,_0,_0,_0),_rgba(0,_0,_0,_0.2)),_#fafafa] border-gray-1300 border border-solid flex items-center justify-center p-num-12 text-num-16 text-gray-300 hover:shadow-[0px_0px_0px_6px_rgba(255,_255,_255,_0.3)] transition-shadow cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
+                  >
                     <span className="tracking-num--0_01 leading-6 font-semibold">
-                      Sign In
+                      {isLoading ? 'Signing In...' : 'Sign In'}
                     </span>
                   </button>
                 </div>
