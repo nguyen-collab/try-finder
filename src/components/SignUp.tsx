@@ -149,7 +149,7 @@ export default function SignUp() {
 
             <div className="flex items-center gap-3 sm:gap-5 text-lg sm:text-xl lg:text-[24px] font-caveat mt-4 sm:mt-6">
               <Image
-                src="/register/group.png"
+                src="/auth/group.png"
                 className="lg:h-[85.7px] lg:w-[382.2px]"
                 width={148.2}
                 height={33.7}

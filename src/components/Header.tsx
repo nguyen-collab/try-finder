@@ -41,7 +41,7 @@ export default function Header() {
         ${
           isScrolled
             ? 'bg-gray-200/95 border border-solid border-gray-1300 backdrop-blur-lg shadow-2xl rounded-2xl p-3 w-[90%] md:w-[900px] mt-4 mx-auto'
-            : 'bg-transparent py-4 w-full border border-solid border-gray-200'
+            : 'bg-transparent py-4 w-full border border-solid border-gray-500'
         } 
         text-left text-sm md:text-base lg:text-num-16 text-white font-inter-variable
       `}
