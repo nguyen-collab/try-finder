@@ -7,21 +7,21 @@ export default function CopyRight() {
         </div>
         <div className="flex items-center gap-3 sm:gap-4 lg:gap-5">
           <a
-            href="#"
+            href="/terms-of-service"
             className="tracking-num--0_01 leading-num-20 font-medium opacity-[0.8] text-xs sm:text-sm lg:text-base hover:opacity-100 transition-opacity"
           >
             Terms of Service
           </a>
           <div className="h-0.5 w-0.5 rounded-[50%] bg-white opacity-[0.5]" />
           <a
-            href="#"
+            href="/privacy-policy"
             className="tracking-num--0_01 leading-num-20 font-medium opacity-[0.8] text-xs sm:text-sm lg:text-base hover:opacity-100 transition-opacity"
           >
             Privacy Policy
           </a>
           <div className="h-0.5 w-0.5 rounded-[50%] bg-white opacity-[0.5]" />
           <a
-            href="#"
+            href="/cookie-policy"
             className="tracking-num--0_01 leading-num-20 font-medium opacity-[0.8] text-xs sm:text-sm lg:text-base hover:opacity-100 transition-opacity"
           >
             Cookie Policy

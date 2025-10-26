@@ -1,3 +1,5 @@
+'use client';
+
 import { PrintIcon } from './common/SvgIcon';
 
 interface PolicyProps {
@@ -5,6 +7,10 @@ interface PolicyProps {
 }
 
 export default function Policy({ title }: PolicyProps) {
+  const handlePrint = () => {
+    window.print();
+  };
+
   return (
     <div className="w-full space-y-16">
       <div className="w-full flex flex-col md:flex-row items-center md:items-start justify-center md:justify-between gap-8 text-left text-[42px] text-white font-aeonik-pro">
@@ -17,7 +23,10 @@ export default function Policy({ title }: PolicyProps) {
           </div>
         </div>
         <div className="flex items-center justify-end text-base text-gray-100 font-inter-variable">
-          <button className="space-x-2 shadow-[0px_0px_0px_4px_rgba(255,_255,_255,_0.25)] rounded-xl [background:linear-gradient(180deg,_rgba(0,_0,_0,_0),_rgba(0,_0,_0,_0.2)),_#fafafa] flex items-center justify-center p-3 text-num-16 text-gray-300 hover:[background:linear-gradient(180deg,_rgba(0,_0,_0,_0.3),_rgba(0,_0,_0,_0.1)),_#fafafa] transition-[background] duration-300 ease-in-out cursor-pointer">
+          <button
+            onClick={handlePrint}
+            className="space-x-2 shadow-[0px_0px_0px_4px_rgba(255,_255,_255,_0.25)] rounded-xl [background:linear-gradient(180deg,_rgba(0,_0,_0,_0),_rgba(0,_0,_0,_0.2)),_#fafafa] flex items-center justify-center p-3 text-num-16 text-gray-300 hover:[background:linear-gradient(180deg,_rgba(0,_0,_0,_0.3),_rgba(0,_0,_0,_0.1)),_#fafafa] transition-[background] duration-300 ease-in-out cursor-pointer"
+          >
             <PrintIcon />
             <div className="tracking-[-0.01em] leading-[19.5px] font-semibold">
               Print this Page

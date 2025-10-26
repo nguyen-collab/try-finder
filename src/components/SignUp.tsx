@@ -339,11 +339,17 @@ export default function SignUp() {
                     className="tracking-num--0_01 leading-tight lg:leading-num-20 font-medium cursor-pointer"
                   >
                     I agree to the{' '}
-                    <Link href="#" className="underline cursor-pointer">
+                    <Link
+                      href="/terms-of-service"
+                      className="underline cursor-pointer"
+                    >
                       Terms and Conditions
                     </Link>{' '}
                     and{' '}
-                    <Link href="#" className="underline cursor-pointer">
+                    <Link
+                      href="/privacy-policy"
+                      className="underline cursor-pointer"
+                    >
                       Privacy Policy
                     </Link>
                   </label>
