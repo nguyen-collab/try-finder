@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import {
   AnonymousIcon,
   ArrowRightIcon,
@@ -12,12 +13,12 @@ import Image from 'next/image';
 
 export default function Hero() {
   const [searchQuery, setSearchQuery] = useState('');
+  const router = useRouter();
 
   const handleSearch = () => {
     if (searchQuery.trim()) {
-      // Handle search functionality here
-      console.log('Searching for:', searchQuery);
-      // You can add navigation or API call here
+      // Navigate to sign-up page when user enters text and searches
+      router.push('/sign-up');
     }
   };
 
@@ -45,9 +46,9 @@ export default function Hero() {
           <h1 className="text-4xl xl:text-5xl 2xl:text-[56px] tracking-[-0.03em] leading-12 xl:leading-14 2xl:leading-[62px] font-aeonik-pro">
             <p className="m-0">
               Find prospects in{' '}
-              <span className="relative inline-block">
+              <span className="relative inline-block px-1.5">
                 <span className="relative z-10">5 seconds.</span>
-                <span className="absolute inset-0 bg-gray-1200 transform -skew-y-2 opacity-80 rounded-sm"></span>
+                <span className="absolute inset-0 bg-gray-1200 transform -skew-y-2 opacity-80"></span>
               </span>
             </p>
             <p className="m-0">Close deals- find contacts.</p>
