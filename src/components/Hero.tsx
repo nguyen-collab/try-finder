@@ -10,6 +10,8 @@ import {
   SearchInsightIcon,
 } from './common/SvgIcon';
 import Image from 'next/image';
+import LottieAnimation from './common/LottieAnimation';
+import heroAnimation from '../../public/animations/hero.json';
 
 export default function Hero() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -133,15 +135,17 @@ export default function Hero() {
         </footer>
       </section>
 
-      {/* Hero Image */}
-      <section className="flex-1 flex justify-center lg:justify-end">
-        <Image
-          src="/hero/hero.png"
-          alt="Hero Image"
-          width={1000}
-          height={1000}
-          className="w-full h-full object-cover"
-        />
+      {/* Hero Animation */}
+      <section className="flex-1 flex justify-center lg:justify-end items-center overflow-hidden">
+        <div className="w-full h-full max-w-[600px] max-h-[600px] lg:max-w-[800px] lg:max-h-[800px] xl:max-w-[1000px] xl:max-h-[1000px]">
+          <LottieAnimation
+            animationData={heroAnimation}
+            className="w-full h-full"
+            loop={true}
+            autoplay={true}
+            speed={1}
+          />
+        </div>
       </section>
     </main>
   );
