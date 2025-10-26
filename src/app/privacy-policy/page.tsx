@@ -1,44 +1,25 @@
 import Image from 'next/image';
-import Feature from '@/components/Feature';
-import Hero from '@/components/Hero';
-import Solution from '@/components/Solution';
-import Pricing from '@/components/Pricing';
-import Faq from '@/components/Faq';
 import Footer from '@/components/Footer';
 import CopyRight from '@/components/CopyRight';
 import Header from '@/components/Header';
+import Policy from '@/components/Policy';
 
-export default function Home() {
+export default function PrivacyPolicyPage() {
   return (
     <div className="min-h-screen w-full overflow-x-hidden">
       <div className="bg-gray-500">
         <div className="container mx-auto py-4 sm:py-6 lg:py-8 xl:py-12">
           <Header />
         </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-          <Hero />
-        </div>
       </div>
-      <div id="features" className="bg-gray-200">
+
+      {/* Content */}
+      <div className="bg-gray-500">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 sm:py-20 lg:py-28">
-          <Feature />
+          <Policy title="Privacy Policy" />
         </div>
       </div>
-      <div id="solutions" className="bg-gray-500">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 sm:py-20 lg:py-28">
-          <Solution />
-        </div>
-      </div>
-      <div id="pricing" className="bg-gray-500">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 sm:py-20 lg:py-28">
-          <Pricing />
-        </div>
-      </div>
-      <div id="faqs" className="bg-gray-200">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 sm:py-20 lg:py-28">
-          <Faq />
-        </div>
-      </div>
+
       <div className="bg-gray-500 relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 sm:py-20 lg:py-28">
           <Footer />

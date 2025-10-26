@@ -72,11 +72,13 @@ const config: Config = {
         'num-14': '14px',
         'num-18': '18px',
         'num-16': '16px',
+        'num-28': '28px',
       },
       lineHeight: {
         'num-20': '20px',
         'num-28': '28px',
         'num-26': '26px',
+        'num-32': '32px',
         'num-24': '24px',
       },
       letterSpacing: {
