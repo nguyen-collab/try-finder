@@ -31,7 +31,7 @@ export default function Hero() {
   };
 
   return (
-    <main className="flex flex-col mt-12 lg:mt-0 lg:flex-row items-center justify-between min-h-[706px] text-white font-inter">
+    <main className="flex flex-col mt-12 lg:mt-0 lg:flex-row items-center justify-between min-h-screen text-white font-inter">
       {/* Hero Content Section */}
       <section className="flex-1 flex flex-col items-center lg:items-start gap-6 lg:gap-[25px] text-left text-sm px-4 lg:px-0">
         {/* Launch Offer Badge */}
@@ -136,8 +136,8 @@ export default function Hero() {
       </section>
 
       {/* Hero Animation */}
-      <section className="flex-1 flex justify-center lg:justify-end items-center overflow-hidden">
-        <div className="w-full h-full max-w-[600px] max-h-[600px] lg:max-w-[800px] lg:max-h-[800px] xl:max-w-[1000px] xl:max-h-[1000px]">
+      <section className="flex-1 flex justify-center lg:justify-end items-center">
+        <div className="w-full h-full min-h-[400px] lg:min-h-[500px] xl:min-h-[600px]">
           <LottieAnimation
             animationData={heroAnimation}
             className="w-full h-full"
