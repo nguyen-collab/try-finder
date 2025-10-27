@@ -136,8 +136,8 @@ export default function Hero() {
       </section>
 
       {/* Hero Animation */}
-      <section className="flex-1 flex justify-center lg:justify-end items-center">
-        <div className="w-full h-full min-h-[400px] lg:min-h-[500px] xl:min-h-[600px]">
+      <section className="flex justify-center lg:justify-end items-center">
+        <div className="w-full h-full max-w-[500px] xl:max-w-[600px]">
           <LottieAnimation
             animationData={heroAnimation}
             className="w-full h-full"
