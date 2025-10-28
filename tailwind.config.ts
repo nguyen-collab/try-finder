@@ -25,10 +25,24 @@ const config: Config = {
           '1200': 'rgba(255, 255, 255, 0.25)',
           '1300': 'rgba(255, 255, 255, 0.1)',
           '1400': 'rgba(255, 255, 255, 0.05)',
+          '1500': 'rgba(255, 255, 255, 0.15)',
         },
         white: '#fff',
         darkorange: '#ff7520',
-        limegreen: '#0aca00',
+        limegreen: {
+          '100': '#00be53',
+          '200': 'rgba(0, 190, 83, 0.25)',
+          '300': 'rgba(0, 190, 83, 0.1)',
+        },
+        orangered: {
+          '100': 'rgba(255, 58, 44, 0.5)',
+          '200': 'rgba(255, 58, 44, 0.25)',
+        },
+        firebrick: {
+          '100': '#c5221f',
+          '200': 'rgba(197, 34, 31, 0.25)',
+          '300': 'rgba(197, 34, 31, 0.1)',
+        },
       },
       spacing: {
         'num-942': '942px',
@@ -42,6 +56,10 @@ const config: Config = {
         'num-1': '1px solid rgba(255, 255, 255, 0.25)',
         'num-2': '1px solid rgba(255, 255, 255, 0.1)',
         'num-3': '1px solid rgba(24, 24, 24, 0)',
+        'num-20_9': '20.9px',
+        'num-15_7': '15.7px',
+        'num-0_7': '0.7px solid rgba(255, 255, 255, 0.1)',
+        'num-14_4': '14.4px',
       },
       fontFamily: {
         inter: 'var(--font-inter)',
@@ -55,6 +73,8 @@ const config: Config = {
         'num-15': '15px',
         'num-7_5': '7.5px',
         'num-58_09': '58.09px',
+        'num-13_08': '13.08px',
+        'num-9_6': '9.6px',
       },
       padding: {
         'num-30': '30px',
@@ -73,13 +93,17 @@ const config: Config = {
         'num-18': '18px',
         'num-16': '16px',
         'num-28': '28px',
+        'num-12_8': '12.8px',
+        'num-10_46': '10.46px',
       },
       lineHeight: {
         'num-20': '20px',
         'num-28': '28px',
+        'num-16': '16px',
         'num-26': '26px',
         'num-32': '32px',
         'num-24': '24px',
+        'num-13_95': '13.95px',
       },
       letterSpacing: {
         'num--0_01': '-0.01em',

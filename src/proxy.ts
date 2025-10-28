@@ -13,8 +13,8 @@ export async function proxy(request: NextRequest) {
   } = await supabase.auth.getUser();
 
   // Define protected routes
-  const protectedRoutes = ['/dashboard'];
-  const authRoutes = [
+  const protectedRoutes: string[] = [];
+  const authRoutes: string[] = [
     '/sign-in',
     '/sign-up',
     '/verification',
