@@ -35,13 +35,13 @@ export default function Hero() {
       {/* Hero Content Section */}
       <section className="flex-1 flex flex-col items-center lg:items-start gap-6 lg:gap-[25px] text-left text-sm px-4 lg:px-0">
         {/* Launch Offer Badge */}
-        <div className="rounded-[15px] bg-gray-1300 border-gray-1200 border-solid border flex items-center justify-center p-2.5 text-gray-500">
+        {/* <div className="rounded-[15px] bg-gray-1300 border-gray-1200 border-solid border flex items-center justify-center p-2.5 text-gray-500">
           <div className="rounded-[7px] bg-white flex items-center justify-center py-1 px-2">
             <div className="text-sm xl:text-base 2xl:text-lg tracking-num--0_01 leading-5 font-medium">
               Launch Offer
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Main Headline */}
         <header className="w-full text-center lg:text-left">
