@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import React, { useState } from 'react';
 import {
   BuildingIcon,
   FacebookWhiteIcon,
@@ -96,9 +97,13 @@ const searchResults: SearchResultItem[] = [
 function SearchResultItem({
   item,
   index,
+  checked,
+  onChange,
 }: {
   item: SearchResultItem;
   index: number;
+  checked: boolean;
+  onChange: (checked: boolean) => void;
 }) {
   return (
     <article
@@ -111,7 +116,13 @@ function SearchResultItem({
         {/* Left column - Checkbox and profile */}
         <div className="flex items-center space-x-4">
           {/* Checkbox */}
-          <div className="rounded-md bg-gray-200 border-gray-200 border w-4 h-4 shrink-0" />
+          <input
+            type="checkbox"
+            checked={checked}
+            onChange={e => onChange(e.target.checked)}
+            className="h-num-15.7 w-[15.7px] rounded-num-4.91 bg-gray-1300 border-gray-1300 rounded-sm border-solid border appearance-none focus:outline-none relative after:content-['✓'] after:absolute after:top-1/2 after:left-1/2 after:transform after:-translate-x-1/2 after:-translate-y-1/2 after:text-white after:text-xs after:font-bold after:opacity-0 checked:after:opacity-100 checked:bg-gray-1300 checked:border-gray-1300 transition-all duration-200 shrink-0"
+            aria-label={`Select row ${item.name}`}
+          />
 
           {/* Profile info */}
           <div className="flex items-center gap-2 text-[17.44px] font-inter">
@@ -210,6 +221,26 @@ function SearchResultItem({
 }
 
 export default function SearchResults() {
+  const [selected, setSelected] = useState<number[]>([]);
+
+  const allChecked =
+    selected.length === searchResults.length && searchResults.length > 0;
+  const indeterminate =
+    selected.length > 0 && selected.length < searchResults.length;
+
+  function handleSelectAll(checked: boolean) {
+    setSelected(checked ? searchResults.map((_, idx) => idx) : []);
+  }
+  function handleSelectRow(idx: number, checked: boolean) {
+    setSelected(prev => {
+      if (checked) {
+        return prev.includes(idx) ? prev : [...prev, idx];
+      } else {
+        return prev.filter(i => i !== idx);
+      }
+    });
+  }
+
   return (
     <>
       <main className="w-full overflow-x-hidden text-num-12_21 text-white font-inter-variable">
@@ -223,10 +254,19 @@ export default function SearchResults() {
         <div className="px-4 overflow-x-auto scrollbar-none">
           <header className="flex items-center justify-between py-4 min-w-[1200px]">
             <div className="flex items-center gap-2 text-[13.08px]">
-              <div className="h-4 w-4 rounded bg-gray-200 border-gray-200 border" />
+              <input
+                type="checkbox"
+                checked={allChecked}
+                ref={el => {
+                  if (el) el.indeterminate = indeterminate;
+                }}
+                onChange={e => handleSelectAll(e.target.checked)}
+                className="h-num-15.7 w-[15.7px] rounded-num-4.91 bg-gray-1300 border-gray-1300 rounded-md border-solid border appearance-none focus:outline-none relative after:content-['✓'] after:absolute after:top-1/2 after:left-1/2 after:transform after:-translate-x-1/2 after:-translate-y-1/2 after:text-white after:text-xs after:font-bold after:opacity-0 checked:after:opacity-100 checked:bg-gray-1300 checked:border-gray-1300 transition-all duration-200"
+                aria-label="Select all results"
+              />
               <span className="tracking-num--0_01 leading-tight font-medium opacity-75">
                 1 - {searchResults.length} of about {searchResults.length}{' '}
-                results.
+                results. Selected: {selected.length}
               </span>
             </div>
           </header>
@@ -239,7 +279,13 @@ export default function SearchResults() {
         <div className="w-full overflow-x-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent">
           <section className="flex flex-col min-w-[1200px]">
             {searchResults.map((item, index) => (
-              <SearchResultItem key={index} item={item} index={index} />
+              <SearchResultItem
+                key={index}
+                item={item}
+                index={index}
+                checked={selected.includes(index)}
+                onChange={checked => handleSelectRow(index, checked)}
+              />
             ))}
           </section>
         </div>

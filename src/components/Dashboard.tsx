@@ -34,8 +34,10 @@ export default function Dashboard() {
   const [selectedContactMethods, setSelectedContactMethods] = useState<
     string[]
   >([]);
+  const [isSearching, setIsSearching] = useState(false);
 
   const handleSearch = () => {
+    setIsSearching(true);
     console.log('Searching for:', searchQuery);
   };
 
@@ -103,9 +105,8 @@ export default function Dashboard() {
     radius > 0 ||
     selectedContactMethods.length > 0;
 
-  const noData = false;
   const searchResults = () => {
-    if (noData) {
+    if (!isSearching) {
       return (
         <div className="flex-1 flex flex-col items-center justify-center gap-[15px] text-center text-[15px] min-h-[500px]">
           <Image
@@ -556,7 +557,7 @@ export default function Dashboard() {
         {/* Results Area */}
         <div className="flex-1 flex flex-col items-center justify-center gap-[15px] text-center text-[15px] min-h-[500px] overflow-x-hidden w-full">
           {/* Search Section */}
-          <section className="w-full flex flex-col items-center gap-4">
+          <section className="w-full flex flex-col items-center gap-4 px-1">
             <div className="w-full flex flex-col lg:flex-row items-end gap-4">
               {/* Main Search Input */}
               <div className="flex-1 flex flex-col items-start gap-[13.1px] w-full">
