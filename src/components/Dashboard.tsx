@@ -14,6 +14,7 @@ import {
   PreferenceHorizontalIcon,
   UserCircleIcon,
 } from './common/SvgIcon';
+import SearchResults from './SearchResults';
 
 export default function Dashboard() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -102,7 +103,7 @@ export default function Dashboard() {
     radius > 0 ||
     selectedContactMethods.length > 0;
 
-  const noData = true;
+  const noData = false;
   const searchResults = () => {
     if (noData) {
       return (
@@ -140,18 +141,7 @@ export default function Dashboard() {
     }
 
     // Search Results Section
-    return (
-      <div className="flex-1 flex flex-col items-center justify-center gap-[15px] text-center text-[15px] min-h-[500px]">
-        <Image
-          src="/dashboard/social-02.png"
-          className="w-[204px] h-[204px]"
-          width={204}
-          height={204}
-          sizes="100vw"
-          alt="Dashboard illustration showing search functionality"
-        />
-      </div>
-    );
+    return <SearchResults />;
   };
 
   return (
