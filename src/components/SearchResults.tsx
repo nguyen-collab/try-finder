@@ -211,9 +211,9 @@ function SearchResultItem({
               {index === 0 ? 'Get Contact Info' : 'View More Details'}
             </span>
           </div>
-          <div className="w-full tracking-num--0_01 leading-num-20_93 font-medium text-white text-center opacity-50 whitespace-nowrap">
+          {/* <div className="w-full tracking-num--0_01 leading-num-20_93 font-medium text-white text-center opacity-50 whitespace-nowrap">
             View More Details
-          </div>
+          </div> */}
         </div>
       </div>
     </article>

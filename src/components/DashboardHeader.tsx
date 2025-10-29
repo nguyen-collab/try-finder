@@ -81,7 +81,7 @@ export default function DashboardHeader() {
   return (
     <div className="w-full max-w-4xl mx-auto relative rounded-[13.08px] bg-[#161616]  border-gray-1300 border-solid border-[0.7px] box-border flex items-center justify-between py-[10.9px] px-[16.4px] gap-5 text-left text-[13.08px] text-gray-10 font-inter-variable">
       <div className="flex items-center gap-[6.2px]">
-        <Link href="/">
+        <Link href="/dashboard">
           <Image
             src="/header/tryfinder.svg"
             className="h-[21.8px] w-[117.9px]"
