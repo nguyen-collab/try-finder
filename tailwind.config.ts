@@ -96,6 +96,10 @@ const config: Config = {
         'num-28': '28px',
         'num-12_8': '12.8px',
         'num-10_46': '10.46px',
+        'num-12_21': '12.21px',
+        'num-17_44': '17.44px',
+        'num-13_95': '13.95px',
+        'num-12_27': '12.27px',
       },
       lineHeight: {
         'num-20': '20px',

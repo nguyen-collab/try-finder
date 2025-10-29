@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 import {
+  BackPack02Icon,
+  Briefcase02Icon,
+  Building02Icon,
   BuildingIcon,
   FacebookWhiteIcon,
   GmailIcon,
@@ -93,17 +96,169 @@ const searchResults: SearchResultItem[] = [
   },
 ];
 
+function DetailItem() {
+  return (
+    // Details container
+    <section className="w-full text-left text-[12.21px] text-white font-inter-variable flex flex-col gap-4">
+      {/* Top: Two columns */}
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Left column: Experience/Education/Skills */}
+        <section className="flex flex-col items-start gap-[15px]">
+          <h3 className="tracking-num--0_01 leading-num-17_44 opacity-num-0_5">
+            Work Experience, Education, Skills
+          </h3>
+          <div className="flex flex-col items-start gap-3 text-num-13_95">
+            <div className="flex items-start gap-2">
+              <Building02Icon />
+              <div className="flex flex-col items-start justify-center gap-[3px]">
+                <div className="tracking-num--0_01 leading-num-17_44">
+                  President @Dallas Mavericks
+                </div>
+                <div className="tracking-num--0_01 leading-num-17_44">
+                  Founder @Broadcast.com
+                </div>
+              </div>
+            </div>
+            <div className="flex items-start gap-2">
+              <BackPack02Icon />
+              <div className="flex flex-col items-start justify-center gap-[3px]">
+                <div className="tracking-num--0_01 leading-num-17_44">
+                  1990 - 1992 Indiana University Bloomington
+                </div>
+                <div className="tracking-num--0_01 leading-num-17_44">{`1990 - 1992 Texas School `}</div>
+              </div>
+            </div>
+            <div className="flex items-start gap-2">
+              <div className="w-[21px] h-[21px]">
+                <Briefcase02Icon />
+              </div>
+              <div className="flex flex-col items-start justify-center">
+                <div className="tracking-num--0_01 leading-num-17_44">
+                  Skills - Mergers, IPO, Private Equity, Investment Banking,
+                  Equities, Restructuring, Valuation, Capital Markets, Financial
+                  Modeling, Financial Structuring, Corporate Finance
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Right column: Other Contact Information */}
+        <section className="flex flex-col items-start gap-[15px] ml-52">
+          <h3 className="tracking-num--0_01 leading-num-17_44 opacity-num-0_5">
+            Other Contact Information
+          </h3>
+          <div className="flex flex-col items-start gap-[8.7px] text-num-13_95">
+            <div className="flex items-center gap-[3.5px]">
+              <BuildingIcon />
+              <div className="tracking-num--0_01 leading-num-17_44">
+                mark@dallasmavs.com
+              </div>
+            </div>
+            <div className="flex items-center gap-[3.5px]">
+              <MailIcon />
+              <div className="tracking-num--0_01 leading-num-17_44">
+                president@dallasmavs.com
+              </div>
+            </div>
+            <div className="flex items-center gap-[3.5px]">
+              <SmartPhoneIcon />
+              <div className="flex items-center gap-[8.7px]">
+                <div className="tracking-num--0_01 leading-num-17_44">
+                  114-442-4411
+                </div>
+                <div className="h-[1.7px] w-[1.7px] rounded-[50%] bg-white opacity-num-0_5" />
+                <div className="tracking-num--0_01 leading-num-17_44">
+                  214-783-1236
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      {/* Bottom: Companies row */}
+      <section className="grid grid-cols-1 sm:grid-cols-3 gap-[15px] text-[15px] font-inter">
+        <div className="h-[76px] rounded-[10.46px] bg-gray-200 border-gray-100 border-solid border-[1px] box-border flex flex-col items-start py-3.5 px-[21px]">
+          <div className="flex items-center gap-[15px]">
+            <Image
+              className="w-[48.4px] max-h-full object-cover"
+              src={'/dashboard/detail-1.png'}
+              width={48.4}
+              height={48.3}
+              sizes="100vw"
+              alt=""
+            />
+            <div className="flex flex-col items-start justify-center">
+              <div className="tracking-num--0_01 leading-[22.67px] font-medium">
+                Dallas Mavericks
+              </div>
+              <div className="text-[13px] tracking-num--0_01 leading-num-17_44 font-inter-variable opacity-num-0_5">
+                President
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="h-[76px] rounded-[10.46px] bg-gray-200 border-gray-100 border-solid border-[1px] box-border flex flex-col items-start py-3.5 px-[21px]">
+          <div className="flex items-center gap-[15px]">
+            <Image
+              className="h-12 w-[89px] object-cover"
+              src={'/dashboard/detail-2.png'}
+              width={89}
+              height={48}
+              sizes="100vw"
+              alt=""
+            />
+            <div className="flex flex-col items-start justify-center">
+              <div className="tracking-num--0_01 leading-[22.67px] font-medium">
+                Axs.tv
+              </div>
+              <div className="text-[13px] tracking-num--0_01 leading-num-17_44 font-inter-variable opacity-num-0_5">
+                Investor
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="h-[76px] rounded-[10.46px] bg-gray-200 border-gray-100 border-solid border-[1px] box-border flex flex-col items-start py-3.5 px-[21px]">
+          <div className="flex items-center gap-[15px]">
+            <Image
+              className="h-12 w-[109px] object-cover"
+              src={'/dashboard/detail-3.png'}
+              width={109}
+              height={48}
+              sizes="100vw"
+              alt=""
+            />
+            <div className="flex flex-col items-start justify-center">
+              <div className="tracking-num--0_01 leading-[22.67px] font-medium">
+                CostPlus Drug Company
+              </div>
+              <div className="text-[13px] tracking-num--0_01 leading-num-17_44 font-inter-variable opacity-num-0_5">
+                Equity Owner
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  );
+}
+
 // Component for rendering individual search result item
 function SearchResultItem({
   item,
   index,
   checked,
   onChange,
+  isExpanded,
+  onToggleExpand,
 }: {
   item: SearchResultItem;
   index: number;
   checked: boolean;
   onChange: (checked: boolean) => void;
+  isExpanded: boolean;
+  onToggleExpand: () => void;
 }) {
   return (
     <article
@@ -205,23 +360,34 @@ function SearchResultItem({
         </div>
 
         {/* Action buttons (Grid column 5) */}
-        <div className="flex flex-col items-center justify-center gap-[10.5px] text-num-13_95 text-gray-100 w-[180.5px]">
-          <div className="w-full h-[34.9px] rounded-[10.46px] [background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0.2)),#fafafa] border-gray-200 border-[0.9px] overflow-hidden flex items-center justify-center p-[10.5px]">
+        <div className="flex flex-col items-center justify-center gap-[10.5px] text-num-13_95 text-gray-100 w-[140.5px]">
+          <button
+            type="button"
+            onClick={onToggleExpand}
+            className={`w-full h-[34.9px] rounded-[10.46px] border-gray-200 border-[0.9px] overflow-hidden flex items-center justify-center p-[10.5px] cursor-pointer ${isExpanded ? 'bg-gray-500 text-white border-gray-1300' : '[background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0.2)),#fafafa]'}`}
+            aria-expanded={isExpanded}
+            aria-controls={`result-details-${index}`}
+          >
             <span className="tracking-num--0_01 leading-num-20_93 font-semibold whitespace-nowrap">
-              {index === 0 ? 'Get Contact Info' : 'View More Details'}
+              {isExpanded ? 'Hide Details' : 'View Details'}
             </span>
-          </div>
-          {/* <div className="w-full tracking-num--0_01 leading-num-20_93 font-medium text-white text-center opacity-50 whitespace-nowrap">
-            View More Details
-          </div> */}
+          </button>
         </div>
       </div>
+
+      {/* Expanded details */}
+      {isExpanded && (
+        <div id={`result-details-${index}`} className="w-full px-4 pb-4">
+          <DetailItem />
+        </div>
+      )}
     </article>
   );
 }
 
 export default function SearchResults() {
   const [selected, setSelected] = useState<number[]>([]);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   const allChecked =
     selected.length === searchResults.length && searchResults.length > 0;
@@ -239,6 +405,10 @@ export default function SearchResults() {
         return prev.filter(i => i !== idx);
       }
     });
+  }
+
+  function handleToggleExpand(idx: number) {
+    setExpandedIndex(prev => (prev === idx ? null : idx));
   }
 
   return (
@@ -285,6 +455,8 @@ export default function SearchResults() {
                 index={index}
                 checked={selected.includes(index)}
                 onChange={checked => handleSelectRow(index, checked)}
+                isExpanded={expandedIndex === index}
+                onToggleExpand={() => handleToggleExpand(index)}
               />
             ))}
           </section>
