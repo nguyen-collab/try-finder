@@ -12,6 +12,7 @@ import {
 } from './common/SvgIcon';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 export default function DashboardHeader() {
   const { user, signOut } = useAuth();
@@ -78,16 +79,18 @@ export default function DashboardHeader() {
   };
 
   return (
-    <div className="w-full max-w-xl mx-auto relative rounded-[13.08px] bg-[#161616]  border-gray-1300 border-solid border-[0.7px] box-border flex items-center justify-between py-[10.9px] px-[16.4px] gap-5 text-left text-[13.08px] text-gray-10 font-inter-variable">
+    <div className="w-full max-w-4xl mx-auto relative rounded-[13.08px] bg-[#161616]  border-gray-1300 border-solid border-[0.7px] box-border flex items-center justify-between py-[10.9px] px-[16.4px] gap-5 text-left text-[13.08px] text-gray-10 font-inter-variable">
       <div className="flex items-center gap-[6.2px]">
-        <Image
-          src="/header/tryfinder.svg"
-          className="h-[21.8px] w-[117.9px]"
-          width={88.9}
-          height={21.8}
-          sizes="100vw"
-          alt=""
-        />
+        <Link href="/">
+          <Image
+            src="/header/tryfinder.svg"
+            className="h-[21.8px] w-[117.9px]"
+            width={88.9}
+            height={21.8}
+            sizes="100vw"
+            alt=""
+          />
+        </Link>
       </div>
       <div className="hidden sm:flex items-center gap-[13.1px]">
         <div className="rounded-[8.72px] overflow-hidden flex flex-col items-center justify-center py-[7px] px-[10.5px] bg-gray-500">
@@ -105,16 +108,19 @@ export default function DashboardHeader() {
             </div>
           </div>
         </div>
-        <div className="rounded-[8.72px] overflow-hidden flex flex-col items-center justify-center py-[7px] px-[10.5px]">
+        <Link
+          href="/save-searches"
+          className="cursor-pointer rounded-[8.72px] overflow-hidden flex flex-col items-center justify-center py-[7px] px-[10.5px]"
+        >
           <div className="self-stretch flex items-center">
-            <div className="flex items-center gap-[8.7px]">
+            <div className="flex items-center gap-[8.7px] text-gray-10 hover:text-gray-1100 transition-colors duration-200">
               <SavedSearchesIcon />
               <div className="relative tracking-[-0.01em] leading-[13.08px] font-medium">
                 Saved Searches
               </div>
             </div>
           </div>
-        </div>
+        </Link>
       </div>
       <div className="flex items-center gap-[5px] text-[17.76px] text-white">
         {/* Notification Icon */}

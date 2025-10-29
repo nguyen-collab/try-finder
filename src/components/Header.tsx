@@ -58,11 +58,12 @@ export default function Header() {
           >
             <Image
               src="/header/tryfinder.svg"
-              className="h-6 w-auto transition-all duration-700 ease-out"
+              className="w-auto transition-all duration-700 ease-out"
               width={114.1}
               height={28}
               sizes="100vw"
               alt="TryFinder Logo"
+              priority
             />
           </Link>
 
@@ -163,7 +164,7 @@ export default function Header() {
           >
             <Image
               src="/header/tryfinder.svg"
-              className="h-6 md:h-7 w-auto transition-all duration-700 ease-out"
+              className="w-auto transition-all duration-700 ease-out"
               width={114.1}
               height={28}
               sizes="100vw"

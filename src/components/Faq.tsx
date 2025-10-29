@@ -2,6 +2,14 @@
 
 import { useState } from 'react';
 import { ArrowRightSmallIcon, CloseIcon, PlusIcon } from './common/SvgIcon';
+import { motion } from 'framer-motion';
+import ScrollAnimationWrapper from './common/ScrollAnimationWrapper';
+import {
+  fadeInUp,
+  fadeInBottom,
+  staggerContainer,
+  staggerItems,
+} from '@/utils/animations';
 
 export default function Faq() {
   const [expandedItems, setExpandedItems] = useState<number[]>([0]); // First item expanded by default
@@ -60,31 +68,40 @@ export default function Faq() {
     <section className="w-full bg-gray-200 border-gray-1000 border-solid border-t border-b text-left text-num-16 text-white font-inter">
       <div className="max-w-[1350px] mx-auto flex flex-col items-center gap-6 sm:gap-8 md:gap-10 lg:gap-[30px]">
         {/* Header Section */}
-        <header className="max-w-[942px] flex flex-col items-center gap-3 sm:gap-4 md:gap-5 lg:gap-[15px] text-center">
-          <div className="rounded-num-15 bg-gray-500 border-gray-1300 border-solid border flex items-center justify-center py-1.5 px-3 sm:px-4 md:px-num-10">
-            <div className="flex items-center gap-[5px]">
-              <div className="h-2 w-2 rounded-[50%] bg-limegreen" />
-              <div className="tracking-num--0_01 leading-5 font-medium text-xs sm:text-sm md:text-base">
-                FAQs
+        <ScrollAnimationWrapper variants={fadeInUp}>
+          <header className="max-w-[942px] flex flex-col items-center gap-3 sm:gap-4 md:gap-5 lg:gap-[15px] text-center">
+            <div className="rounded-num-15 bg-gray-500 border-gray-1300 border-solid border flex items-center justify-center py-1.5 px-3 sm:px-4 md:px-num-10">
+              <div className="flex items-center gap-[5px]">
+                <div className="h-2 w-2 rounded-[50%] bg-limegreen" />
+                <div className="tracking-num--0_01 leading-5 font-medium text-xs sm:text-sm md:text-base">
+                  FAQs
+                </div>
               </div>
             </div>
-          </div>
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[42px] tracking-[-0.03em] leading-tight sm:leading-tight lg:leading-[56px] font-aeonik-pro px-4">
-            Got Questions? We&apos;ve Got Answers.
-          </h2>
-          <p className="text-xs sm:text-sm md:text-base lg:text-[20px] tracking-num--0_01 leading-relaxed sm:leading-relaxed lg:leading-7 font-inter-variable opacity-[0.6] px-4">
-            Everything you need to know before you start closing more deals.
-          </p>
-        </header>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[42px] tracking-[-0.03em] leading-tight sm:leading-tight lg:leading-[56px] font-aeonik-pro px-4">
+              Got Questions? We&apos;ve Got Answers.
+            </h2>
+            <p className="text-xs sm:text-sm md:text-base lg:text-[20px] tracking-num--0_01 leading-relaxed sm:leading-relaxed lg:leading-7 font-inter-variable opacity-[0.6] px-4">
+              Everything you need to know before you start closing more deals.
+            </p>
+          </header>
+        </ScrollAnimationWrapper>
 
         {/* FAQ Items */}
-        <main className="w-full max-w-[666px] flex flex-col gap-2 sm:gap-3 md:gap-4 lg:gap-2.5">
+        <motion.main
+          className="w-full max-w-[666px] flex flex-col gap-2 sm:gap-3 md:gap-4 lg:gap-2.5"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {faqData.map((faq, index) => {
             const isExpanded = expandedItems.includes(index);
             return (
-              <div
+              <motion.div
                 key={index}
                 className={`shadow-[0px_1px_2px_rgba(10,_10,_10,_0.05)] rounded-num-15 bg-gray-500 border-gray-1300 border-solid border flex flex-col lg:p-num-10 transition-all duration-300 ease-in-out ${isExpanded ? 'p-2' : ''}`}
+                variants={fadeInBottom}
               >
                 <button
                   onClick={() => toggleItem(index)}
@@ -107,30 +124,35 @@ export default function Faq() {
                   }`}
                 >
                   <div className="flex items-center justify-center p-2 sm:p-3 md:p-4 lg:p-num-12">
-                    <p className="flex-1 tracking-num--0_01 leading-num-24 font-medium opacity-[0.6] text-xs sm:text-sm md:text-base lg:text-lg">
+                    <motion.p
+                      className="flex-1 tracking-num--0_01 leading-num-24 font-medium opacity-[0.6] text-xs sm:text-sm md:text-base lg:text-lg"
+                      variants={staggerItems}
+                    >
                       {faq.answer}
-                    </p>
+                    </motion.p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
 
           {/* Contact CTA */}
-          <div className="shadow-[0px_1px_2px_rgba(10,_10,_10,_0.05)] rounded-num-15 bg-gray-500 border-gray-1300 border-solid border flex flex-col items-center justify-center lg:p-num-10 min-h-[70px] sm:min-h-[80px]">
-            <div className="rounded-num-7_5 bg-gray-800 border-gray-700 border-solid border flex flex-col sm:flex-row items-center justify-between py-2 sm:py-3 md:py-4 lg:py-num-10 px-2 sm:px-3 md:px-4 lg:px-num-12 gap-2 sm:gap-3 md:gap-4 lg:gap-5 w-full">
-              <h3 className="tracking-num--0_01 leading-num-24 font-medium text-xs sm:text-sm md:text-base lg:text-lg text-center sm:text-left flex-1">
-                Couldn&apos;t find an answer you&apos;re looking for?
-              </h3>
-              <button className="rounded-[9px] border-gray-1300 border-solid border flex items-center justify-center py-1.5 sm:py-2 md:py-3 lg:py-[9px] px-3 sm:px-4 md:px-6 lg:px-[18px] gap-1.5 sm:gap-2 md:gap-3 lg:gap-[11.3px] text-xs sm:text-sm md:text-sm lg:text-[14px] hover:bg-gray-700 transition-colors w-full sm:w-auto cursor-pointer">
-                <span className="tracking-num--0_01 leading-5 font-medium">
-                  Contact Us
-                </span>
-                <ArrowRightSmallIcon />
-              </button>
+          <ScrollAnimationWrapper variants={fadeInUp}>
+            <div className="shadow-[0px_1px_2px_rgba(10,_10,_10,_0.05)] rounded-num-15 bg-gray-500 border-gray-1300 border-solid border flex flex-col items-center justify-center lg:p-num-10 min-h-[70px] sm:min-h-[80px]">
+              <div className="rounded-num-7_5 bg-gray-800 border-gray-700 border-solid border flex flex-col sm:flex-row items-center justify-between py-2 sm:py-3 md:py-4 lg:py-num-10 px-2 sm:px-3 md:px-4 lg:px-num-12 gap-2 sm:gap-3 md:gap-4 lg:gap-5 w-full">
+                <h3 className="tracking-num--0_01 leading-num-24 font-medium text-xs sm:text-sm md:text-base lg:text-lg text-center sm:text-left flex-1">
+                  Couldn&apos;t find an answer you&apos;re looking for?
+                </h3>
+                <button className="rounded-[9px] border-gray-1300 border-solid border flex items-center justify-center py-1.5 sm:py-2 md:py-3 lg:py-[9px] px-3 sm:px-4 md:px-6 lg:px-[18px] gap-1.5 sm:gap-2 md:gap-3 lg:gap-[11.3px] text-xs sm:text-sm md:text-sm lg:text-[14px] hover:bg-gray-700 transition-colors w-full sm:w-auto cursor-pointer">
+                  <span className="tracking-num--0_01 leading-5 font-medium">
+                    Contact Us
+                  </span>
+                  <ArrowRightSmallIcon />
+                </button>
+              </div>
             </div>
-          </div>
-        </main>
+          </ScrollAnimationWrapper>
+        </motion.main>
       </div>
     </section>
   );
