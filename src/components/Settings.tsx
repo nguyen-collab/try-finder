@@ -12,9 +12,60 @@ import {
   LockIcon,
   PencilEditIcon,
 } from './common/SvgIcon';
+import { useAuth } from '@/context/AuthContext';
+import { useRouter } from 'next/navigation';
 
 export default function Settings() {
+  const { user, signOut } = useAuth();
+  const router = useRouter();
+
   const [isDangerZoneExpanded, setIsDangerZoneExpanded] = useState(false);
+  const [email, setEmail] = useState(user?.email ?? '');
+  const [currentPassword, setCurrentPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [showCurrentPassword, setShowCurrentPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [confirmDelete, setConfirmDelete] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSaveChanges = () => {
+    console.log('Saving changes:', {
+      email,
+      currentPassword,
+      newPassword,
+      confirmPassword,
+    });
+  };
+
+  const handleReset = () => {
+    setEmail(user?.email ?? '');
+    setCurrentPassword('');
+    setNewPassword('');
+    setConfirmPassword('');
+    setShowCurrentPassword(false);
+    setShowNewPassword(false);
+    setShowConfirmPassword(false);
+    setConfirmDelete(false);
+  };
+
+  const handleDeleteAccount = async () => {
+    if (!confirmDelete) return;
+
+    setIsLoading(true);
+    try {
+      // TODO: delete api calling
+      console.log('Account deletion requested');
+
+      await signOut();
+      router.push('/');
+    } catch (error) {
+      console.error('Error deleting account:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <main className="w-full flex flex-col items-start gap-3.5 text-white font-inter-variable text-[16px] pb-20">
@@ -35,14 +86,19 @@ export default function Settings() {
           <label className="w-full tracking-num--0_01 leading-3 font-medium opacity-[0.75]">
             Email Address
           </label>
-          <div className="w-full rounded-num-9.6 border-gray-400 border-solid border-[0.8px] flex items-center justify-between py-[11.2px] px-[9.6px] gap-5 text-num-12.8">
-            <div className="flex items-center gap-1.5">
+          <div className="group w-full rounded-num-9.6 border-gray-400 border-solid border-[0.8px] flex items-center justify-between py-[11.2px] px-[9.6px] gap-5 text-num-12.8 focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
+            <div className="flex items-center gap-1.5 flex-1">
               <EmailIcon />
-              <span className="tracking-num--0_01 leading-num-16">
-                hi@echodzns.com
-              </span>
+              <input
+                type="email"
+                className="flex-1 bg-transparent tracking-num--0_01 leading-num-16 text-white placeholder:text-gray-10 focus:outline-none"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+              />
             </div>
-            <PencilEditIcon />
+            <button className="opacity-num-0.25 hover:opacity-50 transition-opacity cursor-pointer">
+              <PencilEditIcon />
+            </button>
           </div>
         </div>
       </section>
@@ -68,18 +124,34 @@ export default function Settings() {
             <label className="tracking-num--0_01 leading-3 font-medium opacity-[0.75]">
               Current Password
             </label>
-            <button className="text-[11.2px] tracking-num--0_01 leading-[11.2px] font-medium opacity-num-0.5">
+            <button className="text-[11.2px] tracking-num--0_01 leading-[11.2px] font-medium opacity-num-0.5 hover:opacity-75 transition-opacity cursor-pointer">
               Forgot password?
             </button>
           </div>
-          <div className="w-full rounded-num-9.6 bg-gray-300 border-gray-400 border-solid border-[0.8px] flex items-center justify-between py-[11.2px] px-[9.6px] gap-5 text-num-12.8">
-            <div className="flex items-center gap-[6.4px]">
-              <KeyIcon />
-              <span className="tracking-num--0_01 leading-num-16 opacity-num-0.25">
-                *************
-              </span>
+          <div className="group w-full rounded-num-9.6 bg-gray-300 border-gray-400 border-solid border-[0.8px] flex items-center justify-between py-[11.2px] px-[9.6px] gap-5 text-num-12.8 focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
+            <div className="flex items-center gap-[6.4px] flex-1">
+              <KeyIcon className="group-focus-within:[&_path]:fill-gray-1100 group-focus-within:[&_g]:opacity-100 transition-all duration-200" />
+              <input
+                type={showCurrentPassword ? 'text' : 'password'}
+                placeholder="••••••••••••••••"
+                className="flex-1 bg-transparent tracking-num--0_01 leading-num-16 text-white placeholder:text-gray-10 focus:outline-none"
+                value={currentPassword}
+                onChange={e => setCurrentPassword(e.target.value)}
+              />
             </div>
-            <EyeOpenIcon />
+            <button
+              type="button"
+              className="opacity-num-0.25 hover:opacity-50 transition-opacity"
+              onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+            >
+              <EyeOpenIcon
+                className={`transition-all duration-200 ${
+                  showCurrentPassword
+                    ? '[&_path]:fill-gray-1100 [&_g]:opacity-100'
+                    : ''
+                }`}
+              />
+            </button>
           </div>
         </div>
 
@@ -89,18 +161,34 @@ export default function Settings() {
             <label className="tracking-num--0_01 leading-3 font-medium opacity-[0.75]">
               New Password
             </label>
-            <button className="text-[11.2px] tracking-num--0_01 leading-[11.2px] font-medium opacity-num-0.5">
+            <button className="text-[11.2px] tracking-num--0_01 leading-[11.2px] font-medium opacity-num-0.5 hover:opacity-75 transition-opacity cursor-pointer">
               Forgot password?
             </button>
           </div>
-          <div className="w-full rounded-num-9.6 bg-gray-300 border-gray-400 border-solid border-[0.8px] flex items-center justify-between py-[11.2px] px-[9.6px] gap-5 text-num-12.8">
-            <div className="flex items-center gap-[6.4px]">
-              <KeyIcon />
-              <span className="tracking-num--0_01 leading-num-16 opacity-num-0.25">
-                *************
-              </span>
+          <div className="group w-full rounded-num-9.6 bg-gray-300 border-gray-400 border-solid border-[0.8px] flex items-center justify-between py-[11.2px] px-[9.6px] gap-5 text-num-12.8 focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
+            <div className="flex items-center gap-[6.4px] flex-1">
+              <KeyIcon className="group-focus-within:[&_path]:fill-gray-1100 group-focus-within:[&_g]:opacity-100 transition-all duration-200" />
+              <input
+                type={showNewPassword ? 'text' : 'password'}
+                placeholder="••••••••••••••••"
+                className="flex-1 bg-transparent tracking-num--0_01 leading-num-16 text-white placeholder:text-gray-10 focus:outline-none"
+                value={newPassword}
+                onChange={e => setNewPassword(e.target.value)}
+              />
             </div>
-            <EyeOpenIcon />
+            <button
+              type="button"
+              className="opacity-num-0.25 hover:opacity-50 transition-opacity"
+              onClick={() => setShowNewPassword(!showNewPassword)}
+            >
+              <EyeOpenIcon
+                className={`transition-all duration-200 ${
+                  showNewPassword
+                    ? '[&_path]:fill-gray-1100 [&_g]:opacity-100'
+                    : ''
+                }`}
+              />
+            </button>
           </div>
         </div>
 
@@ -110,18 +198,34 @@ export default function Settings() {
             <label className="tracking-num--0_01 leading-3 font-medium opacity-[0.75]">
               Confirm New Password
             </label>
-            <button className="text-[11.2px] tracking-num--0_01 leading-[11.2px] font-medium opacity-num-0.5">
+            <button className="text-[11.2px] tracking-num--0_01 leading-[11.2px] font-medium opacity-num-0.5 hover:opacity-75 transition-opacity cursor-pointer">
               Forgot password?
             </button>
           </div>
-          <div className="w-full rounded-num-9.6 bg-gray-300 border-gray-400 border-solid border-[0.8px] flex items-center justify-between py-[11.2px] px-[9.6px] gap-5 text-num-12.8">
-            <div className="flex items-center gap-[6.4px]">
-              <LockIcon />
-              <span className="tracking-num--0_01 leading-num-16 opacity-num-0.25">
-                ••••••••••••••••
-              </span>
+          <div className="group w-full rounded-num-9.6 bg-gray-300 border-gray-400 border-solid border-[0.8px] flex items-center justify-between py-[11.2px] px-[9.6px] gap-5 text-num-12.8 focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
+            <div className="flex items-center gap-[6.4px] flex-1">
+              <LockIcon className="group-focus-within:[&_path]:fill-gray-1100 group-focus-within:[&_g]:opacity-100 transition-all duration-200" />
+              <input
+                type={showConfirmPassword ? 'text' : 'password'}
+                placeholder="••••••••••••••••"
+                className="flex-1 bg-transparent tracking-num--0_01 leading-num-16 text-white placeholder:text-gray-10 focus:outline-none"
+                value={confirmPassword}
+                onChange={e => setConfirmPassword(e.target.value)}
+              />
             </div>
-            <EyeOpenIcon />
+            <button
+              type="button"
+              className="opacity-num-0.25 hover:opacity-50 transition-opacity"
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+            >
+              <EyeOpenIcon
+                className={`transition-all duration-200 ${
+                  showConfirmPassword
+                    ? '[&_path]:fill-gray-1100 [&_g]:opacity-100'
+                    : ''
+                }`}
+              />
+            </button>
           </div>
         </div>
       </section>
@@ -143,7 +247,7 @@ export default function Settings() {
             </p>
           </div>
           <div
-            className={`transition-transform duration-300 ${isDangerZoneExpanded ? 'rotate-180' : 'rotate-0'}`}
+            className={`transition-transform duration-300 ${isDangerZoneExpanded ? 'rotate-0' : 'rotate-180'}`}
           >
             <ArrowUpIcon />
           </div>
@@ -167,17 +271,31 @@ export default function Settings() {
               </p>
             </div>
 
-            <label className="flex items-center gap-[9.6px] text-gray-10">
-              <div className="h-num-14.4 w-[14.4px] rounded-[4.5px] bg-gray-300 border-gray-400 border-solid border-[0.9px]" />
+            <label className="flex items-center gap-[9.6px] text-gray-10 cursor-pointer">
+              <input
+                type="checkbox"
+                id="confirmDelete"
+                checked={confirmDelete}
+                onChange={e => setConfirmDelete(e.target.checked)}
+                className="h-num-14.4 w-[14.4px] rounded-[4.5px] bg-gray-300 border-gray-400 border-solid border-[0.9px] appearance-none focus:outline-none relative after:content-['✓'] after:absolute after:top-1/2 after:left-1/2 after:transform after:-translate-x-1/2 after:-translate-y-1/2 after:text-white after:text-xs after:font-bold after:opacity-0 checked:after:opacity-100 checked:bg-gray-500 checked:border-gray-500 transition-all duration-200"
+              />
               <span className="tracking-num--0_01 leading-num-16 font-medium">
                 I want to permanently delete my account
               </span>
             </label>
 
-            <button className="w-full shadow-[0px_0px_0px_3.2px_rgba(197,34,31,0.25)] rounded-num-9.6 [background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0.2)),#c5221f] border-gray-400 border-solid border-[0.8px] overflow-hidden flex items-center justify-center p-[9.6px] gap-1">
+            <button
+              onClick={handleDeleteAccount}
+              disabled={!confirmDelete || isLoading}
+              className={`w-full shadow-[0px_0px_0px_3.2px_rgba(197,34,31,0.25)] rounded-num-9.6 [background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0.2)),#c5221f] border-gray-400 border-solid border-[0.8px] overflow-hidden flex items-center justify-center p-[9.6px] gap-1 transition-all duration-300 ${
+                confirmDelete && !isLoading
+                  ? 'hover:[background:linear-gradient(180deg,rgba(0,0,0,0.3),rgba(0,0,0,0.1)),#c5221f] cursor-pointer'
+                  : 'opacity-50 cursor-not-allowed'
+              }`}
+            >
               <DeleteIcon />
               <span className="tracking-num--0_01 leading-[19.2px] font-semibold">
-                Yes, Delete my account
+                {isLoading ? 'Deleting...' : 'Yes, Delete my account'}
               </span>
             </button>
 
@@ -199,13 +317,19 @@ export default function Settings() {
               2 Unsaved Changes
             </div>
             <div className="flex items-center gap-2.5 text-[13.95px] font-inter-variable">
-              <button className="h-[34.9px] rounded-[10.46px] border-gray-1300 border-solid border flex items-center justify-center py-[10.5px] px-4 gap-[4.4px]">
+              <button
+                onClick={handleReset}
+                className="h-[34.9px] rounded-[10.46px] border-gray-1300 border-solid border flex items-center justify-center py-[10.5px] px-4 gap-[4.4px] hover:outline-none hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_0_0_4px_rgba(255,255,255,0.1)] transition-all duration-200 cursor-pointer"
+              >
                 <ArrowTurnBackIcon />
                 <span className="tracking-num--0_01 leading-[20.93px] font-semibold">
                   Reset
                 </span>
               </button>
-              <button className="h-[34.9px] rounded-[10.46px] [background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0.2)),#fafafa] border-gray-300 border-solid border-[0.9px] flex items-center justify-center py-[10.5px] px-4 text-gray-200">
+              <button
+                onClick={handleSaveChanges}
+                className="h-[34.9px] rounded-[10.46px] [background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0.2)),#fafafa] border-gray-300 border-solid border-[0.9px] flex items-center justify-center py-[10.5px] px-4 text-gray-200 hover:[background:linear-gradient(180deg,rgba(0,0,0,0.3),rgba(0,0,0,0.1)),#fafafa] transition-[background] duration-300 ease-in-out cursor-pointer"
+              >
                 <span className="tracking-num--0_01 leading-[20.93px] font-semibold">
                   Save changes
                 </span>

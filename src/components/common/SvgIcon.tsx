@@ -871,7 +871,11 @@ export const LockIcon = ({
   );
 };
 
-export const GoogleIcon = (): JSX.Element => {
+export const GoogleIcon = ({
+  className = '',
+}: {
+  className?: string;
+}): JSX.Element => {
   return (
     <svg
       width="18"
@@ -879,6 +883,7 @@ export const GoogleIcon = (): JSX.Element => {
       viewBox="0 0 18 18"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <path
         d="M16.92 9.1875C16.92 8.6025 16.8675 8.04 16.77 7.5H9V10.695H13.44C13.245 11.7225 12.66 12.5925 11.7825 13.1775V15.255H14.46C16.02 13.815 16.92 11.7 16.92 9.1875Z"

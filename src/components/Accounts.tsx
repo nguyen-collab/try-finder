@@ -1,6 +1,37 @@
+'use client';
+
 import { GoogleIcon, LogoutIcon, SettingsIcon } from './common/SvgIcon';
+import { useAuth } from '@/context/AuthContext';
+import { useRouter } from 'next/navigation';
 
 export default function Accounts() {
+  const { user, signOut } = useAuth();
+  const router = useRouter();
+
+  const handleSettingsClick = () => {
+    router.push('/settings');
+  };
+
+  const handleLogout = async () => {
+    try {
+      await signOut();
+      router.push('/');
+    } catch (error) {
+      console.error('Logout error:', error);
+    }
+  };
+
+  // Format account creation date
+  const formatAccountCreation = (createdAt: string | undefined) => {
+    if (!createdAt) return 'Unknown';
+    const date = new Date(createdAt);
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    });
+  };
+
   return (
     <main className="w-full flex flex-col items-start gap-3.5 text-white font-inter-variable text-[12.21px]">
       {/* Account Details Section */}
@@ -26,20 +57,26 @@ export default function Accounts() {
             </label>
             <div className="flex items-center gap-[8.7px] text-num-14 font-inter">
               <span className="tracking-num--0_01 leading-5 font-medium">
-                hi@echodzns.com
+                {user?.email || 'No email'}
               </span>
-              <div className="h-[20.9px] rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center py-0 px-[5.2px] text-[10.9px]">
+              <div
+                className={`h-[20.9px] rounded-[5.23px] border-solid border-[0.9px] flex items-center justify-center py-0 px-[5.2px] text-[10.9px] ${
+                  user?.email_confirmed_at
+                    ? 'bg-limegreen-200 border-limegreen-100 text-limegreen-100'
+                    : 'bg-gray-1300 border-gray-1200'
+                }`}
+              >
                 <span className="tracking-num--0_01 leading-[13.95px] font-medium">
-                  Not Verified
+                  {user?.email_confirmed_at ? 'Verified' : 'Not Verified'}
                 </span>
               </div>
             </div>
           </div>
 
-          <div className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center py-[5px] px-2.5 gap-[5px] text-[10.9px] font-inter">
+          <button className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center py-[5px] px-2.5 gap-[5px] text-[10.9px] font-inter hover:outline-none hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_0_0_4px_rgba(255,255,255,0.1)] transition-all duration-200 cursor-pointer">
             <span className="tracking-num--0_01 leading-[13.95px] font-medium">{`Signed up via `}</span>
-            <GoogleIcon />
-          </div>
+            <GoogleIcon className="w-[14px] h-[14px]" />
+          </button>
         </div>
 
         {/* User ID and Account Creation Info */}
@@ -53,7 +90,7 @@ export default function Accounts() {
               </label>
               <div className="flex items-center text-num-14 font-inter">
                 <span className="tracking-num--0_01 leading-5 font-medium">
-                  29014361
+                  {user?.id || 'Unknown ID'}
                 </span>
               </div>
             </div>
@@ -68,7 +105,7 @@ export default function Accounts() {
               </label>
               <div className="flex items-center text-num-14 font-inter">
                 <span className="tracking-num--0_01 leading-5 font-medium">
-                  Feb 20, 2025
+                  {formatAccountCreation(user?.created_at)}
                 </span>
               </div>
             </div>
@@ -93,13 +130,19 @@ export default function Accounts() {
 
       {/* Action Buttons Section */}
       <footer className="w-full flex items-center gap-2 text-[12.8px]">
-        <button className="flex-1 rounded-lg bg-gray-1300 border-gray-1300 border-solid border-[0.8px] flex items-center justify-center p-[9.6px] gap-2">
+        <button
+          onClick={handleSettingsClick}
+          className="flex-1 rounded-lg bg-gray-1300 border-gray-1300 border-solid border-[0.8px] flex items-center justify-center p-[9.6px] gap-2 hover:outline-none hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_0_0_4px_rgba(255,255,255,0.1)] transition-all duration-200 cursor-pointer"
+        >
           <SettingsIcon />
           <span className="tracking-num--0_01 leading-[19.2px] font-medium">
             Settings
           </span>
         </button>
-        <button className="flex-1 rounded-lg bg-orangered-200 border-orangered-100 border-solid border flex items-center justify-center p-[9.6px] gap-2">
+        <button
+          onClick={handleLogout}
+          className="flex-1 rounded-lg bg-orangered-200 border-orangered-100 border-solid border flex items-center justify-center p-[9.6px] gap-2 hover:outline-none hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_0_0_4px_rgba(255,255,255,0.1)] transition-all duration-200 cursor-pointer"
+        >
           <LogoutIcon />
           <span className="tracking-num--0_01 leading-[19.2px] font-medium">
             Log Out
