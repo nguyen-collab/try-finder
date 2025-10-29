@@ -6,11 +6,16 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+
+  /* Scale everything to 80% by setting base font-size to 80% */
+  font-size: 80%;
 }
 
 body {
   @apply leading-[normal] m-0;
 }
+
 @layer base {
   *,
   *::before,

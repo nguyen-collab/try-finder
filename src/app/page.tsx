@@ -10,12 +10,14 @@ import Header from '@/components/Header';
 
 export default function Home() {
   return (
-    <div className="min-h-screen w-full overflow-x-hidden">
+    <div className="min-h-screen w-full overflow-x-hidden bg-gray-500">
       <div className="bg-gray-500">
-        <div className="container mx-auto py-4 sm:py-6 lg:py-8 xl:py-12">
+        <div className="container mx-auto">
           <Header />
         </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+      </div>
+      <div className="bg-gray-500">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-12 xl:pt-4">
           <Hero />
         </div>
       </div>

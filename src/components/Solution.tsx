@@ -8,9 +8,9 @@ import {
 
 export default function Solution() {
   return (
-    <section className="w-full h-auto xl:min-h-[835px] text-left text-num-16 text-white font-inter relative overflow-hidden">
+    <section className="w-full h-auto xl:min-h-[575px] 2xl:min-h-[655px] text-left text-num-16 text-white font-inter relative overflow-hidden">
       {/* Background Image */}
-      <div className="hidden xl:block absolute top-44 z-0">
+      <div className="hidden xl:block absolute top-51 z-0">
         <Image
           className="w-full h-full object-cover rounded-[15px]"
           width={1350}
@@ -44,8 +44,8 @@ export default function Solution() {
           </header>
 
           {/* Team Categories */}
-          <div className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-2 sm:gap-3 lg:gap-2.5 text-sm 2xl:text-[18px]">
-            <div className="rounded-[10px] bg-gray-200 border-gray-1200 border-solid border-[1px] flex flex-col items-start p-2 sm:p-3 lg:p-num-10 w-fit">
+          <div className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-2 sm:gap-3 lg:gap-2.5 text-sm 2xl:text-[15px]">
+            <div className="rounded-[10px] bg-gray-200 border-gray-1200 border-solid border-[1px] flex flex-col items-start p-2 w-fit">
               <div className="flex items-center gap-2">
                 <StoreIcon />
                 <div className="tracking-num--0_01 leading-num-24 font-medium">
@@ -53,7 +53,7 @@ export default function Solution() {
                 </div>
               </div>
             </div>
-            <div className="rounded-[10px] bg-gray-200 border-gray-1200 border-solid border-[1px] flex flex-col items-start p-2 sm:p-3 lg:p-num-10 w-fit">
+            <div className="rounded-[10px] bg-gray-200 border-gray-1200 border-solid border-[1px] flex flex-col items-start p-2 w-fit">
               <div className="flex items-center gap-2">
                 <PromotionIcon />
                 <div className="tracking-num--0_01 leading-num-24 font-medium">
@@ -61,7 +61,7 @@ export default function Solution() {
                 </div>
               </div>
             </div>
-            <div className="rounded-[10px] bg-gray-200 border-gray-1200 border-solid border-[1px] flex flex-col items-start p-2 sm:p-3 lg:p-num-10 w-fit">
+            <div className="rounded-[10px] bg-gray-200 border-gray-1200 border-solid border-[1px] flex flex-col items-start p-2 w-fit">
               <div className="flex items-center gap-2">
                 <UserGroupIcon />
                 <div className="tracking-num--0_01 leading-num-24 font-medium">
@@ -69,7 +69,7 @@ export default function Solution() {
                 </div>
               </div>
             </div>
-            <div className="rounded-[10px] bg-gray-200 border-gray-1200 border-solid border-[1px] flex flex-col items-start p-2 sm:p-3 lg:p-num-10 w-fit">
+            <div className="rounded-[10px] bg-gray-200 border-gray-1200 border-solid border-[1px] flex flex-col items-start p-2 w-fit">
               <div className="flex items-center gap-2">
                 <StartupIcon />
                 <div className="tracking-num--0_01 leading-num-24 font-medium">
@@ -80,9 +80,9 @@ export default function Solution() {
           </div>
 
           {/* Main Content Section */}
-          <main className="w-full max-w-[1350px] flex flex-col xl:flex-row items-center xl:items-stretch justify-between gap-6 sm:gap-8 lg:gap-12 mt-8 xl:mt-10 2xl:mt-16 px-4 sm:px-6 lg:px-8 xl:px-12">
+          <main className="w-full max-w-[1350px] flex flex-col xl:flex-row items-center xl:items-stretch justify-between gap-6 sm:gap-8 lg:gap-12 xl:mt-0 2xl:mt-2 px-4 sm:px-6 lg:px-8 xl:px-12">
             {/* Left Content */}
-            <div className="flex-1 max-w-[606px] flex flex-col gap-4 lg:gap-5 2xl:gap-20 text-3xl 2xl:text-[38px] font-aeonik-pro">
+            <div className="flex-1 max-w-[606px] flex flex-col gap-4 lg:gap-4 2xl:gap-8 text-3xl 2xl:text-[38px] font-aeonik-pro">
               <div className="flex flex-col text-center xl:text-left gap-2 sm:gap-3 lg:gap-2.5">
                 <h3 className="tracking-[-0.03em] leading-tight sm:leading-tight lg:leading-[42px]">
                   Find decision-makers in seconds
