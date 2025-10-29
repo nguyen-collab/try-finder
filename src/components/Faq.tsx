@@ -84,13 +84,13 @@ export default function Faq() {
             return (
               <div
                 key={index}
-                className={`shadow-[0px_1px_2px_rgba(10,_10,_10,_0.05)] rounded-num-15 bg-gray-500 border-gray-1200 border-solid border flex flex-col lg:p-num-10 transition-all duration-300 ease-in-out ${isExpanded ? 'p-2' : ''}`}
+                className={`shadow-[0px_1px_2px_rgba(10,_10,_10,_0.05)] rounded-num-15 bg-gray-500 border-gray-1300 border-solid border flex flex-col lg:p-num-10 transition-all duration-300 ease-in-out ${isExpanded ? 'p-2' : ''}`}
               >
                 <button
                   onClick={() => toggleItem(index)}
                   className={`rounded-num-7_5 flex items-center justify-between p-2 sm:p-3 md:p-4 lg:p-num-12 gap-2 sm:gap-3 md:gap-4 lg:gap-5 w-full text-left transition-all duration-300 ease-in-out ${
                     isExpanded
-                      ? 'bg-gray-200 hover:bg-gray-300 border-gray-1200 border-solid border'
+                      ? 'bg-gray-200 hover:bg-gray-300 border-gray-1300 border-solid border'
                       : 'bg-gray-800 hover:bg-gray-700 border-transparent border-solid border'
                   }`}
                 >
@@ -117,12 +117,12 @@ export default function Faq() {
           })}
 
           {/* Contact CTA */}
-          <div className="shadow-[0px_1px_2px_rgba(10,_10,_10,_0.05)] rounded-num-15 bg-gray-500 border-gray-1200 border-solid border flex flex-col items-center justify-center lg:p-num-10 min-h-[70px] sm:min-h-[80px]">
+          <div className="shadow-[0px_1px_2px_rgba(10,_10,_10,_0.05)] rounded-num-15 bg-gray-500 border-gray-1300 border-solid border flex flex-col items-center justify-center lg:p-num-10 min-h-[70px] sm:min-h-[80px]">
             <div className="rounded-num-7_5 bg-gray-800 border-gray-700 border-solid border flex flex-col sm:flex-row items-center justify-between py-2 sm:py-3 md:py-4 lg:py-num-10 px-2 sm:px-3 md:px-4 lg:px-num-12 gap-2 sm:gap-3 md:gap-4 lg:gap-5 w-full">
               <h3 className="tracking-num--0_01 leading-num-24 font-medium text-xs sm:text-sm md:text-base lg:text-lg text-center sm:text-left flex-1">
                 Couldn&apos;t find an answer you&apos;re looking for?
               </h3>
-              <button className="rounded-[9px] border-gray-1200 border-solid border flex items-center justify-center py-1.5 sm:py-2 md:py-3 lg:py-[9px] px-3 sm:px-4 md:px-6 lg:px-[18px] gap-1.5 sm:gap-2 md:gap-3 lg:gap-[11.3px] text-xs sm:text-sm md:text-sm lg:text-[14px] hover:bg-gray-700 transition-colors w-full sm:w-auto cursor-pointer">
+              <button className="rounded-[9px] border-gray-1300 border-solid border flex items-center justify-center py-1.5 sm:py-2 md:py-3 lg:py-[9px] px-3 sm:px-4 md:px-6 lg:px-[18px] gap-1.5 sm:gap-2 md:gap-3 lg:gap-[11.3px] text-xs sm:text-sm md:text-sm lg:text-[14px] hover:bg-gray-700 transition-colors w-full sm:w-auto cursor-pointer">
                 <span className="tracking-num--0_01 leading-5 font-medium">
                   Contact Us
                 </span>

@@ -10,7 +10,7 @@ export default function Solution() {
   return (
     <section className="w-full h-auto xl:min-h-[835px] text-left text-num-16 text-white font-inter relative overflow-hidden">
       {/* Background Image */}
-      <div className="hidden xl:block absolute top-40 z-0">
+      <div className="hidden xl:block absolute top-44 z-0">
         <Image
           className="w-full h-full object-cover rounded-[15px]"
           width={1350}
@@ -23,7 +23,7 @@ export default function Solution() {
 
       {/* Content Container */}
       <div className="relative z-10 flex flex-col items-center justify-center">
-        <div className="max-w-[1350px] w-full flex flex-col items-center gap-6 sm:gap-8 lg:gap-[15px]">
+        <div className="max-w-[1350px] w-full flex flex-col items-center gap-6 sm:gap-8 lg:gap-[28px]">
           {/* Header Section */}
           <header className="max-w-[942px] flex flex-col items-center gap-3 sm:gap-4 lg:gap-[15px] text-center">
             <div className="rounded-[15px] bg-gray-200 border-gray-1300 border-solid border-[1px] flex items-center justify-center py-1.5 px-num-10">

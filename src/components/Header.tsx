@@ -41,7 +41,7 @@ export default function Header() {
         ${
           isScrolled
             ? 'bg-gray-200/95 border border-solid border-gray-1300 backdrop-blur-lg shadow-2xl rounded-2xl p-3 w-[90%] md:w-[900px] mt-4 mx-auto'
-            : 'bg-transparent py-4 w-full border border-solid border-gray-500'
+            : 'bg-transparent py-4 w-full border border-solid border-transparent'
         } 
         text-left text-sm md:text-base lg:text-num-16 text-white font-inter-variable
       `}
@@ -52,7 +52,10 @@ export default function Header() {
         {/* Mobile Layout */}
         <div className="flex lg:hidden items-center justify-between h-full">
           {/* Logo */}
-          <div className="flex items-center gap-1 transition-all duration-700 ease-out">
+          <Link
+            href="/"
+            className="flex items-center gap-1 transition-all duration-700 ease-out cursor-pointer"
+          >
             <Image
               src="/header/tryfinder.svg"
               className="h-6 w-auto transition-all duration-700 ease-out"
@@ -61,7 +64,7 @@ export default function Header() {
               sizes="100vw"
               alt="TryFinder Logo"
             />
-          </div>
+          </Link>
 
           {/* Mobile Menu Button */}
           <button
@@ -154,7 +157,10 @@ export default function Header() {
         {/* Desktop Layout */}
         <div className="hidden lg:flex items-center justify-between h-full">
           {/* Logo */}
-          <div className="flex items-center gap-1 transition-all duration-700 ease-out">
+          <Link
+            href="/"
+            className="flex items-center gap-1 transition-all duration-700 ease-out cursor-pointer"
+          >
             <Image
               src="/header/tryfinder.svg"
               className="h-6 md:h-7 w-auto transition-all duration-700 ease-out"
@@ -163,7 +169,7 @@ export default function Header() {
               sizes="100vw"
               alt="TryFinder Logo"
             />
-          </div>
+          </Link>
 
           {/* Navigation Menu */}
           <nav className="flex items-center gap-4 md:gap-6 lg:gap-[30px] font-inter transition-all duration-700 ease-out">
