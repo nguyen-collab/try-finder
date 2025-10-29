@@ -10,13 +10,15 @@ import {
   PlusIcon,
   UserCircleIcon,
 } from './common/SvgIcon';
+import { useRouter } from 'next/navigation';
 
 export default function Dashboard() {
   const [searchQuery, setSearchQuery] = useState('');
 
+  const router = useRouter();
+
   const handleSearch = () => {
-    console.log('Searching for:', searchQuery);
-    // TODO: Implement search functionality
+    router.push('/search');
   };
 
   return (

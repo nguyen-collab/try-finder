@@ -1,4 +1,4 @@
-// import Search from '@/components/Search';
+import Search from '@/components/Search';
 
 export default function SearchPage() {
   return (
@@ -6,7 +6,7 @@ export default function SearchPage() {
       <div className="bg-gray-500">
         <div className="container mx-auto py-4 sm:py-6 lg:py-8 xl:py-12">
           Search
-          {/* <Search /> */}
+          <Search />
         </div>
       </div>
     </div>
