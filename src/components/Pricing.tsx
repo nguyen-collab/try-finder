@@ -154,7 +154,7 @@ export default function Pricing() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <div className="tracking-num--0_01 leading-[19.5px] font-semibold">
+                  <div className="tracking-num--0_01 leading-[19.5px] font-semibold px-8">
                     Get Started
                   </div>
                 </motion.button>
