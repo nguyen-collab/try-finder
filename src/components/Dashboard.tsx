@@ -145,7 +145,7 @@ export default function Dashboard() {
   };
 
   return (
-    <main className="w-full min-h-screen bg-gray-500 text-white font-inter-variable text-[13.08px]">
+    <main className="w-full min-h-screen bg-gray-500 text-white font-inter-variable text-[13.08px] overflow-x-hidden">
       {/* Main Content Area */}
       <section className="w-full flex flex-col lg:flex-row px-6 gap-6">
         {/* Filters Sidebar */}
@@ -285,10 +285,10 @@ export default function Dashboard() {
 
               {/* Name Filter Input - Expanded State */}
               <div
-                className={`w-full overflow-hidden transition-all duration-300 ease-in-out ${
+                className={`w-full transition-all duration-300 ease-in-out ${
                   isNameFilterOpen
-                    ? 'max-h-[100px] opacity-100 mt-[8.7px]'
-                    : 'max-h-0 opacity-0 mt-0'
+                    ? 'overflow-visible max-h-[100px] opacity-100 mt-[8.7px]'
+                    : 'overflow-hidden max-h-0 opacity-0 mt-0'
                 }`}
               >
                 <div className="w-full rounded-[10.46px] bg-gray-500 border-gray-1300 border-solid border-[0.9px] flex items-center justify-between p-[10.5px] gap-5 focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
@@ -329,10 +329,10 @@ export default function Dashboard() {
 
               {/* Location Filter Content - Expanded State */}
               <div
-                className={`w-full overflow-hidden transition-all duration-300 ease-in-out ${
+                className={`w-full transition-all duration-300 ease-in-out ${
                   isLocationFilterOpen
-                    ? 'max-h-[500px] opacity-100 mt-[8.7px]'
-                    : 'max-h-0 opacity-0 mt-0'
+                    ? 'overflow-visible max-h-[500px] opacity-100 mt-[8.7px]'
+                    : 'overflow-hidden max-h-0 opacity-0 mt-0'
                 }`}
               >
                 <div className="w-full space-y-[20.9px]">
@@ -474,10 +474,10 @@ export default function Dashboard() {
 
               {/* Contact Method Filter Content - Expanded State */}
               <div
-                className={`w-full overflow-hidden transition-all duration-300 ease-in-out ${
+                className={`w-full transition-all duration-300 ease-in-out ${
                   isContactMethodFilterOpen
-                    ? 'max-h-[300px] opacity-100 mt-[8.7px]'
-                    : 'max-h-0 opacity-0 mt-0'
+                    ? 'overflow-visible max-h-[300px] opacity-100 mt-[8.7px]'
+                    : 'overflow-hidden max-h-0 opacity-0 mt-0'
                 }`}
               >
                 <div className="w-full space-y-3.5">
@@ -554,7 +554,7 @@ export default function Dashboard() {
         </aside>
 
         {/* Results Area */}
-        <div className="flex-1 flex flex-col items-center justify-center gap-[15px] text-center text-[15px] min-h-[500px]">
+        <div className="flex-1 flex flex-col items-center justify-center gap-[15px] text-center text-[15px] min-h-[500px] overflow-x-hidden w-full">
           {/* Search Section */}
           <section className="w-full flex flex-col items-center gap-4">
             <div className="w-full flex flex-col lg:flex-row items-end gap-4">
