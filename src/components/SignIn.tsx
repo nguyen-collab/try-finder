@@ -12,13 +12,14 @@ import {
 import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 
 export default function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [, setErrorMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();
@@ -33,14 +34,23 @@ export default function SignIn() {
       const { error } = await signIn(email, password);
 
       if (error) {
+        toast.error('Error', {
+          description: error.message,
+        });
         setErrorMessage(error.message);
         return;
       }
 
       // Redirect to dashboard on successful login
       router.push('/dashboard');
+      toast.success('Success', {
+        description: 'Sign in successful',
+      });
     } catch (error) {
       console.error('Sign in error:', error);
+      toast.error('Error', {
+        description: 'An unexpected error occurred. Please try again.',
+      });
       setErrorMessage('An unexpected error occurred. Please try again.');
     } finally {
       setIsLoading(false);
@@ -164,11 +174,11 @@ export default function SignIn() {
                   </div>
 
                   {/* Sign in button */}
-                  {errorMessage && (
+                  {/* {errorMessage && (
                     <div className="text-red-500 text-sm mt-2">
                       {errorMessage}
                     </div>
-                  )}
+                  )} */}
 
                   <button
                     type="submit"

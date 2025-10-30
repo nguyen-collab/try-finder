@@ -29,6 +29,9 @@ const config: Config = {
           '1600': 'rgba(255, 255, 255, 0.5)',
         },
         white: '#fff',
+        mediumseagreen: '#00c361',
+        goldenrod: '#ffb340',
+        tomato: '#fb544d',
         darkorange: '#ff7520',
         limegreen: {
           '100': '#00be53',

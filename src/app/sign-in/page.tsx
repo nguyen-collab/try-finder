@@ -15,7 +15,7 @@ export default function SignInPage() {
         />
       </div>
 
-      <div className="container max-w-2xl mx-auto">
+      <div className="container max-w-xl mx-auto">
         <SignIn />
       </div>
     </div>

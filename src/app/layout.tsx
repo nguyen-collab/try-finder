@@ -99,6 +99,8 @@ export const metadata: Metadata = {
 };
 
 import { AuthProvider } from '@/context/AuthContext';
+import { Toaster } from '@/components/common/Sonner';
+import Providers from './providers';
 
 export default function RootLayout({
   children,
@@ -110,7 +112,10 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${aeonikPro.variable} ${interVariable.variable} antialiased`}
       >
-        <AuthProvider>{children}</AuthProvider>
+        <Providers>
+          <Toaster position="top-right" />
+          <AuthProvider>{children}</AuthProvider>
+        </Providers>
       </body>
     </html>
   );

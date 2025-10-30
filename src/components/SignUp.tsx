@@ -16,6 +16,7 @@ import {
 import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 
 export default function SignUp() {
   const [email, setEmail] = useState('');
@@ -24,7 +25,7 @@ export default function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [agreeToTerms, setAgreeToTerms] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [, setErrorMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();
@@ -33,6 +34,9 @@ export default function SignUp() {
   const validateInputs = () => {
     if (!email || !password || !confirmPassword) {
       setErrorMessage('All fields are required');
+      toast.error('Error', {
+        description: 'All fields are required',
+      });
       return false;
     }
 
@@ -40,24 +44,36 @@ export default function SignUp() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       setErrorMessage('Please enter a valid email address');
+      toast.error('Error', {
+        description: 'Please enter a valid email address',
+      });
       return false;
     }
 
     // Password validation (at least 6 characters)
     if (password.length < 6) {
       setErrorMessage('Password must be at least 6 characters');
+      toast.error('Error', {
+        description: 'Password must be at least 6 characters',
+      });
       return false;
     }
 
     // Password match validation
     if (password !== confirmPassword) {
       setErrorMessage('Passwords do not match');
+      toast.error('Error', {
+        description: 'Passwords do not match',
+      });
       return false;
     }
 
     // Terms agreement validation
     if (!agreeToTerms) {
       setErrorMessage('You must agree to the Terms and Conditions');
+      toast.error('Error', {
+        description: 'You must agree to the Terms and Conditions',
+      });
       return false;
     }
 
@@ -78,14 +94,23 @@ export default function SignUp() {
       const { error } = await signUp(email, password);
 
       if (error) {
+        toast.error('Error', {
+          description: error.message,
+        });
         setErrorMessage(error.message);
         return;
       }
 
       // Show success message and redirect
       router.push('/verification');
+      toast.success('Success', {
+        description: 'Sign up successful',
+      });
     } catch (error) {
       console.error('Sign up error:', error);
+      toast.error('Error', {
+        description: 'An unexpected error occurred. Please try again.',
+      });
       setErrorMessage('An unexpected error occurred. Please try again.');
     } finally {
       setIsLoading(false);
@@ -167,7 +192,7 @@ export default function SignUp() {
 
             {/* Testimonial card */}
             <div className="rounded-[15px] bg-gray-500 border-gray-1300 border-solid border-[1px] p-4 sm:p-5">
-              <div className="mb-3 sm:mb-4">
+              <div className="">
                 <p className="text-sm sm:text-base lg:text-base tracking-num--0_01 leading-relaxed lg:leading-num-24 opacity-num-0_6 mb-3 sm:mb-4">
                   &ldquo;tryfinder tears the competition apart. I&apos;ve tried
                   almost every other search service, their speeds, success rates
@@ -205,8 +230,8 @@ export default function SignUp() {
         </main>
 
         {/* Right side - Registration form */}
-        <aside className="flex-1 flex items-center justify-center px-4 lg:px-0 py-8 sm:py-12 lg:py-20">
-          <div className="w-full max-w-2xl bg-gray-50 rounded-[20px]">
+        <aside className="flex-1  flex items-center justify-center px-4 lg:px-0 py-8 sm:py-12 lg:py-20">
+          <div className="w-full max-w-xl bg-gray-50 rounded-[20px]">
             {/* Registration form */}
             <div className="rounded-[20px] bg-gray-200 border-gray-1300 border-solid border-[1px] p-4 sm:p-6 lg:p-[30px] mb-4 sm:mb-6">
               <div className="text-center mb-6 sm:mb-8">
@@ -344,11 +369,11 @@ export default function SignUp() {
                 </div>
 
                 {/* Error message */}
-                {errorMessage && (
+                {/* {errorMessage && (
                   <div className="text-red-500 text-sm mt-2">
                     {errorMessage}
                   </div>
-                )}
+                )} */}
 
                 {/* Submit button */}
                 <button
