@@ -14,10 +14,10 @@ export async function proxy(request: NextRequest) {
 
   // Define protected routes
   const protectedRoutes: string[] = [
-    'dashboard',
-    'settings',
-    'accounts',
-    'features',
+    '/dashboard',
+    '/settings',
+    '/accounts',
+    '/features',
   ];
   const authRoutes: string[] = [
     '/sign-in',
@@ -34,6 +34,9 @@ export async function proxy(request: NextRequest) {
   );
 
   // Redirect logic
+  console.log('isProtectedRoute', isProtectedRoute);
+  console.log('user', user);
+  console.log('nextUrl.pathname', request.nextUrl.pathname);
   if (isProtectedRoute && !user) {
     // Redirect to sign-in if trying to access protected route without auth
     const redirectUrl = new URL('/sign-in', request.url);

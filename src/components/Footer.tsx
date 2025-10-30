@@ -17,7 +17,7 @@ import { motion } from 'framer-motion';
 
 export default function Footer() {
   return (
-    <footer className="w-full text-left text-num-14 text-white font-inter relative overflow-hidden">
+    <footer className="w-full text-left text-sm text-white font-inter relative overflow-hidden">
       {/* Main Content */}
       <div className="relative z-10 flex flex-col">
         {/* CTA Section */}
@@ -31,7 +31,7 @@ export default function Footer() {
                     Launch Offer
                   </div>
                 </div>
-                <div className="flex items-center text-sm sm:text-base lg:text-num-16 text-white">
+                <div className="flex items-center text-sm sm:text-base lg:text-base text-white">
                   <div className="flex items-center gap-1 sm:gap-2 lg:gap-[5px]">
                     <div className="tracking-num--0_01 leading-num-20 font-medium">
                       Welcome to tryfinder.ai
@@ -67,7 +67,7 @@ export default function Footer() {
 
             {/* CTA Button */}
             <ScrollAnimationWrapper variants={fadeInBottom}>
-              <button className="shadow-[0px_0px_0px_4px_rgba(255,_255,_255,_0.25)] rounded-xl [background:linear-gradient(180deg,_rgba(0,_0,_0,_0),_rgba(0,_0,_0,_0.2)),_#fafafa] flex items-center justify-center py-3 sm:py-4 lg:py-3 px-6 sm:px-8 lg:px-6 gap-3 sm:gap-4 lg:gap-[15px] text-base sm:text-lg lg:text-[18px] text-gray-300 hover:[background:linear-gradient(180deg,_rgba(0,_0,_0,_0.3),_rgba(0,_0,_0,_0.1)),_#fafafa] transition-[background] duration-300 ease-in-out cursor-pointer font-inter-variable ">
+              <button className="shadow-[0px_0px_0px_4px_rgba(255,_255,_255,_0.25)] rounded-xl [background:linear-gradient(180deg,_rgba(0,_0,_0,_0),_rgba(0,_0,_0,_0.2)),_#fafafa] flex items-center justify-center py-3 sm:py-4 lg:py-3 px-6 sm:px-8 lg:px-6 gap-3 sm:gap-4 lg:gap-[15px] text-base sm:text-lg lg:text-lg text-gray-300 hover:[background:linear-gradient(180deg,_rgba(0,_0,_0,_0.3),_rgba(0,_0,_0,_0.1)),_#fafafa] transition-[background] duration-300 ease-in-out cursor-pointer font-inter-variable ">
                 <span className="tracking-num--0_01 leading-[26px] font-semibold">
                   Start Finding Buyers Now
                 </span>
@@ -77,7 +77,7 @@ export default function Footer() {
 
             {/* Features */}
             <motion.div
-              className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 lg:gap-[15px] text-sm sm:text-base lg:text-num-16"
+              className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 lg:gap-[15px] text-sm sm:text-base lg:text-base"
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"

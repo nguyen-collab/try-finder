@@ -18,7 +18,7 @@ import {
 
 export default function Solution() {
   return (
-    <section className="w-full h-auto xl:min-h-[575px] 2xl:min-h-[655px] text-left text-num-16 text-white font-inter relative overflow-hidden">
+    <section className="w-full h-auto xl:min-h-[575px] 2xl:min-h-[655px] text-left text-base text-white font-inter relative overflow-hidden">
       {/* Background Image */}
       <motion.div
         className="hidden xl:block absolute top-51 z-0"
@@ -62,7 +62,7 @@ export default function Solution() {
 
           {/* Team Categories */}
           <motion.div
-            className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-2 sm:gap-3 lg:gap-2.5 text-sm 2xl:text-[15px]"
+            className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-2 sm:gap-3 lg:gap-2.5 text-sm 2xl:text-md"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -124,7 +124,7 @@ export default function Solution() {
                     Find decision-makers in seconds
                   </h3>
                   <motion.div
-                    className="text-sm xl:text-sm 2xl:text-num-16 tracking-num--0_01 leading-num-24 font-inter opacity-[0.6] space-y-2"
+                    className="text-sm xl:text-sm 2xl:text-base tracking-num--0_01 leading-num-24 font-inter opacity-[0.6] space-y-2"
                     variants={staggerContainer}
                     initial="hidden"
                     whileInView="visible"
@@ -144,7 +144,7 @@ export default function Solution() {
 
                 {/* Testimonial Card */}
                 <motion.div
-                  className="rounded-[15px] bg-gray-500 border-gray-1200 border-solid border flex items-center p-4 sm:p-5 lg:p-5 text-sm xl:text-sm 2xl:text-num-16 font-inter-variable"
+                  className="rounded-[15px] bg-gray-500 border-gray-1200 border-solid border flex items-center p-4 sm:p-5 lg:p-5 text-sm xl:text-sm 2xl:text-base font-inter-variable"
                   variants={fadeInBottom}
                   initial="hidden"
                   whileInView="visible"

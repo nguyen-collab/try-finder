@@ -144,13 +144,13 @@ export default function Pricing() {
         {/* CTA Section */}
         <ScrollAnimationWrapper variants={fadeInBottom} viewportAmount={0.4}>
           <footer className="w-fit mt-8">
-            <div className="rounded-xl bg-gray-100 border-gray-1200 border-solid border flex flex-col items-center p-3 lg:p-[15px] text-sm sm:text-base lg:text-[16px] text-white">
+            <div className="rounded-xl bg-gray-100 border-gray-1200 border-solid border flex flex-col items-center p-3 lg:p-[15px] text-sm sm:text-base lg:text-base text-white">
               <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 lg:gap-[15px]">
                 <div className="tracking-num--0_01 leading-num-24 font-medium opacity-[0.75] text-center sm:text-left">
                   Ready to supercharge your searches?
                 </div>
                 <motion.button
-                  className="shadow-[0px_0px_0px_4px_rgba(255,_255,_255,_0.25)] rounded-xl [background:linear-gradient(180deg,_rgba(0,_0,_0,_0),_rgba(0,_0,_0,_0.2)),_#fafafa] flex items-center justify-center p-3 px-8 text-num-16 text-gray-300 hover:[background:linear-gradient(180deg,_rgba(0,_0,_0,_0.3),_rgba(0,_0,_0,_0.1)),_#fafafa] transition-[background] duration-300 ease-in-out cursor-pointer"
+                  className="shadow-[0px_0px_0px_4px_rgba(255,_255,_255,_0.25)] rounded-xl [background:linear-gradient(180deg,_rgba(0,_0,_0,_0),_rgba(0,_0,_0,_0.2)),_#fafafa] flex items-center justify-center p-3 px-8 text-base text-gray-300 hover:[background:linear-gradient(180deg,_rgba(0,_0,_0,_0.3),_rgba(0,_0,_0,_0.1)),_#fafafa] transition-[background] duration-300 ease-in-out cursor-pointer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
                 >

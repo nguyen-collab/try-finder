@@ -79,12 +79,12 @@ export default function DashboardHeader() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto relative rounded-[13.08px] bg-[#161616]  border-gray-1300 border-solid border-[0.7px] box-border flex items-center justify-between py-[10.9px] px-[16.4px] gap-5 text-left text-[13.08px] text-gray-10 font-inter-variable">
+    <div className="w-full max-w-4xl mx-auto relative rounded-[13.08px] bg-[#161616]  border-gray-1300 border-solid border-[0.7px] box-border flex items-center justify-between py-[10.9px] px-[16.4px] gap-5 text-left text-sm text-gray-10 font-inter-variable">
       <div className="flex items-center gap-[6.2px]">
         <Link href="/dashboard">
           <Image
             src="/header/tryfinder.svg"
-            className="h-[21.8px] w-[117.9px]"
+            className="h-6 w-auto"
             width={88.9}
             height={21.8}
             sizes="100vw"
@@ -101,7 +101,7 @@ export default function DashboardHeader() {
                 Search
               </div>
             </div>
-            <div className="h-[20.9px] rounded-[5.23px] bg-limegreen-300 border-limegreen-200 border-solid border-[0.9px] box-border flex items-center justify-center py-0 px-[5.2px] text-[10.9px] text-limegreen-100 font-inter">
+            <div className="h-[20.9px] rounded-[5.23px] bg-limegreen-300 border-limegreen-200 border-solid border-[0.9px] box-border flex items-center justify-center py-0 px-[5.2px] text-xs text-limegreen-100 font-inter">
               <div className="relative tracking-[-0.01em] leading-[13.95px] font-semibold">
                 2/2
               </div>
@@ -178,12 +178,12 @@ export default function DashboardHeader() {
 
 const NotificationPopup = () => {
   return (
-    <div className="relative rounded-[13.08px] w-[197.7px] bg-gray-500 border-gray-1300 border-solid border-[1.1px] box-border overflow-hidden flex flex-col items-center py-[8.7px] px-2.5 text-left text-sm text-white font-inter-variable">
+    <div className="relative rounded-[13.08px] w-fit bg-gray-500 border-gray-1300 border-solid border-[1.1px] box-border overflow-hidden flex flex-col items-center p-2 text-left text-base text-white font-inter-variable">
       <div className="flex items-center gap-[8.7px]">
         <NotificationIcon />
         <div className="relative tracking-[-0.01em] leading-[18px] opacity-[0.9]">
-          <p className="m-0">All Caught up!</p>
-          <p className="m-0">No New Notifications</p>
+          <p className="m-0 whitespace-nowrap">All Caught up!</p>
+          <p className="m-0 whitespace-nowrap">No New Notifications</p>
         </div>
       </div>
     </div>
@@ -202,17 +202,17 @@ const UserPopup = ({
   onLogoutClick,
 }: UserPopupProps) => {
   return (
-    <div className="relative rounded-[13.08px] bg-gray-500 border-gray-1300 border-solid border-[1.1px] box-border w-full overflow-hidden flex flex-col items-center py-[8.7px] px-0 gap-[5px] text-center text-[14.17px] text-white font-geist">
+    <div className="relative rounded-[13.08px] bg-gray-500 border-gray-1300 border-solid border-[1.1px] box-border w-full overflow-hidden flex flex-col items-center py-[8.7px] px-0 gap-[5px] text-center text-base text-white font-geist">
       <button
         onClick={onAccountClick}
-        className="w-[147.7px] flex items-center py-0.5 px-[10.9px] box-border gap-[8.2px] opacity-[0.9] hover:opacity-100 transition-opacity cursor-pointer"
+        className="w-[147.7px] flex items-center p-1 box-border rounded-md gap-[8.2px] hover:bg-gray-1300 mx-2 transition-opacity cursor-pointer"
       >
         <UserCircleIcon />
         <div className="relative font-medium">Account</div>
       </button>
       <button
         onClick={onSettingsClick}
-        className="w-[147.7px] flex items-center py-0.5 px-[10.9px] box-border gap-[8.2px] opacity-[0.9] hover:opacity-100 transition-opacity cursor-pointer"
+        className="w-[147.7px] flex items-center p-1 box-border rounded-md gap-[8.2px] hover:bg-gray-1300 mx-2 transition-opacity cursor-pointer"
       >
         <SettingsIcon />
         <div className="relative font-medium">Settings</div>
@@ -220,7 +220,7 @@ const UserPopup = ({
       <div className="self-stretch h-[0.8px] bg-gray-10 opacity-[0.1]" />
       <button
         onClick={onLogoutClick}
-        className="w-[147.7px] flex items-center py-0.5 px-[10.9px] box-border gap-[8.2px] text-orangered hover:opacity-80 transition-opacity cursor-pointer"
+        className="w-[147.7px] flex items-center p-1 box-border rounded-md gap-[8.2px] text-orangered hover:bg-gray-1300 mx-2 transition-opacity cursor-pointer"
       >
         <LogoutIcon />
         <div className="relative font-medium">Log Out</div>

@@ -68,21 +68,21 @@ export default function Settings() {
   };
 
   return (
-    <main className="w-full flex flex-col items-start gap-3.5 text-white font-inter-variable text-[16px] pb-20">
+    <main className="w-full flex flex-col items-start gap-3.5 text-white font-inter-variable text-base pb-20">
       {/* Email Settings Section */}
       <section className="w-full rounded-[13.08px] bg-gray-200 border-gray-400 border-solid border-[0.7px] flex flex-col items-start p-[15px] gap-[15px] font-inter">
         <header className="w-full flex flex-col items-start justify-center gap-0.5">
           <h2 className="tracking-num--0_01 leading-[22px] font-medium">
             Settings
           </h2>
-          <p className="text-[14px] tracking-num--0_01 leading-5 font-inter-variable opacity-num-0.5">
+          <p className="text-sm tracking-num--0_01 leading-5 font-inter-variable opacity-num-0.5">
             Manage your account preferences
           </p>
         </header>
 
         <hr className="w-full h-[1.3px] opacity-[0.1] bg-gray-10" />
 
-        <div className="w-full flex flex-col items-start gap-2 text-[12px] font-inter-variable">
+        <div className="w-full flex flex-col items-start gap-2 text-xs font-inter-variable">
           <label className="w-full tracking-num--0_01 leading-3 font-medium opacity-[0.75]">
             Email Address
           </label>
@@ -104,13 +104,13 @@ export default function Settings() {
       </section>
 
       {/* Password Reset Section */}
-      <section className="w-full rounded-[13.08px] bg-gray-200 border-gray-400 border-solid border-[0.7px] flex flex-col items-start p-[15px] gap-3 text-[12px]">
-        <header className="w-full flex flex-col items-start justify-center text-[16px] font-inter">
+      <section className="w-full rounded-[13.08px] bg-gray-200 border-gray-400 border-solid border-[0.7px] flex flex-col items-start p-[15px] gap-3 text-xs">
+        <header className="w-full flex flex-col items-start justify-center text-base font-inter">
           <div className="flex flex-col items-start justify-center gap-0.5">
             <h2 className="tracking-num--0_01 leading-[22px] font-medium">
               Reset Password
             </h2>
-            <p className="text-[14px] tracking-num--0_01 leading-5 font-inter-variable opacity-num-0.5">
+            <p className="text-sm tracking-num--0_01 leading-5 font-inter-variable opacity-num-0.5">
               Change your account password
             </p>
           </div>
@@ -124,9 +124,6 @@ export default function Settings() {
             <label className="tracking-num--0_01 leading-3 font-medium opacity-[0.75]">
               Current Password
             </label>
-            <button className="text-[11.2px] tracking-num--0_01 leading-[11.2px] font-medium opacity-num-0.5 hover:opacity-75 transition-opacity cursor-pointer">
-              Forgot password?
-            </button>
           </div>
           <div className="group w-full rounded-num-9.6 bg-gray-300 border-gray-400 border-solid border-[0.8px] flex items-center justify-between py-[11.2px] px-[9.6px] gap-5 text-num-12.8 focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
             <div className="flex items-center gap-[6.4px] flex-1">
@@ -161,9 +158,6 @@ export default function Settings() {
             <label className="tracking-num--0_01 leading-3 font-medium opacity-[0.75]">
               New Password
             </label>
-            <button className="text-[11.2px] tracking-num--0_01 leading-[11.2px] font-medium opacity-num-0.5 hover:opacity-75 transition-opacity cursor-pointer">
-              Forgot password?
-            </button>
           </div>
           <div className="group w-full rounded-num-9.6 bg-gray-300 border-gray-400 border-solid border-[0.8px] flex items-center justify-between py-[11.2px] px-[9.6px] gap-5 text-num-12.8 focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
             <div className="flex items-center gap-[6.4px] flex-1">
@@ -198,9 +192,6 @@ export default function Settings() {
             <label className="tracking-num--0_01 leading-3 font-medium opacity-[0.75]">
               Confirm New Password
             </label>
-            <button className="text-[11.2px] tracking-num--0_01 leading-[11.2px] font-medium opacity-num-0.5 hover:opacity-75 transition-opacity cursor-pointer">
-              Forgot password?
-            </button>
           </div>
           <div className="group w-full rounded-num-9.6 bg-gray-300 border-gray-400 border-solid border-[0.8px] flex items-center justify-between py-[11.2px] px-[9.6px] gap-5 text-num-12.8 focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
             <div className="flex items-center gap-[6.4px] flex-1">
@@ -235,14 +226,14 @@ export default function Settings() {
         className={`w-full rounded-[13.08px] [background:linear-gradient(rgba(197,34,31,0.1),rgba(197,34,31,0.1)),#0f0f0f] border-firebrick-100 border-dashed border flex flex-col items-start p-[15px] text-num-12.8 transition-all duration-300 ${isDangerZoneExpanded ? 'gap-3' : 'gap-0'}`}
       >
         <header
-          className="w-full flex items-center justify-between gap-5 text-[16px] font-inter cursor-pointer"
+          className="w-full flex items-center justify-between gap-5 text-base font-inter cursor-pointer"
           onClick={() => setIsDangerZoneExpanded(!isDangerZoneExpanded)}
         >
           <div className="flex flex-col items-start justify-center gap-0.5">
             <h2 className="tracking-num--0_01 leading-[22px] font-medium">
               Danger Zone
             </h2>
-            <p className="text-[14px] tracking-num--0_01 leading-5 font-inter-variable opacity-num-0.5">
+            <p className="text-sm tracking-num--0_01 leading-5 font-inter-variable opacity-num-0.5">
               Delete your account and all related searches
             </p>
           </div>
@@ -264,7 +255,7 @@ export default function Settings() {
           <div className="space-y-3">
             <hr className="w-full h-[1.3px] opacity-[0.1]" />
 
-            <div className="w-full rounded-[13.08px] bg-firebrick-300 border-firebrick-200 border-solid border flex items-center p-2.5 text-[14px]">
+            <div className="w-full rounded-[13.08px] bg-firebrick-300 border-firebrick-200 border-solid border flex items-center p-2.5 text-sm">
               <p className="w-full tracking-num--0_01 leading-5">
                 Note : This will delete all your saved searches, credits linked
                 to this account&apos;s email address
@@ -311,12 +302,12 @@ export default function Settings() {
 
       {/* Fixed Save Section */}
       <div className="fixed bottom-0 left-0 right-0 z-10">
-        <div className="container max-w-md mx-auto px-4">
+        <div className="container max-w-xl mx-auto px-4">
           <div className="w-full h-[61px] rounded-[13.08px] bg-gray-200 border-gray-1300 border-solid border-[0.7px] flex items-center justify-between p-[15px] gap-5 text-sm text-white font-inter mb-4">
             <div className="tracking-num--0_01 leading-4 font-medium opacity-[0.75]">
               2 Unsaved Changes
             </div>
-            <div className="flex items-center gap-2.5 text-[13.95px] font-inter-variable">
+            <div className="flex items-center gap-2.5 text-sm font-inter-variable">
               <button
                 onClick={handleReset}
                 className="h-[34.9px] rounded-[10.46px] border-gray-1300 border-solid border flex items-center justify-center py-[10.5px] px-4 gap-[4.4px] hover:outline-none hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_0_0_4px_rgba(255,255,255,0.1)] transition-all duration-200 cursor-pointer"

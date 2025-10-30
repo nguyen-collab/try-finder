@@ -108,7 +108,7 @@ export default function Dashboard() {
   const searchResults = () => {
     if (!isSearching) {
       return (
-        <div className="flex-1 flex flex-col items-center justify-center gap-[15px] text-center text-[15px] min-h-[500px]">
+        <div className="flex-1 flex flex-col items-center justify-center gap-[15px] text-center text-md min-h-[500px]">
           <Image
             src="/dashboard/social-02.png"
             className="w-[204px] h-[204px]"
@@ -122,13 +122,13 @@ export default function Dashboard() {
             <h2 className="w-full tracking-[-0.02em] leading-[22px] font-medium">
               Start Searching
             </h2>
-            <p className="w-full text-[14px] tracking-num--0_01 leading-5 opacity-[0.5]">
+            <p className="w-full text-sm tracking-num--0_01 leading-5 opacity-[0.5]">
               Let&apos;s start with your first business search
             </p>
           </div>
 
           {/* Usage Statistics */}
-          <div className="w-full max-w-md flex flex-col items-center gap-2.5 text-center text-[14px] font-inter">
+          <div className="w-full max-w-md flex flex-col items-center gap-2.5 text-center text-sm font-inter">
             <p className="tracking-num--0_01 leading-4 font-medium opacity-num-0.75">
               1 of 2 Searches Remaining
             </p>
@@ -146,7 +146,7 @@ export default function Dashboard() {
   };
 
   return (
-    <main className="w-full min-h-screen bg-gray-500 text-white font-inter-variable text-[13.08px] overflow-x-hidden">
+    <main className="w-full min-h-screen bg-gray-500 text-white font-inter-variable text-sm overflow-x-hidden">
       {/* Main Content Area */}
       <section className="w-full flex flex-col lg:flex-row gap-6">
         {/* Filters Sidebar */}
@@ -178,7 +178,7 @@ export default function Dashboard() {
               <div className="w-full flex items-start flex-col gap-[5.2px]">
                 {/* Name Filter Applied */}
                 {nameFilter && (
-                  <div className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center p-[5.2px] gap-[4.4px] text-[12.21px] text-white font-inter transition-all duration-300">
+                  <div className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center p-[5.2px] gap-[4.4px] text-xs text-white font-inter transition-all duration-300">
                     <UserCircleIcon />
                     <span className="tracking-num--0_01 leading-num-13.95">
                       <span className="font-medium">{`Name : `}</span>
@@ -195,7 +195,7 @@ export default function Dashboard() {
 
                 {/* Location Filter Applied */}
                 {locationFilter && (
-                  <div className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center p-[5.2px] gap-[4.4px] text-[12.21px] text-white font-inter transition-all duration-300">
+                  <div className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center p-[5.2px] gap-[4.4px] text-xs text-white font-inter transition-all duration-300">
                     <UserCircleIcon />
                     <span className="tracking-num--0_01 leading-num-13.95">
                       <span className="font-medium">{`Location : `}</span>
@@ -212,7 +212,7 @@ export default function Dashboard() {
 
                 {/* Location Options Applied */}
                 {selectedLocationOptions.length > 0 && (
-                  <div className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center p-[5.2px] gap-[4.4px] text-[12.21px] text-white font-inter transition-all duration-300">
+                  <div className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center p-[5.2px] gap-[4.4px] text-xs text-white font-inter transition-all duration-300">
                     <UserCircleIcon />
                     <span className="tracking-num--0_01 leading-num-13.95">
                       <span className="font-medium">{`Location Options : `}</span>
@@ -229,7 +229,7 @@ export default function Dashboard() {
 
                 {/* Radius Applied */}
                 {radius > 0 && (
-                  <div className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center p-[5.2px] gap-[4.4px] text-[12.21px] text-white font-inter transition-all duration-300">
+                  <div className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center p-[5.2px] gap-[4.4px] text-xs text-white font-inter transition-all duration-300">
                     <UserCircleIcon />
                     <span className="tracking-num--0_01 leading-num-13.95">
                       <span className="font-medium">{`Radius : `}</span>
@@ -246,7 +246,7 @@ export default function Dashboard() {
 
                 {/* Contact Methods Applied */}
                 {selectedContactMethods.length > 0 && (
-                  <div className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center p-[5.2px] gap-[4.4px] text-[12.21px] text-white font-inter transition-all duration-300">
+                  <div className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center p-[5.2px] gap-[4.4px] text-xs text-white font-inter transition-all duration-300">
                     <UserCircleIcon />
                     <span className="tracking-num--0_01 leading-num-13.95">
                       <span className="font-medium">{`Contact Methods (${contactMethodLogic.toUpperCase()}) : `}</span>
@@ -555,7 +555,7 @@ export default function Dashboard() {
         </aside>
 
         {/* Results Area */}
-        <div className="flex-1 flex flex-col items-center justify-center gap-[15px] text-center text-[15px] min-h-[500px] overflow-x-hidden w-full">
+        <div className="flex-1 flex flex-col items-center justify-center gap-[15px] text-center text-md min-h-[500px] overflow-x-hidden w-full">
           {/* Search Section */}
           <section className="w-full flex flex-col items-center gap-4 px-1">
             <div className="w-full flex flex-col lg:flex-row items-end gap-4">
@@ -564,7 +564,7 @@ export default function Dashboard() {
                 <label className="w-full tracking-num--0_01 text-left leading-[13.08px] font-medium opacity-num-0.75">
                   Search for any business contact
                 </label>
-                <div className="w-full rounded-[10.46px] bg-[#151515] border-gray-1500 border-solid border-[0.9px] flex items-center justify-between py-[8.7px] px-[10.5px] gap-5 text-[14.17px] focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
+                <div className="w-full rounded-[10.46px] bg-[#151515] border-gray-1500 border-solid border-[0.9px] flex items-center justify-between py-[8.7px] px-[10.5px] gap-5 text-sm focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
                   <div className="flex items-center gap-[8.7px] flex-1">
                     <AISearchIcon />
                     <input
@@ -586,7 +586,7 @@ export default function Dashboard() {
               </div>
 
               {/* Tag Filter */}
-              <div className="w-full lg:max-w-[250px] rounded-[10.46px] bg-[#151515] border-gray-1500 border-solid border-[0.9px] flex items-center justify-between py-[8.7px] px-[10.5px] gap-5 text-[14.17px]">
+              <div className="w-full lg:max-w-[250px] rounded-[10.46px] bg-[#151515] border-gray-1500 border-solid border-[0.9px] flex items-center justify-between py-[8.7px] px-[10.5px] gap-5 text-sm">
                 <div className="flex items-center">
                   <span className="tracking-num--0_01 leading-[19.62px] opacity-[0.4]">
                     No Active Tag

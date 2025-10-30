@@ -33,14 +33,14 @@ export default function Accounts() {
   };
 
   return (
-    <main className="w-full flex flex-col items-start gap-3.5 text-white font-inter-variable text-[12.21px]">
+    <main className="w-full flex flex-col items-start gap-3.5 text-white font-inter-variable text-xs">
       {/* Account Details Section */}
       <section className="w-full rounded-[13.08px] bg-gray-200 border-gray-1300 border-solid border-[0.7px] flex flex-col items-start p-[15px] gap-[15px]">
-        <header className="w-full flex flex-col items-start justify-center gap-0.5 text-[16px] font-inter">
+        <header className="w-full flex flex-col items-start justify-center gap-0.5 text-base font-inter">
           <h2 className="tracking-num--0_01 leading-[22px] font-medium">
             Account Details
           </h2>
-          <p className="text-num-14 tracking-num--0_01 leading-5 font-inter-variable opacity-[0.5]">
+          <p className="text-sm tracking-num--0_01 leading-5 font-inter-variable opacity-[0.5]">
             Details about your profile and ID
           </p>
         </header>
@@ -55,12 +55,12 @@ export default function Accounts() {
                 Email Address
               </span>
             </label>
-            <div className="flex items-center gap-[8.7px] text-num-14 font-inter">
+            <div className="flex items-center gap-[8.7px] text-sm font-inter">
               <span className="tracking-num--0_01 leading-5 font-medium">
                 {user?.email || 'No email'}
               </span>
               <div
-                className={`h-[20.9px] rounded-[5.23px] border-solid border-[0.9px] flex items-center justify-center py-0 px-[5.2px] text-[10.9px] ${
+                className={`h-[20.9px] rounded-[5.23px] border-solid border-[0.9px] flex items-center justify-center py-0 px-[5.2px] text-xs ${
                   user?.email_confirmed_at
                     ? 'bg-limegreen-200 border-limegreen-100 text-limegreen-100'
                     : 'bg-gray-1300 border-gray-1200'
@@ -73,7 +73,7 @@ export default function Accounts() {
             </div>
           </div>
 
-          <button className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center py-[5px] px-2.5 gap-[5px] text-[10.9px] font-inter hover:outline-none hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_0_0_4px_rgba(255,255,255,0.1)] transition-all duration-200 cursor-pointer">
+          <button className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center py-[5px] px-2.5 gap-[5px] text-xs font-inter hover:outline-none hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_0_0_4px_rgba(255,255,255,0.1)] transition-all duration-200 cursor-pointer">
             <span className="tracking-num--0_01 leading-[13.95px] font-medium">{`Signed up via `}</span>
             <GoogleIcon className="w-[14px] h-[14px]" />
           </button>
@@ -88,7 +88,7 @@ export default function Accounts() {
                   tryfinder ID
                 </span>
               </label>
-              <div className="flex items-center text-num-14 font-inter">
+              <div className="flex items-center text-sm font-inter">
                 <span className="tracking-num--0_01 leading-5 font-medium">
                   {user?.id || 'Unknown ID'}
                 </span>
@@ -103,7 +103,7 @@ export default function Accounts() {
                   Account Creation
                 </span>
               </label>
-              <div className="flex items-center text-num-14 font-inter">
+              <div className="flex items-center text-sm font-inter">
                 <span className="tracking-num--0_01 leading-5 font-medium">
                   {formatAccountCreation(user?.created_at)}
                 </span>
@@ -114,7 +114,7 @@ export default function Accounts() {
       </section>
 
       {/* Usage Statistics Section */}
-      <section className="w-full rounded-[13.08px] bg-gray-200 border-gray-1300 border-solid border-[0.7px] p-[15px] text-num-14 font-inter">
+      <section className="w-full rounded-[13.08px] bg-gray-200 border-gray-1300 border-solid border-[0.7px] p-[15px] text-sm font-inter">
         <div className="w-full flex flex-col items-start gap-2.5">
           <div className="w-full flex justify-center">
             <p className="tracking-num--0_01 leading-4 font-medium opacity-[0.75]">
@@ -129,7 +129,7 @@ export default function Accounts() {
       </section>
 
       {/* Action Buttons Section */}
-      <footer className="w-full flex items-center gap-2 text-[12.8px]">
+      <footer className="w-full flex items-center gap-2 text-sm">
         <button
           onClick={handleSettingsClick}
           className="flex-1 rounded-lg bg-gray-1300 border-gray-1300 border-solid border-[0.8px] flex items-center justify-center p-[9.6px] gap-2 hover:outline-none hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_0_0_4px_rgba(255,255,255,0.1)] transition-all duration-200 cursor-pointer"

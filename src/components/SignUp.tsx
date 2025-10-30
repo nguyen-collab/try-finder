@@ -93,11 +93,11 @@ export default function SignUp() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-500 text-left text-sm sm:text-base lg:text-num-16 text-white font-inter-variable">
+    <div className="min-h-screen bg-gray-500 text-left text-sm sm:text-base lg:text-base text-white font-inter-variable">
       {/* Main content container */}
-      <div className="relative z-10 flex flex-col lg:flex-row">
+      <div className="relative z-10 flex flex-col lg:flex-row gap-8">
         {/* Left side - Hero content */}
-        <main className="flex-1 flex flex-col justify-center px-4 sm:px-6 lg:px-16 py-8 sm:py-12 lg:py-20">
+        <main className="hidden lg:flex flex-1 flex-col justify-center py-8 sm:py-12 lg:py-20">
           {/* Logo */}
           <header className="flex items-center gap-2.5 mb-4 sm:mb-6 lg:mb-8">
             <Image
@@ -112,10 +112,10 @@ export default function SignUp() {
 
           {/* Hero content */}
           <section className="max-w-full lg:max-w-[520px] mb-8 sm:mb-16 lg:mb-20">
-            <h1 className="text-xl sm:text-2xl lg:text-[28px] tracking-num--0_01 leading-tight lg:leading-8 font-semibold mb-3 sm:mb-4">
+            <h1 className="text-xl sm:text-2xl lg:text-3xl tracking-num--0_01 leading-tight lg:leading-8 font-semibold mb-3 sm:mb-4">
               Ready to 10x Your Pipeline?
             </h1>
-            <div className="text-sm sm:text-base lg:text-[18px] tracking-num--0_01 leading-relaxed lg:leading-7 opacity-num-0_6 mb-4 sm:mb-6">
+            <div className="text-sm sm:text-base lg:text-lg tracking-num--0_01 leading-relaxed lg:leading-7 opacity-num-0_6 mb-4 sm:mb-6">
               <p className="mb-2">
                 Join 10,000+ sales teams closing more deals with TryFinder. Stop
                 wasting time on tools that don&apos;t work.
@@ -124,21 +124,21 @@ export default function SignUp() {
             </div>
 
             {/* Features - Stack on mobile, inline on larger screens */}
-            <div className="flex flex-col sm:flex-row flex-wrap sm:items-center gap-2 sm:gap-[15px] text-xs sm:text-sm lg:text-num-16 font-inter">
+            <div className="flex flex-col xl:flex-row xl:items-center gap-2 sm:gap-[15px] text-xs sm:text-sm lg:text-base font-inter">
               <div className="flex items-center gap-2">
                 <ConfigurationIcon />
                 <span className="tracking-num--0_01 leading-tight lg:leading-num-24 font-medium opacity-[0.9] whitespace-nowrap">
                   Instant Setup
                 </span>
               </div>
-              <div className="hidden sm:block h-0.5 w-0.5 rounded-num-50 bg-white opacity-num-0_5" />
+              <div className="hidden xl:block h-0.5 w-0.5 rounded-num-50 bg-white opacity-num-0_5" />
               <div className="flex items-center gap-2">
                 <SearchFocusIcon />
                 <span className="tracking-num--0_01 leading-tight lg:leading-num-24 font-medium opacity-[0.9] whitespace-nowrap">
                   2 Free Searches
                 </span>
               </div>
-              <div className="hidden sm:block h-0.5 w-0.5 rounded-num-50 bg-white opacity-num-0_5" />
+              <div className="hidden xl:block h-0.5 w-0.5 rounded-num-50 bg-white opacity-num-0_5" />
               <div className="flex items-center gap-2">
                 <CancelCircle2Icon />
                 <span className="tracking-num--0_01 leading-tight lg:leading-num-24 font-medium opacity-[0.9] whitespace-nowrap">
@@ -160,20 +160,20 @@ export default function SignUp() {
           </section>
 
           {/* Testimonial section - Hidden on mobile, shown on tablet+ */}
-          <section className="hidden sm:block max-w-full lg:max-w-[480px]">
-            <div className="text-sm lg:text-[18px] tracking-num--0_01 leading-relaxed lg:leading-7 opacity-num-0_6 mb-3 sm:mb-4">
+          <section className="block max-w-full lg:max-w-[480px]">
+            <div className="text-sm lg:text-lg tracking-num--0_01 leading-relaxed lg:leading-7 opacity-num-0_6 mb-3 sm:mb-4">
               What the customers say about tryfinder AI
             </div>
 
             {/* Testimonial card */}
             <div className="rounded-[15px] bg-gray-500 border-gray-1300 border-solid border-[1px] p-4 sm:p-5">
               <div className="mb-3 sm:mb-4">
-                <p className="text-sm sm:text-base lg:text-num-16 tracking-num--0_01 leading-relaxed lg:leading-num-24 opacity-num-0_6 mb-3 sm:mb-4">
+                <p className="text-sm sm:text-base lg:text-base tracking-num--0_01 leading-relaxed lg:leading-num-24 opacity-num-0_6 mb-3 sm:mb-4">
                   &ldquo;tryfinder tears the competition apart. I&apos;ve tried
                   almost every other search service, their speeds, success rates
                   beats all the other providers. Incredible&rdquo;
                 </p>
-                <div className="flex items-center gap-2 font-inter">
+                <div className="flex items-center gap-2 font-inter-variable">
                   <div className="flex items-center gap-2">
                     <Image
                       src="/solution/user-avatar.png"
@@ -205,15 +205,15 @@ export default function SignUp() {
         </main>
 
         {/* Right side - Registration form */}
-        <aside className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-16 py-8 sm:py-12 lg:py-20">
-          <div className="w-full max-w-sm sm:max-w-md lg:max-w-[553px] bg-gray-50 rounded-[20px]">
+        <aside className="flex-1 flex items-center justify-center px-4 lg:px-0 py-8 sm:py-12 lg:py-20">
+          <div className="w-full max-w-2xl bg-gray-50 rounded-[20px]">
             {/* Registration form */}
             <div className="rounded-[20px] bg-gray-200 border-gray-1300 border-solid border-[1px] p-4 sm:p-6 lg:p-[30px] mb-4 sm:mb-6">
               <div className="text-center mb-6 sm:mb-8">
-                <h2 className="text-xl sm:text-2xl lg:text-[28px] tracking-num--0_01 leading-tight lg:leading-8 font-medium mb-2">
+                <h2 className="text-3xl tracking-num--0_01 leading-tight lg:leading-8 font-medium mb-2">
                   Create Account
                 </h2>
-                <p className="text-sm sm:text-base lg:text-[18px] tracking-num--0_01 leading-relaxed lg:leading-[26px] opacity-num-0_6">
+                <p className="text-base lg:text-lg tracking-num--0_01 leading-relaxed lg:leading-[26px] opacity-num-0_6">
                   Join the fastest search platform
                 </p>
               </div>
@@ -221,10 +221,10 @@ export default function SignUp() {
               <form className="space-y-4 sm:space-y-6" onSubmit={handleSignUp}>
                 {/* Email field */}
                 <div className="space-y-2 sm:space-y-2.5">
-                  <label className="block text-sm sm:text-[15px] tracking-num--0_01 leading-tight lg:leading-[15px] font-medium opacity-num-0_75">
+                  <label className="block text-base tracking-num--0_01 leading-tight lg:leading-[15px] font-medium opacity-num-0_75">
                     Email Address
                   </label>
-                  <div className="group rounded-xl bg-gray-500 border-gray-1300 border-solid border-[1px] flex items-center py-3 sm:py-3.5 px-3 sm:px-num-12 gap-2 text-sm sm:text-num-16 focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
+                  <div className="group rounded-xl bg-gray-500 border-gray-1300 border-solid border-[1px] flex items-center py-3 sm:py-3.5 px-3 sm:px-num-12 gap-2 text-sm sm:text-base focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
                     <EmailIcon2
                       className="group-focus-within:[&_path]:fill-gray-1100 group-focus-within:[&_g]:opacity-100 transition-all duration-200"
                       color="white"
@@ -244,17 +244,11 @@ export default function SignUp() {
                 {/* Password field */}
                 <div className="space-y-2 sm:space-y-2.5">
                   <div className="flex items-start justify-between gap-3 sm:gap-5">
-                    <label className="text-sm sm:text-[15px] tracking-num--0_01 leading-tight lg:leading-[15px] font-medium opacity-num-0_75">
+                    <label className="text-base tracking-num--0_01 leading-tight lg:leading-[15px] font-medium opacity-num-0_75">
                       Password
                     </label>
-                    <Link
-                      href="/forgot-password"
-                      className="text-xs sm:text-[14px] tracking-num--0_01 leading-tight lg:leading-[14px] font-medium opacity-num-0_5 hover:opacity-100 transition-opacity cursor-pointer"
-                    >
-                      Forgot password?
-                    </Link>
                   </div>
-                  <div className="group rounded-xl bg-gray-500 border-gray-1300 border-solid border-[1px] flex items-center justify-between py-3 sm:py-3.5 px-3 sm:px-num-12 gap-3 sm:gap-5 text-sm sm:text-num-16 focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
+                  <div className="group rounded-xl bg-gray-500 border-gray-1300 border-solid border-[1px] flex items-center justify-between py-3 sm:py-3.5 px-3 sm:px-num-12 gap-3 sm:gap-5 text-sm sm:text-base focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
                     <div className="flex items-center gap-2 flex-1">
                       <KeyIcon className="group-focus-within:[&_path]:fill-gray-1100 group-focus-within:[&_g]:opacity-100 transition-all duration-200" />
                       <input
@@ -268,7 +262,7 @@ export default function SignUp() {
                     </div>
                     <button
                       type="button"
-                      className="opacity-num-0_25 hover:opacity-50 transition-opacity"
+                      className="opacity-num-0_25 hover:opacity-50 transition-opacity cursor-pointer"
                       onClick={() => setShowPassword(!showPassword)}
                     >
                       <EyeOpenIcon
@@ -285,17 +279,11 @@ export default function SignUp() {
                 {/* Confirm Password field */}
                 <div className="space-y-2 sm:space-y-2.5">
                   <div className="flex items-start justify-between gap-3 sm:gap-5">
-                    <label className="text-sm sm:text-[15px] tracking-num--0_01 leading-tight lg:leading-[15px] font-medium opacity-num-0_75">
+                    <label className="text-base tracking-num--0_01 leading-tight lg:leading-[15px] font-medium opacity-num-0_75">
                       Confirm Password
                     </label>
-                    <Link
-                      href="/forgot-password"
-                      className="text-xs sm:text-[14px] tracking-num--0_01 leading-tight lg:leading-[14px] font-medium opacity-num-0_5 hover:opacity-100 transition-opacity cursor-pointer"
-                    >
-                      Forgot password?
-                    </Link>
                   </div>
-                  <div className="group rounded-xl bg-gray-500 border-gray-1300 border-solid border-[1px] flex items-center justify-between py-3 sm:py-3.5 px-3 sm:px-num-12 gap-3 sm:gap-5 text-sm sm:text-num-16 focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
+                  <div className="group rounded-xl bg-gray-500 border-gray-1300 border-solid border-[1px] flex items-center justify-between py-3 sm:py-3.5 px-3 sm:px-num-12 gap-3 sm:gap-5 text-sm sm:text-base focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
                     <div className="flex items-center gap-2 flex-1">
                       <LockIcon className="group-focus-within:[&_path]:fill-gray-1100 group-focus-within:[&_g]:opacity-100 transition-all duration-200" />
                       <input
@@ -309,7 +297,7 @@ export default function SignUp() {
                     </div>
                     <button
                       type="button"
-                      className="opacity-num-0_25 hover:opacity-50 transition-opacity"
+                      className="opacity-num-0_25 hover:opacity-50 transition-opacity cursor-pointer"
                       onClick={() =>
                         setShowConfirmPassword(!showConfirmPassword)
                       }
@@ -326,7 +314,7 @@ export default function SignUp() {
                 </div>
 
                 {/* Terms and conditions */}
-                <div className="flex items-start gap-3 text-sm sm:text-num-16 text-gray-10">
+                <div className="flex items-start gap-3 text-sm sm:text-base text-gray-10">
                   <input
                     type="checkbox"
                     id="remember"
@@ -366,14 +354,14 @@ export default function SignUp() {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full shadow-[0px_0px_0px_4px_rgba(255,_255,_255,_0.25)] rounded-xl [background:linear-gradient(180deg,_rgba(0,_0,_0,_0),_rgba(0,_0,_0,_0.2)),_#fafafa] flex items-center justify-center p-num-12 text-num-16 text-gray-300 hover:[background:linear-gradient(180deg,_rgba(0,_0,_0,_0.3),_rgba(0,_0,_0,_0.1)),_#fafafa] transition-[background] duration-300 ease-in-out cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full shadow-[0px_0px_0px_4px_rgba(255,_255,_255,_0.25)] rounded-xl [background:linear-gradient(180deg,_rgba(0,_0,_0,_0),_rgba(0,_0,_0,_0.2)),_#fafafa] flex items-center justify-center p-3 text-base text-gray-300 hover:[background:linear-gradient(180deg,_rgba(0,_0,_0,_0.3),_rgba(0,_0,_0,_0.1)),_#fafafa] transition-[background] duration-300 ease-in-out cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed font-semibold"
                 >
                   {isLoading ? 'Creating Account...' : 'Create Account'}
                 </button>
               </form>
 
               {/* Divider */}
-              <div className="flex items-center py-1.5 px-0 gap-1.5 opacity-[0.15] text-xs sm:text-[12px] my-4 sm:my-6">
+              <div className="flex items-center py-1.5 px-0 gap-1.5 opacity-[0.15] text-xs sm:text-xs my-4 sm:my-6">
                 <div className="flex-1 h-px bg-white" />
                 <span className="tracking-num--0_01 leading-tight lg:leading-4 font-semibold px-2">
                   OR
@@ -384,20 +372,20 @@ export default function SignUp() {
               {/* Social login */}
               <div className="space-y-3 sm:space-y-4">
                 <div className="text-center">
-                  <p className="text-sm sm:text-num-16 tracking-num--0_01 leading-relaxed lg:leading-[26px] opacity-num-0_6">
+                  <p className="text-sm sm:text-base tracking-num--0_01 leading-relaxed lg:leading-[26px] opacity-num-0_6">
                     Sign up with
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-2 sm:gap-2.5">
-                  <button className="flex-1 rounded-[10px] bg-gray-1300 border-gray-1300 border-solid border-[1px] flex items-center justify-center p-3 sm:p-num-12 gap-2 sm:gap-2.5 min-h-[44px] cursor-pointer hover:outline-none hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_0_0_4px_rgba(255,255,255,0.1)] transition-all duration-200">
+                  <button className="flex-1 rounded-[10px] bg-gray-1300 border-gray-1300 border-solid border-[1px] flex items-center justify-center p-3 sm:p-3 gap-2 sm:gap-2.5 cursor-pointer hover:outline-none hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_0_0_4px_rgba(255,255,255,0.1)] transition-all duration-200">
                     <GoogleIcon />
-                    <span className="text-sm sm:text-num-16 tracking-num--0_01 leading-tight lg:leading-num-24 font-medium">
+                    <span className="text-sm sm:text-base tracking-num--0_01 leading-tight lg:leading-num-24 font-medium">
                       Google
                     </span>
                   </button>
-                  <button className="flex-1 rounded-[10px] bg-gray-1300 border-gray-1300 border-solid border-[1px] flex items-center justify-center p-3 sm:p-num-12 gap-2 sm:gap-2.5 min-h-[44px] cursor-pointer hover:outline-none hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_0_0_4px_rgba(255,255,255,0.1)] transition-all duration-200">
+                  <button className="flex-1 rounded-[10px] bg-gray-1300 border-gray-1300 border-solid border-[1px] flex items-center justify-center p-3 sm:p-3 gap-2 sm:gap-2.5 cursor-pointer hover:outline-none hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_0_0_4px_rgba(255,255,255,0.1)] transition-all duration-200">
                     <FacebookIcon />
-                    <span className="text-sm sm:text-num-16 tracking-num--0_01 leading-tight lg:leading-num-24 font-medium">
+                    <span className="text-sm sm:text-base tracking-num--0_01 leading-tight lg:leading-num-24 font-medium">
                       Facebook
                     </span>
                   </button>
@@ -407,7 +395,7 @@ export default function SignUp() {
 
             {/* Sign in link */}
             <div className="rounded-[20px] pb-4 sm:pb-6 text-center">
-              <p className="text-sm sm:text-num-16 tracking-num--0_01 leading-tight lg:leading-num-20">
+              <p className="text-base tracking-num--0_01 leading-tight lg:leading-num-20">
                 <span className="font-medium text-gray-10">
                   Already have an account?{' '}
                 </span>
@@ -424,8 +412,8 @@ export default function SignUp() {
       </div>
 
       {/* Footer */}
-      <footer className="relative z-10 text-center py-4 sm:py-5">
-        <p className="text-xs sm:text-[14px] tracking-num--0_01 leading-tight lg:leading-num-20 font-medium font-inter opacity-[0.8]">
+      <footer className="absolute bottom-0 left-0 right-0 z-10 text-center p-8">
+        <p className="text-xs sm:text-sm tracking-num--0_01 leading-tight lg:leading-num-20 font-medium font-inter opacity-[0.8]">
           ©2025 Tryfinder LLC. All rights reserved.
         </p>
       </footer>

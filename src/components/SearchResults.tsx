@@ -99,7 +99,7 @@ const searchResults: SearchResultItem[] = [
 function DetailItem() {
   return (
     // Details container
-    <section className="w-full text-left text-[12.21px] text-white font-inter-variable flex flex-col gap-4">
+    <section className="w-full text-left text-xs text-white font-inter-variable flex flex-col gap-4">
       {/* Top: Two columns */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Left column: Experience/Education/Skills */}
@@ -107,7 +107,7 @@ function DetailItem() {
           <h3 className="tracking-num--0_01 leading-num-17_44 opacity-num-0_5">
             Work Experience, Education, Skills
           </h3>
-          <div className="flex flex-col items-start gap-3 text-num-13_95">
+          <div className="flex flex-col items-start gap-3 text-sm">
             <div className="flex items-start gap-2">
               <Building02Icon />
               <div className="flex flex-col items-start justify-center gap-[3px]">
@@ -144,11 +144,11 @@ function DetailItem() {
         </section>
 
         {/* Right column: Other Contact Information */}
-        <section className="flex flex-col items-start gap-[15px] ml-52">
+        <section className="flex flex-col items-start gap-[15px] ml-48">
           <h3 className="tracking-num--0_01 leading-num-17_44 opacity-num-0_5">
             Other Contact Information
           </h3>
-          <div className="flex flex-col items-start gap-[8.7px] text-num-13_95">
+          <div className="flex flex-col items-start gap-[8.7px] text-sm">
             <div className="flex items-center gap-[3.5px]">
               <BuildingIcon />
               <div className="tracking-num--0_01 leading-num-17_44">
@@ -178,7 +178,7 @@ function DetailItem() {
       </section>
 
       {/* Bottom: Companies row */}
-      <section className="grid grid-cols-1 sm:grid-cols-3 gap-[15px] text-[15px] font-inter">
+      <section className="grid grid-cols-1 sm:grid-cols-3 gap-[15px] text-md font-inter">
         <div className="h-[76px] rounded-[10.46px] bg-gray-200 border-gray-100 border-solid border-[1px] box-border flex flex-col items-start py-3.5 px-[21px]">
           <div className="flex items-center gap-[15px]">
             <Image
@@ -193,7 +193,7 @@ function DetailItem() {
               <div className="tracking-num--0_01 leading-[22.67px] font-medium">
                 Dallas Mavericks
               </div>
-              <div className="text-[13px] tracking-num--0_01 leading-num-17_44 font-inter-variable opacity-num-0_5">
+              <div className="text-sm tracking-num--0_01 leading-num-17_44 font-inter-variable opacity-num-0_5">
                 President
               </div>
             </div>
@@ -213,7 +213,7 @@ function DetailItem() {
               <div className="tracking-num--0_01 leading-[22.67px] font-medium">
                 Axs.tv
               </div>
-              <div className="text-[13px] tracking-num--0_01 leading-num-17_44 font-inter-variable opacity-num-0_5">
+              <div className="text-sm tracking-num--0_01 leading-num-17_44 font-inter-variable opacity-num-0_5">
                 Investor
               </div>
             </div>
@@ -233,7 +233,7 @@ function DetailItem() {
               <div className="tracking-num--0_01 leading-[22.67px] font-medium">
                 CostPlus Drug Company
               </div>
-              <div className="text-[13px] tracking-num--0_01 leading-num-17_44 font-inter-variable opacity-num-0_5">
+              <div className="text-sm tracking-num--0_01 leading-num-17_44 font-inter-variable opacity-num-0_5">
                 Equity Owner
               </div>
             </div>
@@ -280,7 +280,7 @@ function SearchResultItem({
           />
 
           {/* Profile info */}
-          <div className="flex items-center gap-2 text-[17.44px] font-inter">
+          <div className="flex items-center gap-2 text-lg font-inter">
             <Image
               className="w-12 h-12 rounded-lg object-cover"
               src={item.avatar || PLACEHOLDER_IMAGE}
@@ -291,10 +291,10 @@ function SearchResultItem({
             />
             <div className="flex flex-col items-start justify-center gap-[3px]">
               <div className="flex items-center gap-2">
-                <span className="tracking-num--0_01 leading-num-22_67 font-medium whitespace-nowrap truncate">
+                <span className="tracking-num--0_01 leading-num-22_67 font-medium whitespace-nowrap truncate text-lg">
                   {item.name}
                 </span>
-                <span className="text-[15.7px] tracking-num--0_01 leading-num-17_44 font-inter-variable opacity-50 whitespace-nowrap truncate">
+                <span className="text-base tracking-num--0_01 leading-num-17_44 font-inter-variable opacity-50 whitespace-nowrap truncate">
                   {item.position}
                 </span>
               </div>
@@ -316,7 +316,7 @@ function SearchResultItem({
           <span className="block tracking-num--0_01 leading-num-17_44 opacity-50 whitespace-nowrap truncate">
             {item.companyName}
           </span>
-          <span className="block text-[15.7px] font-inter tracking-num--0_01 leading-num-22_67 font-medium whitespace-nowrap truncate">
+          <span className="block text-base font-inter tracking-num--0_01 leading-num-22_67 font-medium whitespace-nowrap truncate">
             {item.companyDisplayName}
           </span>
         </div>
@@ -326,13 +326,13 @@ function SearchResultItem({
           <span className="block tracking-num--0_01 leading-num-17_44 opacity-50 whitespace-nowrap truncate">
             {item.location}
           </span>
-          <span className="block text-[15.7px] font-inter tracking-num--0_01 leading-num-22_67 font-medium whitespace-nowrap truncate">
+          <span className="block text-base font-inter tracking-num--0_01 leading-num-22_67 font-medium whitespace-nowrap truncate">
             {item.email}
           </span>
         </div>
 
         {/* Contact information (Grid column 4) */}
-        <div className="flex flex-col gap-2 text-num-13_95 w-56">
+        <div className="flex flex-col gap-2 text-sm w-56">
           <div className="flex items-center gap-1">
             <BuildingIcon />
             <span className="tracking-num--0_01 leading-num-17_44 whitespace-nowrap truncate">
@@ -360,7 +360,7 @@ function SearchResultItem({
         </div>
 
         {/* Action buttons (Grid column 5) */}
-        <div className="flex flex-col items-center justify-center gap-[10.5px] text-num-13_95 text-gray-100 w-[140.5px]">
+        <div className="flex flex-col items-center justify-center gap-[10.5px] text-sm text-gray-100 w-[140.5px]">
           <button
             type="button"
             onClick={onToggleExpand}
@@ -413,7 +413,7 @@ export default function SearchResults() {
 
   return (
     <>
-      <main className="w-full overflow-x-hidden text-num-12_21 text-white font-inter-variable">
+      <main className="w-full overflow-x-hidden text-xs text-white font-inter-variable">
         {/* Background decorative elements - converted from absolute positioning */}
         <div className="hidden">
           {/* These were decorative backgrounds with transforms, hidden for now as they need special handling */}
@@ -423,7 +423,7 @@ export default function SearchResults() {
         {/* Header with results count */}
         <div className="px-4 overflow-x-auto scrollbar-none">
           <header className="flex items-center justify-between py-4 min-w-[1200px]">
-            <div className="flex items-center gap-2 text-[13.08px]">
+            <div className="flex items-center gap-2 text-sm">
               <input
                 type="checkbox"
                 checked={allChecked}
@@ -469,7 +469,7 @@ export default function SearchResults() {
 
       <div className="px-4 overflow-x-auto scrollbar-none w-full">
         <footer className="flex justify-center py-4 w-full">
-          <div className="text-[13.08px] tracking-num--0_01 leading-tight font-medium opacity-75 w-full">
+          <div className="text-sm tracking-num--0_01 leading-tight font-medium opacity-75 w-full">
             End of Results
           </div>
         </footer>

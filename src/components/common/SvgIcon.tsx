@@ -1771,8 +1771,8 @@ export const SearchCircleIcon = (): JSX.Element => {
 export const DeleteRedIcon = (): JSX.Element => {
   return (
     <svg
-      width="20"
-      height="20"
+      width="15"
+      height="15"
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

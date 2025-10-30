@@ -8,14 +8,14 @@ import {
 export default function SaveSearches() {
   return (
     // Card container for Saved Searches
-    <section className="w-full rounded-[13.08px] bg-gray-200 border-gray-1300 border-solid border-[0.7px] box-border flex flex-col items-start p-5 gap-[15px] text-left text-[16px] text-white font-inter">
+    <section className="w-full rounded-[13.08px] bg-gray-200 border-gray-1300 border-solid border-[0.7px] box-border flex flex-col items-start p-5 gap-[15px] text-left text-base text-white font-inter">
       {/* Header: title and subtitle */}
       <header className="self-stretch flex items-center">
         <div className="flex flex-col items-start justify-center gap-0.5">
           <h2 className="tracking-num--0_01 leading-[22px] font-medium">
             Saved Searches
           </h2>
-          <p className="text-num-14 tracking-num--0_01 leading-num-20 font-inter-variable opacity-num-0_5">
+          <p className="text-sm tracking-num--0_01 leading-num-20 font-inter-variable opacity-num-0_5">
             List of all your saved searches
           </p>
         </div>
@@ -32,17 +32,17 @@ export default function SaveSearches() {
       />
 
       {/* List of saved search cards (Grid) */}
-      <section className="self-stretch grid grid-cols-1 md:grid-cols-2 gap-[15px] text-[17.44px] font-inter-variable">
+      <section className="self-stretch grid grid-cols-1 md:grid-cols-2 gap-[15px] text-lg font-inter-variable">
         {/* Card 1 */}
         <article className="rounded-[10.46px] bg-gray-1300 border-gray-1200 border-solid border-[1px] overflow-hidden flex items-center justify-between p-[18px] gap-5">
           <div className="flex flex-col items-start gap-2">
             <div className="flex items-center gap-2.5 font-inter">
               <SearchCircleIcon />
-              <div className="tracking-num--0_01 leading-[22.67px] font-medium">
+              <div className="tracking-num--0_01 leading-[22.67px] font-medium text-lg">
                 Mark Cuban
               </div>
             </div>
-            <div className="flex items-center gap-2 text-num-14">
+            <div className="flex items-center gap-2 text-sm">
               <div className="tracking-num--0_01 leading-num-20 opacity-num-0_5">
                 5 Contacts
               </div>
@@ -58,15 +58,19 @@ export default function SaveSearches() {
                 0 Filters Applied
               </div>
             </div>
-            <div className="flex items-center text-[12.21px]">
+            <div className="flex items-center text-xs">
               <div className="tracking-num--0_01 leading-[17.44px] opacity-num-0_5">
                 Saved Oct 29, 2025
               </div>
             </div>
           </div>
           <div className="flex items-center gap-[8.3px]">
-            <PencilEditIcon />
-            <DeleteRedIcon />
+            <button className="cursor-pointer bg-gray-500 opacity-75 p-2 rounded-xl hover:opacity-100 transition-all duration-300">
+              <PencilEditIcon />
+            </button>
+            <button className="cursor-pointer bg-gray-500 opacity-75 p-2 rounded-xl hover:opacity-100 transition-all duration-300">
+              <DeleteRedIcon />
+            </button>
           </div>
         </article>
 
@@ -75,11 +79,11 @@ export default function SaveSearches() {
           <div className="flex flex-col items-start gap-2">
             <div className="flex items-center gap-2.5 font-inter">
               <SearchCircleIcon />
-              <div className="tracking-num--0_01 leading-[22.67px] font-medium">
+              <div className="tracking-num--0_01 leading-[22.67px] font-medium text-lg">
                 Tim Cook
               </div>
             </div>
-            <div className="flex items-center gap-2 text-num-14">
+            <div className="flex items-center gap-2 text-sm">
               <div className="tracking-num--0_01 leading-num-20 opacity-num-0_5">
                 5 Contacts
               </div>
@@ -95,15 +99,19 @@ export default function SaveSearches() {
                 0 Filters Applied
               </div>
             </div>
-            <div className="flex items-center text-[12.21px]">
+            <div className="flex items-center text-xs">
               <div className="tracking-num--0_01 leading-[17.44px] opacity-num-0_5">
                 Saved Oct 29, 2025
               </div>
             </div>
           </div>
           <div className="flex items-center gap-[8.3px]">
-            <PencilEditIcon />
-            <DeleteRedIcon />
+            <button className="cursor-pointer bg-gray-500 opacity-75 p-2 rounded-xl hover:opacity-100 transition-all duration-300">
+              <PencilEditIcon />
+            </button>
+            <button className="cursor-pointer bg-gray-500 opacity-75 p-2 rounded-xl hover:opacity-100 transition-all duration-300">
+              <DeleteRedIcon />
+            </button>
           </div>
         </article>
 
@@ -112,11 +120,11 @@ export default function SaveSearches() {
           <div className="flex flex-col items-start gap-2">
             <div className="flex items-center gap-2.5 font-inter">
               <SearchCircleIcon />
-              <div className="tracking-num--0_01 leading-[22.67px] font-medium">
+              <div className="tracking-num--0_01 leading-[22.67px] font-medium text-lg">
                 Kevin O’Leary
               </div>
             </div>
-            <div className="flex items-center gap-2 text-num-14">
+            <div className="flex items-center gap-2 text-sm">
               <div className="tracking-num--0_01 leading-num-20 opacity-num-0_5">
                 5 Contacts
               </div>
@@ -132,15 +140,19 @@ export default function SaveSearches() {
                 0 Filters Applied
               </div>
             </div>
-            <div className="flex items-center text-[12.21px]">
+            <div className="flex items-center text-xs">
               <div className="tracking-num--0_01 leading-[17.44px] opacity-num-0_5">
                 Saved Oct 29, 2025
               </div>
             </div>
           </div>
           <div className="flex items-center gap-[8.3px]">
-            <PencilEditIcon />
-            <DeleteRedIcon />
+            <button className="cursor-pointer bg-gray-500 opacity-75 p-2 rounded-xl hover:opacity-100 transition-all duration-300">
+              <PencilEditIcon />
+            </button>
+            <button className="cursor-pointer bg-gray-500 opacity-75 p-2 rounded-xl hover:opacity-100 transition-all duration-300">
+              <DeleteRedIcon />
+            </button>
           </div>
         </article>
       </section>

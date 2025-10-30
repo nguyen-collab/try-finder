@@ -65,7 +65,7 @@ export default function Verification() {
 
       {/* Footer */}
       <footer className="absolute bottom-5">
-        <div className="text-[14px] tracking-num--0_01 leading-num-20 font-medium font-inter opacity-[0.8]">
+        <div className="text-sm tracking-num--0_01 leading-num-20 font-medium font-inter opacity-[0.8]">
           ©2025 Tryfinder LLC. All rights reserved.
         </div>
       </footer>

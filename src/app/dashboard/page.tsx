@@ -4,9 +4,9 @@ import Dashboard from '@/components/Dashboard';
 export default function SettingsPage() {
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-gray-500">
-      <div className="container mx-auto py-4 px-4">
+      <div className="mx-auto py-4 px-4 lg:px-12 xl:px-16 2xl:px-20">
         <DashboardHeader />
-        <div className="mx-auto mt-4 sm:mt-6 lg:mt-8">
+        <div className="mx-auto mt-10 sm:mt-12 lg:mt-16">
           <Dashboard />
         </div>
       </div>
