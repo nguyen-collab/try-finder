@@ -226,7 +226,7 @@ export default function SignUp() {
             <div className="relative">
               <div className="rounded-[15px] bg-gray-500 border-gray-1300 border-solid border-[1px] p-4 sm:p-5">
                 <div className="">
-                  <p className="text-sm sm:text-base lg:text-base tracking-num--0_01 leading-relaxed lg:leading-num-24 opacity-num-0_6 mb-3 sm:mb-4">
+                  <p className="text-xs sm:text-sm lg:text-base tracking-num--0_01 leading-relaxed lg:leading-num-24 opacity-num-0_6 mb-3 sm:mb-4">
                     &ldquo;{reviews[currentReviewIndex].quote}&rdquo;
                   </p>
                   <div className="flex items-center gap-2 font-inter-variable">
