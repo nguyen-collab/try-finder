@@ -60,11 +60,11 @@ export default function SaveSearches() {
               </div>
             </div>
           </div>
-          <div className="flex items-center gap-[8.3px]">
-            <button className="cursor-pointer bg-gray-500 p-2 rounded-xl transition-all duration-300">
+          <div className="flex items-center gap-5">
+            <button className="cursor-pointer bg-gray-500 p-2 rounded-xl transition-all duration-300 scale-125">
               <PencilEditIcon />
             </button>
-            <button className="cursor-pointer bg-gray-500 p-2 rounded-xl transition-all duration-300">
+            <button className="cursor-pointer bg-gray-500 p-2 rounded-xl transition-all duration-300 scale-125">
               <DeleteRedIcon />
             </button>
           </div>
@@ -101,11 +101,11 @@ export default function SaveSearches() {
               </div>
             </div>
           </div>
-          <div className="flex items-center gap-[8.3px]">
-            <button className="cursor-pointer bg-gray-500 p-2 rounded-xl transition-all duration-300">
+          <div className="flex items-center gap-5">
+            <button className="cursor-pointer bg-gray-500 p-2 rounded-xl transition-all duration-300 scale-125">
               <PencilEditIcon />
             </button>
-            <button className="cursor-pointer bg-gray-500 p-2 rounded-xl transition-all duration-300">
+            <button className="cursor-pointer bg-gray-500 p-2 rounded-xl transition-all duration-300 scale-125">
               <DeleteRedIcon />
             </button>
           </div>
@@ -142,11 +142,11 @@ export default function SaveSearches() {
               </div>
             </div>
           </div>
-          <div className="flex items-center gap-[8.3px]">
-            <button className="cursor-pointer bg-gray-500 p-2 rounded-xl transition-all duration-300">
+          <div className="flex items-center gap-5">
+            <button className="cursor-pointer bg-gray-500 p-2 rounded-xl transition-all duration-300 scale-125">
               <PencilEditIcon />
             </button>
-            <button className="cursor-pointer bg-gray-500 p-2 rounded-xl transition-all duration-300">
+            <button className="cursor-pointer bg-gray-500 p-2 rounded-xl transition-all duration-300 scale-125">
               <DeleteRedIcon />
             </button>
           </div>
