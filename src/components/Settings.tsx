@@ -68,7 +68,7 @@ export default function Settings() {
   };
 
   return (
-    <main className="w-full flex flex-col items-start gap-3.5 text-white font-inter-variable text-base pb-20">
+    <main className="w-full bg-gray-500 flex flex-col items-start gap-3.5 text-white font-inter-variable text-base pb-20">
       {/* Email Settings Section */}
       <section className="w-full rounded-[13.08px] bg-gray-200 border-gray-400 border-solid border-[0.7px] flex flex-col items-start p-[15px] gap-[15px] font-inter">
         <header className="w-full flex flex-col items-start justify-center gap-0.5">

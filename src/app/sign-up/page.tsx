@@ -14,7 +14,7 @@ export default function SignUpPage() {
         />
       </div>
 
-      <div className="container mx-auto">
+      <div className="container mx-auto bg-gray-500">
         <SignUp />
       </div>
     </div>

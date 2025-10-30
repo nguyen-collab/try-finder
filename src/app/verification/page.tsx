@@ -15,7 +15,7 @@ export default function VerificationPage() {
         />
       </div>
 
-      <div className="container mx-auto max-w-2xl">
+      <div className="container mx-auto max-w-2xl bg-gray-500">
         <Verification />
       </div>
     </div>
