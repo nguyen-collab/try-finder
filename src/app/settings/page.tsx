@@ -6,7 +6,7 @@ export default function SettingsPage() {
     <div className="min-h-screen w-full overflow-x-hidden bg-gray-500">
       <div className="container mx-auto py-4 px-4 bg-gray-500">
         <DashboardHeader />
-        <div className="max-w-xl mx-auto mt-4 sm:mt-6 lg:mt-8 bg-gray-500">
+        <div className="max-w-xl mx-auto mt-10 sm:mt-12 lg:mt-16 bg-gray-500">
           <Settings />
         </div>
       </div>
