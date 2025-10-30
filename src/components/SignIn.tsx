@@ -34,23 +34,17 @@ export default function SignIn() {
       const { error } = await signIn(email, password);
 
       if (error) {
-        toast.error('Error', {
-          description: error.message,
-        });
+        toast.error(error.message);
         setErrorMessage(error.message);
         return;
       }
 
       // Redirect to dashboard on successful login
       router.push('/dashboard');
-      toast.success('Success', {
-        description: 'Sign in successful',
-      });
+      toast.success('Sign in successful');
     } catch (error) {
       console.error('Sign in error:', error);
-      toast.error('Error', {
-        description: 'An unexpected error occurred. Please try again.',
-      });
+      toast.error('An unexpected error occurred. Please try again.');
       setErrorMessage('An unexpected error occurred. Please try again.');
     } finally {
       setIsLoading(false);

@@ -66,9 +66,7 @@ export default function SignUp() {
   const validateInputs = () => {
     if (!email || !password || !confirmPassword) {
       setErrorMessage('All fields are required');
-      toast.error('Error', {
-        description: 'All fields are required',
-      });
+      toast.error('All fields are required');
       return false;
     }
 
@@ -76,36 +74,28 @@ export default function SignUp() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       setErrorMessage('Please enter a valid email address');
-      toast.error('Error', {
-        description: 'Please enter a valid email address',
-      });
+      toast.error('Please enter a valid email address');
       return false;
     }
 
     // Password validation (at least 6 characters)
     if (password.length < 6) {
       setErrorMessage('Password must be at least 6 characters');
-      toast.error('Error', {
-        description: 'Password must be at least 6 characters',
-      });
+      toast.error('Password must be at least 6 characters');
       return false;
     }
 
     // Password match validation
     if (password !== confirmPassword) {
       setErrorMessage('Passwords do not match');
-      toast.error('Error', {
-        description: 'Passwords do not match',
-      });
+      toast.error('Passwords do not match');
       return false;
     }
 
     // Terms agreement validation
     if (!agreeToTerms) {
       setErrorMessage('You must agree to the Terms and Conditions');
-      toast.error('Error', {
-        description: 'You must agree to the Terms and Conditions',
-      });
+      toast.error('You must agree to the Terms and Conditions');
       return false;
     }
 
@@ -126,23 +116,17 @@ export default function SignUp() {
       const { error } = await signUp(email, password);
 
       if (error) {
-        toast.error('Error', {
-          description: error.message,
-        });
+        toast.error(error.message);
         setErrorMessage(error.message);
         return;
       }
 
       // Show success message and redirect
       router.push('/verification');
-      toast.success('Success', {
-        description: 'Sign up successful',
-      });
+      toast.success('Sign up successful');
     } catch (error) {
       console.error('Sign up error:', error);
-      toast.error('Error', {
-        description: 'An unexpected error occurred. Please try again.',
-      });
+      toast.error('An unexpected error occurred. Please try again.');
       setErrorMessage('An unexpected error occurred. Please try again.');
     } finally {
       setIsLoading(false);
