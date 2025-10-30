@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import {
+  ArrowBackIcon,
   CancelCircle2Icon,
   ConfigurationIcon,
   EmailIcon2,
@@ -27,9 +28,40 @@ export default function SignUp() {
   const [agreeToTerms, setAgreeToTerms] = useState(false);
   const [, setErrorMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
 
   const router = useRouter();
   const { signUp } = useAuth();
+
+  // Define 3 reviews
+  const reviews = [
+    {
+      quote:
+        "tryfinder tears the competition apart. I've tried almost every other search service, their speeds, success rates beats all the other providers. Incredible",
+      name: 'Echo',
+      title: 'Investor, @Theranos',
+    },
+    {
+      quote:
+        "Absolutely game-changing! TryFinder found contacts I couldn't locate anywhere else. The verification rate is incredible and saved us countless hours of research.",
+      name: 'Sarah Chen',
+      title: 'Sales Director, @TechCorp',
+    },
+    {
+      quote:
+        'Best investment we made for our sales team. The multi-channel contacts feature is a game-changer. Our conversion rates improved by 40% in just one quarter.',
+      name: 'Marcus Johnson',
+      title: 'CEO, @GrowthVentures',
+    },
+  ];
+
+  const handlePreviousReview = () => {
+    setCurrentReviewIndex(prev => (prev === 0 ? reviews.length - 1 : prev - 1));
+  };
+
+  const handleNextReview = () => {
+    setCurrentReviewIndex(prev => (prev === reviews.length - 1 ? 0 : prev + 1));
+  };
 
   const validateInputs = () => {
     if (!email || !password || !confirmPassword) {
@@ -190,41 +222,69 @@ export default function SignUp() {
               What the customers say about tryfinder AI
             </div>
 
-            {/* Testimonial card */}
-            <div className="rounded-[15px] bg-gray-500 border-gray-1300 border-solid border-[1px] p-4 sm:p-5">
-              <div className="">
-                <p className="text-sm sm:text-base lg:text-base tracking-num--0_01 leading-relaxed lg:leading-num-24 opacity-num-0_6 mb-3 sm:mb-4">
-                  &ldquo;tryfinder tears the competition apart. I&apos;ve tried
-                  almost every other search service, their speeds, success rates
-                  beats all the other providers. Incredible&rdquo;
-                </p>
-                <div className="flex items-center gap-2 font-inter-variable">
-                  <div className="flex items-center gap-2">
-                    <Image
-                      src="/solution/user-avatar.png"
-                      className="h-5 w-5 sm:h-6 sm:w-6 rounded-num-50 object-cover"
-                      width={24}
-                      height={24}
-                      sizes="100vw"
-                      alt=""
-                    />
-                    <span className="text-xs sm:text-sm tracking-[-0.02em] leading-tight lg:leading-[22px] font-medium opacity-num-0_75">
-                      Echo
+            {/* Testimonial card with navigation */}
+            <div className="relative">
+              <div className="rounded-[15px] bg-gray-500 border-gray-1300 border-solid border-[1px] p-4 sm:p-5">
+                <div className="">
+                  <p className="text-sm sm:text-base lg:text-base tracking-num--0_01 leading-relaxed lg:leading-num-24 opacity-num-0_6 mb-3 sm:mb-4">
+                    &ldquo;{reviews[currentReviewIndex].quote}&rdquo;
+                  </p>
+                  <div className="flex items-center gap-2 font-inter-variable">
+                    <div className="flex items-center gap-2">
+                      <Image
+                        src="/solution/user-avatar.png"
+                        className="h-5 w-5 sm:h-6 sm:w-6 rounded-num-50 object-cover"
+                        width={24}
+                        height={24}
+                        sizes="100vw"
+                        alt=""
+                      />
+                      <span className="text-xs sm:text-sm tracking-[-0.02em] leading-tight lg:leading-[22px] font-medium opacity-num-0_75">
+                        {reviews[currentReviewIndex].name}
+                      </span>
+                    </div>
+                    <div className="h-1 w-1 rounded-num-50 bg-white opacity-num-0_25" />
+                    <span className="text-xs sm:text-sm tracking-[-0.02em] leading-tight lg:leading-[22px] opacity-num-0_75">
+                      {reviews[currentReviewIndex].title}
                     </span>
                   </div>
-                  <div className="h-1 w-1 rounded-num-50 bg-white opacity-num-0_25" />
-                  <span className="text-xs sm:text-sm tracking-[-0.02em] leading-tight lg:leading-[22px] opacity-num-0_75">
-                    Investor, @Theranos
-                  </span>
                 </div>
               </div>
-            </div>
 
-            {/* Testimonial pagination */}
-            <div className="flex justify-center items-center gap-2 sm:gap-2.5 mt-4 sm:mt-6">
-              <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-num-50 bg-white border-gray-1300 border-solid border-[0.5px]" />
-              <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-num-50 bg-white border-gray-1300 border-solid border-[0.5px] opacity-num-0_25" />
-              <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-num-50 bg-white border-gray-1300 border-solid border-[0.5px] opacity-num-0_25" />
+              {/* Navigation buttons */}
+              <div className="flex justify-center items-center gap-3 mt-4 sm:mt-6">
+                {/* <button
+                  onClick={handlePreviousReview}
+                  className="p-2 rounded-full hover:bg-gray-400 transition-colors cursor-pointer"
+                  aria-label="Previous review"
+                >
+                  <ArrowBackIcon className="w-4 h-4" />
+                </button> */}
+
+                {/* Testimonial pagination dots */}
+                <div className="flex items-center gap-2 sm:gap-2.5">
+                  {reviews.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentReviewIndex(index)}
+                      className={`h-2 w-2 rounded-full border-gray-1300 border-solid border transition-all ${
+                        index === currentReviewIndex
+                          ? 'bg-white border-white'
+                          : 'bg-transparent border-white opacity-num-0_25 hover:opacity-50'
+                      }`}
+                      aria-label={`Go to review ${index + 1}`}
+                    />
+                  ))}
+                </div>
+
+                {/* <button
+                  onClick={handleNextReview}
+                  className="p-2 rounded-full hover:bg-gray-400 transition-colors cursor-pointer rotate-180"
+                  aria-label="Next review"
+                >
+                  <ArrowBackIcon className="w-4 h-4" />
+                </button> */}
+              </div>
             </div>
           </section>
         </main>
