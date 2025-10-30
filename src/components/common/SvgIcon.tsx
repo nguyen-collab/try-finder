@@ -1897,3 +1897,28 @@ export const Briefcase02Icon = (): JSX.Element => {
     </svg>
   );
 };
+
+export const ArrowBackIcon = ({
+  className = '',
+}: {
+  className?: string;
+}): JSX.Element => {
+  return (
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 15 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path
+        d="M11.9999 7.19985H2.3999M2.3999 7.19985L5.9999 10.7999M2.3999 7.19985L5.9999 3.59985"
+        stroke="currentColor"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};

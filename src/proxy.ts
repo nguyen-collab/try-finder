@@ -1,24 +1,35 @@
 import { NextResponse, type NextRequest } from 'next/server';
-import { createServerSupabaseClient } from './utils/supabase-server';
+import { createServerClient } from '@supabase/ssr';
 
 export async function proxy(request: NextRequest) {
-  const supabaseResponse = NextResponse.next({
-    request,
-  });
+  const supabaseResponse = NextResponse.next();
 
-  const supabase = await createServerSupabaseClient();
-  // Refresh session if expired - required for Server Components
+  // Create a Supabase client that reads cookies from the request and
+  // writes any updates to the response, which is required in middleware.
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        get(name) {
+          return request.cookies.get(name)?.value;
+        },
+        set(name, value, options) {
+          supabaseResponse.cookies.set({ name, value, ...options });
+        },
+        remove(name, options) {
+          supabaseResponse.cookies.set({ name, value: '', ...options });
+        },
+      },
+    }
+  );
+
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
   // Define protected routes
-  const protectedRoutes: string[] = [
-    '/dashboard',
-    '/settings',
-    '/accounts',
-    '/features',
-  ];
+  const protectedRoutes: string[] = ['/dashboard', '/settings', '/account'];
   const authRoutes: string[] = [
     '/sign-in',
     '/sign-up',
@@ -34,9 +45,6 @@ export async function proxy(request: NextRequest) {
   );
 
   // Redirect logic
-  console.log('isProtectedRoute', isProtectedRoute);
-  console.log('user', user);
-  console.log('nextUrl.pathname', request.nextUrl.pathname);
   if (isProtectedRoute && !user) {
     // Redirect to sign-in if trying to access protected route without auth
     const redirectUrl = new URL('/sign-in', request.url);

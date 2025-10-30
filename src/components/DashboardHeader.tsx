@@ -11,12 +11,13 @@ import {
   UserCircleIcon,
 } from './common/SvgIcon';
 import { useAuth } from '@/context/AuthContext';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 
 export default function DashboardHeader() {
   const { user, signOut } = useAuth();
   const router = useRouter();
+  const pathname = usePathname();
   const [isUserPopupOpen, setIsUserPopupOpen] = useState(false);
   const [isNotificationPopupOpen, setIsNotificationPopupOpen] = useState(false);
   const popupRef = useRef<HTMLDivElement>(null);
@@ -59,7 +60,7 @@ export default function DashboardHeader() {
   };
 
   const handleAccountClick = () => {
-    router.push('/accounts');
+    router.push('/account');
     setIsUserPopupOpen(false);
   };
 
@@ -113,7 +114,13 @@ export default function DashboardHeader() {
           className="cursor-pointer rounded-[8.72px] overflow-hidden flex flex-col items-center justify-center py-[7px] px-[10.5px]"
         >
           <div className="self-stretch flex items-center">
-            <div className="flex items-center gap-[8.7px] text-gray-10 hover:text-gray-1100 transition-colors duration-200">
+            <div
+              className={`flex items-center gap-[8.7px] transition-colors duration-200 ${
+                pathname === '/save-searches'
+                  ? 'text-gray-1100'
+                  : 'text-gray-10 hover:text-gray-1100'
+              }`}
+            >
               <SavedSearchesIcon />
               <div className="relative tracking-[-0.01em] leading-[13.08px] font-medium">
                 Saved Searches

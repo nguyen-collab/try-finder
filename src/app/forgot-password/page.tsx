@@ -1,7 +1,7 @@
-import Verification from '@/components/Verification';
+import ForgotPassword from '@/components/ForgotPassword';
 import Image from 'next/image';
 
-export default function VerificationPage() {
+export default function ForgotPasswordPage() {
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-gray-500 relative">
       {/* Background Image */}
@@ -15,8 +15,8 @@ export default function VerificationPage() {
         />
       </div>
 
-      <div className="container mx-auto max-w-2xl">
-        <Verification />
+      <div className="container max-w-2xl mx-auto">
+        <ForgotPassword />
       </div>
     </div>
   );

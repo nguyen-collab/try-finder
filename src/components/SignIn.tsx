@@ -56,7 +56,7 @@ export default function SignIn() {
           <div className="flex items-center gap-2.5">
             <Image
               src="/header/tryfinder.svg"
-              className="h-[35.4px] w-[189.5px]"
+              className="h-9 w-full"
               width={144.5}
               height={35.4}
               sizes="100vw"

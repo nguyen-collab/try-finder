@@ -1,0 +1,109 @@
+'use client';
+
+import { useState } from 'react';
+import Image from 'next/image';
+import { ArrowBackIcon, EmailIcon2 } from './common/SvgIcon';
+import { useRouter } from 'next/navigation';
+
+export default function ForgotPassword() {
+  const [email, setEmail] = useState('');
+  const [errorMessage] = useState('');
+
+  const router = useRouter();
+
+  return (
+    <div className="min-h-screen w-full bg-gray-500 text-white font-inter-variable">
+      {/* Main layout container */}
+      <div className="relative flex flex-col min-h-screen">
+        {/* Header with logo */}
+        <header className="flex justify-center pt-20 pb-8">
+          <div className="flex items-center gap-2.5">
+            <Image
+              src="/header/tryfinder.svg"
+              className="h-9 w-full"
+              width={144.5}
+              height={35.4}
+              sizes="100vw"
+              alt=""
+            />
+          </div>
+        </header>
+
+        {/* Main content area */}
+        <main className="flex-1 flex flex-col items-center px-4">
+          <div className="w-full max-w-[553px] rounded-[20px] bg-gray-50 border-gray-1300 border border-solid">
+            {/* Sign-in form card */}
+            <section className="rounded-[20px] bg-gray-200 border-gray-1300 border-b border-solid p-[30px] space-y-[30px]">
+              {/* Welcome section */}
+              <div className="flex flex-col items-center justify-center gap-[5px]">
+                <h1 className="text-3xl tracking-num--0_01 leading-8 font-medium">
+                  Forgot Password
+                </h1>
+                <p className="text-lg tracking-num--0_01 leading-[26px] opacity-[0.6]">
+                  Enter your email to reset your password
+                </p>
+              </div>
+
+              {/* Form fields */}
+              <div className="space-y-4 text-md">
+                <div className="space-y-[18px]">
+                  {/* Email field */}
+                  <div className="space-y-2.5">
+                    <label className="block text-base tracking-num--0_01 leading-[15px] font-medium opacity-[0.75]">
+                      Email Address
+                    </label>
+                    <div className="group rounded-xl bg-gray-500 border-gray-1300 border border-solid flex items-center py-3.5 px-num-12 gap-2 text-base focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
+                      <EmailIcon2
+                        className="group-focus-within:[&_path]:fill-gray-1100 group-focus-within:[&_g]:opacity-100 transition-all duration-200"
+                        color="white"
+                        opacity="0.25"
+                      />
+                      <input
+                        type="email"
+                        placeholder="email@example.com"
+                        className="flex-1 bg-transparent tracking-num--0_01 leading-num-20 text-white placeholder:text-gray-10 focus:outline-none"
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                        required
+                      />
+                    </div>
+                  </div>
+                  {/* Sign in button */}
+                  {errorMessage && (
+                    <div className="text-red-500 text-sm mt-2">
+                      {errorMessage}
+                    </div>
+                  )}
+                  <button
+                    type="submit"
+                    className="w-full shadow-[0px_0px_0px_4px_rgba(255,_255,_255,_0.25)] rounded-xl [background:linear-gradient(180deg,_rgba(0,_0,_0,_0),_rgba(0,_0,_0,_0.2)),_#fafafa] flex items-center justify-center p-3 text-base text-gray-300 hover:[background:linear-gradient(180deg,_rgba(0,_0,_0,_0.3),_rgba(0,_0,_0,_0.1)),_#fafafa] transition-[background] duration-300 ease-in-out cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
+                  >
+                    <span className="tracking-num--0_01 leading-6 font-semibold">
+                      Send Reset Link
+                    </span>
+                  </button>
+                  <button
+                    onClick={() => router.back()}
+                    className="cursor-pointer w-full relative flex items-center justify-center py-2 px-0 box-border gap-2 text-center text-[12.8px] text-gray-10 hover:text-white transition-all duration-200 font-inter-variable"
+                  >
+                    <ArrowBackIcon />
+                    <div className="relative tracking-[-0.01em] leading-4 font-medium">
+                      Go Back
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+
+        {/* Footer */}
+        <footer className="absolute bottom-0 left-0 right-0 z-10 text-center p-8">
+          <div className="text-xs sm:text-sm tracking-num--0_01 leading-num-20 font-medium font-inter opacity-[0.8]">
+            ©2025 Tryfinder LLC. All rights reserved.
+          </div>
+        </footer>
+      </div>
+    </div>
+  );
+}

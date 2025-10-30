@@ -146,7 +146,7 @@ export default function Dashboard() {
   };
 
   return (
-    <main className="w-full min-h-screen bg-gray-500 text-white font-inter-variable text-sm overflow-x-hidden">
+    <main className="w-full bg-gray-500 text-white font-inter-variable text-sm overflow-x-hidden">
       {/* Main Content Area */}
       <section className="w-full flex flex-col lg:flex-row gap-6">
         {/* Filters Sidebar */}

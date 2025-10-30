@@ -35,7 +35,7 @@ export default function Verification() {
       <div className="flex flex-col items-center mb-8">
         <Image
           src="/header/tryfinder.svg"
-          className="h-[35.4px] w-[189.5px] mb-10"
+          className="h-9 w-full mb-10"
           width={144.5}
           height={35.4}
           sizes="100vw"
@@ -64,8 +64,8 @@ export default function Verification() {
       </div>
 
       {/* Footer */}
-      <footer className="absolute bottom-5">
-        <div className="text-sm tracking-num--0_01 leading-num-20 font-medium font-inter opacity-[0.8]">
+      <footer className="fixed left-0 right-0 bottom-5 z-10 text-center p-8">
+        <div className="text-xs sm:text-sm tracking-num--0_01 leading-tight lg:leading-num-20 font-medium font-inter opacity-[0.8]">
           ©2025 Tryfinder LLC. All rights reserved.
         </div>
       </footer>

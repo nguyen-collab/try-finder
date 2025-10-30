@@ -252,7 +252,7 @@ export default function Settings() {
               : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="space-y-3">
+          <div className="space-y-4">
             <hr className="w-full h-[1.3px] opacity-[0.1]" />
 
             <div className="w-full rounded-[13.08px] bg-firebrick-300 border-firebrick-200 border-solid border flex items-center p-2.5 text-sm">
@@ -278,7 +278,7 @@ export default function Settings() {
             <button
               onClick={handleDeleteAccount}
               disabled={!confirmDelete || isLoading}
-              className={`w-full shadow-[0px_0px_0px_3.2px_rgba(197,34,31,0.25)] rounded-num-9.6 [background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0.2)),#c5221f] border-gray-400 border-solid border-[0.8px] overflow-hidden flex items-center justify-center p-[9.6px] gap-1 transition-all duration-300 ${
+              className={`w-[98%] mx-auto shadow-[0px_0px_0px_3.2px_rgba(197,34,31,0.25)] rounded-num-9.6 [background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0.2)),#c5221f] border-gray-400 border-solid border-[0.8px] overflow-hidden flex items-center justify-center p-[9.6px] gap-1 transition-all duration-300 ${
                 confirmDelete && !isLoading
                   ? 'hover:[background:linear-gradient(180deg,rgba(0,0,0,0.3),rgba(0,0,0,0.1)),#c5221f] cursor-pointer'
                   : 'opacity-50 cursor-not-allowed'

@@ -18,6 +18,20 @@ import {
 // Placeholder images for demonstration
 const PLACEHOLDER_IMAGE = '/images/3.png';
 
+// Simple helpers to mask sensitive values when item is collapsed
+function maskEmail(email: string): string {
+  const [local, domain] = email.split('@');
+  if (!local || !domain) return email;
+  return `${local.slice(0, 2)}***@${domain.slice(0, 2)}**.${domain.split('.').pop()}`;
+}
+
+function maskPhone(phone: string): string {
+  return phone.replace(/\d/g, (digit, index, str) => {
+    // Keep last 4 digits
+    return index >= str.length - 4 ? digit : '•';
+  });
+}
+
 // Define the structure for search result items
 type SearchResultItem = {
   name: string;
@@ -144,7 +158,7 @@ function DetailItem() {
         </section>
 
         {/* Right column: Other Contact Information */}
-        <section className="flex flex-col items-start gap-[15px] ml-48">
+        {/* <section className="flex flex-col items-start gap-[15px] ml-48">
           <h3 className="tracking-num--0_01 leading-num-17_44 opacity-num-0_5">
             Other Contact Information
           </h3>
@@ -174,7 +188,7 @@ function DetailItem() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </section>
 
       {/* Bottom: Companies row */}
@@ -251,14 +265,16 @@ function SearchResultItem({
   checked,
   onChange,
   isExpanded,
-  onToggleExpand,
+  isLoading,
+  onRequestToggle,
 }: {
   item: SearchResultItem;
   index: number;
   checked: boolean;
   onChange: (checked: boolean) => void;
   isExpanded: boolean;
-  onToggleExpand: () => void;
+  isLoading: boolean;
+  onRequestToggle: () => void;
 }) {
   return (
     <article
@@ -327,7 +343,7 @@ function SearchResultItem({
             {item.location}
           </span>
           <span className="block text-base font-inter tracking-num--0_01 leading-num-22_67 font-medium whitespace-nowrap truncate">
-            {item.email}
+            {isExpanded ? item.email : maskEmail(item.email)}
           </span>
         </div>
 
@@ -336,13 +352,13 @@ function SearchResultItem({
           <div className="flex items-center gap-1">
             <BuildingIcon />
             <span className="tracking-num--0_01 leading-num-17_44 whitespace-nowrap truncate">
-              {item.email}
+              {isExpanded ? item.email : maskEmail(item.email)}
             </span>
           </div>
           <div className="flex items-center gap-1">
             <MailIcon />
             <span className="tracking-num--0_01 leading-num-17_44 whitespace-nowrap truncate">
-              {item.personalEmail}
+              {isExpanded ? item.personalEmail : maskEmail(item.personalEmail)}
             </span>
           </div>
           <div className="flex items-center gap-1">
@@ -351,9 +367,13 @@ function SearchResultItem({
             </div>
             <div className="flex items-center gap-2">
               <span className="tracking-num--0_01 leading-num-17_44 whitespace-nowrap truncate flex items-center gap-1">
-                {item.phone}
+                {isExpanded ? item.phone : maskPhone(item.phone)}
                 <div className="h-[1.7px] w-[1.7px] rounded-full bg-white opacity-50" />
-                {item.secondaryPhone}
+                {isExpanded
+                  ? item.secondaryPhone
+                  : item.secondaryPhone
+                    ? maskPhone(item.secondaryPhone)
+                    : ''}
               </span>
             </div>
           </div>
@@ -363,21 +383,35 @@ function SearchResultItem({
         <div className="flex flex-col items-center justify-center gap-[10.5px] text-sm text-gray-100 w-[140.5px]">
           <button
             type="button"
-            onClick={onToggleExpand}
-            className={`w-full h-[34.9px] rounded-[10.46px] border-gray-200 border-[0.9px] overflow-hidden flex items-center justify-center p-[10.5px] cursor-pointer ${isExpanded ? 'bg-gray-500 text-white border-gray-1300' : '[background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0.2)),#fafafa]'}`}
+            onClick={onRequestToggle}
+            disabled={isLoading}
+            className={`w-full h-[34.9px] rounded-[10.46px] border-gray-200 border-[0.9px] overflow-hidden flex items-center justify-center p-[10.5px] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed ${isExpanded ? 'bg-gray-500 text-white border-gray-1300' : '[background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0.2)),#fafafa]'}`}
             aria-expanded={isExpanded}
             aria-controls={`result-details-${index}`}
           >
-            <span className="tracking-num--0_01 leading-num-20_93 font-semibold whitespace-nowrap">
-              {isExpanded ? 'Hide Details' : 'View Details'}
-            </span>
+            {isLoading ? (
+              <span className="flex items-center gap-2">
+                <span className="inline-block w-4 h-4 rounded-full border-2 border-white/30 border-t-white animate-spin" />
+                <span className="tracking-num--0_01 leading-num-20_93 font-semibold whitespace-nowrap">
+                  Loading...
+                </span>
+              </span>
+            ) : (
+              <span className="tracking-num--0_01 leading-num-20_93 font-semibold whitespace-nowrap">
+                {isExpanded ? 'Hide Details' : 'Get Contact Info'}
+              </span>
+            )}
           </button>
         </div>
       </div>
 
-      {/* Expanded details */}
+      {/* Expanded details with simple transition */}
       {isExpanded && (
-        <div id={`result-details-${index}`} className="w-full px-4 pb-4">
+        <div
+          id={`result-details-${index}`}
+          className="w-full px-4 pb-4 animate-in slide-in-from-top-2 fade-in duration-200"
+          aria-hidden={!isExpanded}
+        >
           <DetailItem />
         </div>
       )}
@@ -388,6 +422,7 @@ function SearchResultItem({
 export default function SearchResults() {
   const [selected, setSelected] = useState<number[]>([]);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const [loadingIndex, setLoadingIndex] = useState<number | null>(null);
 
   const allChecked =
     selected.length === searchResults.length && searchResults.length > 0;
@@ -407,8 +442,19 @@ export default function SearchResults() {
     });
   }
 
-  function handleToggleExpand(idx: number) {
-    setExpandedIndex(prev => (prev === idx ? null : idx));
+  function handleRequestToggle(idx: number) {
+    const isCurrentlyExpanded = expandedIndex === idx;
+    if (isCurrentlyExpanded) {
+      // Collapse immediately
+      setExpandedIndex(null);
+      return;
+    }
+    if (loadingIndex !== null) return;
+    setLoadingIndex(idx);
+    setTimeout(() => {
+      setExpandedIndex(idx);
+      setLoadingIndex(null);
+    }, 2000);
   }
 
   return (
@@ -456,7 +502,8 @@ export default function SearchResults() {
                 checked={selected.includes(index)}
                 onChange={checked => handleSelectRow(index, checked)}
                 isExpanded={expandedIndex === index}
-                onToggleExpand={() => handleToggleExpand(index)}
+                isLoading={loadingIndex === index}
+                onRequestToggle={() => handleRequestToggle(index)}
               />
             ))}
           </section>
