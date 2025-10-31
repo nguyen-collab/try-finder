@@ -22,7 +22,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
       toastOptions={{
         classNames: {
           toast:
-            '!rounded-2xl font-inter-variable border border-gray-100 flex items-center gap-3 !py-2 !px-6 !text-white !text-xl overflow-hidden !w-fit',
+            '!rounded-xl font-inter-variable border border-gray-100 flex items-center gap-3 !py-2 !px-6 !text-white !text-lg overflow-hidden !w-fit',
           success: '!bg-mediumseagreen',
           warning: '!bg-goldenrod',
           error: '!bg-tomato',

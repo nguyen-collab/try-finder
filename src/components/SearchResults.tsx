@@ -516,7 +516,7 @@ export default function SearchResults() {
 
       <div className="px-4 overflow-x-auto scrollbar-none w-full">
         <footer className="flex justify-center py-4 w-full">
-          <div className="text-sm tracking-num--0_01 leading-tight font-medium opacity-75 w-full">
+          <div className="text-base tracking-num--0_01 leading-tight font-medium opacity-75 w-full">
             End of Results
           </div>
         </footer>
