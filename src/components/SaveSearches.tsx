@@ -15,10 +15,10 @@ export default function SaveSearches() {
       {/* Header: title and subtitle */}
       <header className="self-stretch flex items-center">
         <div className="flex flex-col items-start justify-center gap-0.5">
-          <h2 className="tracking-num--0_01 leading-[22px] font-medium text-[16px]">
+          <h2 className="tracking-num--0_01 leading-[22px] font-medium text-lg">
             Saved Searches
           </h2>
-          <p className="text-[14px] tracking-num--0_01 leading-num-20 font-inter-variable opacity-num-0_5">
+          <p className="text-base tracking-num--0_01 leading-num-20 font-inter-variable opacity-num-0_5">
             List of all your saved searches
           </p>
         </div>
@@ -34,11 +34,11 @@ export default function SaveSearches() {
           <div className="flex flex-col items-start gap-2">
             <div className="flex items-center gap-2.5 font-inter">
               <SearchCircleIcon />
-              <div className="tracking-num--0_01 leading-[22.67px] font-medium text-num-17_44">
+              <div className="tracking-num--0_01 leading-[22.67px] font-medium text-xl">
                 Mark Cuban
               </div>
             </div>
-            <div className="flex items-center gap-2 text-[14px]">
+            <div className="flex items-center gap-2 text-base">
               <div className="tracking-num--0_01 leading-num-20 opacity-num-0_5">
                 5 Contacts
               </div>
@@ -54,7 +54,7 @@ export default function SaveSearches() {
                 0 Filters Applied
               </div>
             </div>
-            <div className="flex items-center text-num-12_21">
+            <div className="flex items-center text-sm">
               <div className="tracking-num--0_01 leading-[17.44px] opacity-num-0_5">
                 Saved Oct 29, 2025
               </div>
@@ -75,11 +75,11 @@ export default function SaveSearches() {
           <div className="flex flex-col items-start gap-2">
             <div className="flex items-center gap-2.5 font-inter">
               <SearchCircleIcon />
-              <div className="tracking-num--0_01 leading-[22.67px] font-medium text-num-17_44">
+              <div className="tracking-num--0_01 leading-[22.67px] font-medium text-xl">
                 Tim Cook
               </div>
             </div>
-            <div className="flex items-center gap-2 text-[14px]">
+            <div className="flex items-center gap-2 text-base">
               <div className="tracking-num--0_01 leading-num-20 opacity-num-0_5">
                 5 Contacts
               </div>
@@ -95,7 +95,7 @@ export default function SaveSearches() {
                 0 Filters Applied
               </div>
             </div>
-            <div className="flex items-center text-num-12_21">
+            <div className="flex items-center text-sm">
               <div className="tracking-num--0_01 leading-[17.44px] opacity-num-0_5">
                 Saved Oct 29, 2025
               </div>
@@ -116,11 +116,11 @@ export default function SaveSearches() {
           <div className="flex flex-col items-start gap-2">
             <div className="flex items-center gap-2.5 font-inter">
               <SearchCircleIcon />
-              <div className="tracking-num--0_01 leading-[22.67px] font-medium text-num-17_44">
+              <div className="tracking-num--0_01 leading-[22.67px] font-medium text-xl">
                 Kevin O’Leary
               </div>
             </div>
-            <div className="flex items-center gap-2 text-[14px]">
+            <div className="flex items-center gap-2 text-base">
               <div className="tracking-num--0_01 leading-num-20 opacity-num-0_5">
                 5 Contacts
               </div>
@@ -136,7 +136,7 @@ export default function SaveSearches() {
                 0 Filters Applied
               </div>
             </div>
-            <div className="flex items-center text-num-12_21">
+            <div className="flex items-center text-sm">
               <div className="tracking-num--0_01 leading-[17.44px] opacity-num-0_5">
                 Saved Oct 29, 2025
               </div>

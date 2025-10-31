@@ -37,10 +37,10 @@ export default function Account() {
       {/* Account Details Section */}
       <section className="w-full rounded-[13.08px] bg-gray-200 border-gray-1300 border-solid border-[0.7px] flex flex-col items-start p-[15px] gap-[15px]">
         <header className="w-full flex flex-col items-start justify-center gap-0.5 text-base font-inter">
-          <h2 className="tracking-num--0_01 leading-[22px] font-medium">
+          <h2 className="tracking-num--0_01 leading-[22px] font-medium text-lg">
             Account Details
           </h2>
-          <p className="text-sm tracking-num--0_01 leading-5 font-inter-variable opacity-[0.5]">
+          <p className="text-base tracking-num--0_01 leading-5 font-inter-variable opacity-[0.5]">
             Details about your profile and ID
           </p>
         </header>
@@ -51,11 +51,11 @@ export default function Account() {
         <div className="w-full flex items-center justify-between gap-5">
           <div className="flex flex-col items-start justify-center gap-[2.6px]">
             <label className="flex items-center">
-              <span className="tracking-num--0_01 leading-[17.44px] opacity-[0.5]">
+              <span className="tracking-num--0_01 leading-[17.44px] opacity-[0.5] text-sm">
                 Email Address
               </span>
             </label>
-            <div className="flex items-center gap-[8.7px] text-sm font-inter">
+            <div className="flex items-center gap-[8.7px] text-base font-inter">
               <span className="tracking-num--0_01 leading-5 font-medium">
                 {user?.email || 'No email'}
               </span>
@@ -74,7 +74,7 @@ export default function Account() {
           </div>
 
           <button className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center py-[5px] px-2.5 gap-[5px] text-xs font-inter hover:outline-none hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_0_0_4px_rgba(255,255,255,0.1)] transition-all duration-200 cursor-pointer">
-            <span className="tracking-num--0_01 leading-[13.95px] font-medium">{`Signed up via `}</span>
+            <span className="tracking-num--0_01 leading-[13.95px] font-medium text-sm">{`Signed up via `}</span>
             <GoogleIcon className="w-[14px] h-[14px]" />
           </button>
         </div>
@@ -84,11 +84,11 @@ export default function Account() {
           <div className="flex items-center">
             <div className="flex flex-col items-start justify-center gap-[2.6px]">
               <label className="flex items-center">
-                <span className="tracking-num--0_01 leading-[17.44px] opacity-[0.5]">
-                  tryfinder ID
+                <span className="tracking-num--0_01 leading-[17.44px] opacity-[0.5] text-sm">
+                  Tryfinder ID
                 </span>
               </label>
-              <div className="flex items-center text-sm font-inter">
+              <div className="flex items-center text-base font-inter">
                 <span className="tracking-num--0_01 leading-5 font-medium">
                   {user?.id || 'Unknown ID'}
                 </span>
@@ -99,11 +99,11 @@ export default function Account() {
           <div className="flex items-center">
             <div className="flex flex-col items-start justify-center gap-[2.6px]">
               <label className="flex items-center">
-                <span className="tracking-num--0_01 leading-[17.44px] opacity-[0.5]">
+                <span className="tracking-num--0_01 leading-[17.44px] opacity-[0.5] text-sm">
                   Account Creation
                 </span>
               </label>
-              <div className="flex items-center text-sm font-inter">
+              <div className="flex items-center text-base font-inter">
                 <span className="tracking-num--0_01 leading-5 font-medium">
                   {formatAccountCreation(user?.created_at)}
                 </span>
@@ -114,7 +114,7 @@ export default function Account() {
       </section>
 
       {/* Usage Statistics Section */}
-      <section className="w-full rounded-[13.08px] bg-gray-200 border-gray-1300 border-solid border-[0.7px] p-[15px] text-sm font-inter">
+      <section className="w-full rounded-[13.08px] bg-gray-200 border-gray-1300 border-solid border-[0.7px] p-[15px] text-base font-inter">
         <div className="w-full flex flex-col items-start gap-2.5">
           <div className="w-full flex justify-center">
             <p className="tracking-num--0_01 leading-4 font-medium opacity-[0.75]">
@@ -129,7 +129,7 @@ export default function Account() {
       </section>
 
       {/* Action Buttons Section */}
-      <footer className="w-full flex items-center gap-2 text-sm">
+      <footer className="w-full flex items-center gap-2 text-base">
         <button
           onClick={handleSettingsClick}
           className="flex-1 rounded-lg bg-gray-1300 border-gray-1300 border-solid border-[0.8px] flex items-center justify-center p-[9.6px] gap-2 hover:outline-none hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_0_0_4px_rgba(255,255,255,0.1)] transition-all duration-200 cursor-pointer"

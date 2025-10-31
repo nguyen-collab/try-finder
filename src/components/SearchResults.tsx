@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   BackPack02Icon,
   Briefcase02Icon,
@@ -113,7 +113,7 @@ const searchResults: SearchResultItem[] = [
 function DetailItem() {
   return (
     // Details container
-    <section className="w-full text-left text-xs text-white font-inter-variable flex flex-col gap-4">
+    <section className="w-full text-left text-sm text-white font-inter-variable flex flex-col gap-4">
       {/* Top: Two columns */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Left column: Experience/Education/Skills */}
@@ -121,7 +121,7 @@ function DetailItem() {
           <h3 className="tracking-num--0_01 leading-num-17_44 opacity-num-0_5">
             Work Experience, Education, Skills
           </h3>
-          <div className="flex flex-col items-start gap-3 text-sm">
+          <div className="flex flex-col items-start gap-3 text-base">
             <div className="flex items-start gap-2">
               <Building02Icon />
               <div className="flex flex-col items-start justify-center gap-[3px]">
@@ -192,7 +192,7 @@ function DetailItem() {
       </section>
 
       {/* Bottom: Companies row */}
-      <section className="grid grid-cols-1 sm:grid-cols-3 gap-[15px] text-md font-inter">
+      <section className="grid grid-cols-1 sm:grid-cols-3 gap-[15px] text-lg font-inter">
         <div className="h-[76px] rounded-[10.46px] bg-gray-200 border-gray-100 border-solid border-[1px] box-border flex flex-col items-start py-3.5 px-[21px]">
           <div className="flex items-center gap-[15px]">
             <Image
@@ -307,7 +307,7 @@ function SearchResultItem({
             />
             <div className="flex flex-col items-start justify-center gap-[3px]">
               <div className="flex items-center gap-2">
-                <span className="tracking-num--0_01 leading-num-22_67 font-medium whitespace-nowrap truncate text-lg">
+                <span className="tracking-num--0_01 leading-num-22_67 font-medium whitespace-nowrap truncate text-xl">
                   {item.name}
                 </span>
                 <span className="text-base tracking-num--0_01 leading-num-17_44 font-inter-variable opacity-50 whitespace-nowrap truncate">
@@ -329,7 +329,7 @@ function SearchResultItem({
 
         {/* Company information */}
         <div className="overflow-hidden flex flex-col items-start justify-center gap-[3px] text-left">
-          <span className="block tracking-num--0_01 leading-num-17_44 opacity-50 whitespace-nowrap truncate">
+          <span className="block tracking-num--0_01 leading-num-17_44 opacity-50 whitespace-nowrap truncate text-sm">
             {item.companyName}
           </span>
           <span className="block text-base font-inter tracking-num--0_01 leading-num-22_67 font-medium whitespace-nowrap truncate">
@@ -339,7 +339,7 @@ function SearchResultItem({
 
         {/* Location information */}
         <div className="overflow-hidden flex flex-col items-start justify-center gap-[3px] text-left">
-          <span className="block tracking-num--0_01 leading-num-17_44 opacity-50 whitespace-nowrap truncate">
+          <span className="block tracking-num--0_01 leading-num-17_44 opacity-50 whitespace-nowrap truncate text-sm">
             {item.location}
           </span>
           <span className="block text-base font-inter tracking-num--0_01 leading-num-22_67 font-medium whitespace-nowrap truncate">
@@ -380,7 +380,7 @@ function SearchResultItem({
         </div>
 
         {/* Action buttons (Grid column 5) */}
-        <div className="flex flex-col items-center justify-center gap-[10.5px] text-sm text-gray-100 w-[140.5px]">
+        <div className="flex flex-col items-center justify-center gap-[10.5px] text-base text-gray-100 w-[140.5px]">
           <button
             type="button"
             onClick={onRequestToggle}
@@ -469,7 +469,7 @@ export default function SearchResults() {
         {/* Header with results count */}
         <div className="px-4 overflow-x-auto scrollbar-none">
           <header className="flex items-center justify-between py-4 min-w-[1200px]">
-            <div className="flex items-center gap-2 text-sm">
+            <div className="flex items-center gap-2 text-base">
               <input
                 type="checkbox"
                 checked={allChecked}

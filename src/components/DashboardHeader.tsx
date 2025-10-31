@@ -82,7 +82,7 @@ export default function DashboardHeader() {
   return (
     <div className="w-full max-w-4xl mx-auto relative rounded-[13.08px] bg-[#161616]  border-gray-1300 border-solid border-[0.7px] box-border flex items-center justify-between py-[10.9px] px-[16.4px] gap-5 text-left text-sm text-gray-10 font-inter-variable">
       <div className="flex items-center gap-[6.2px]">
-        <Link href="/dashboard">
+        <Link href="/">
           <Image
             src="/header/tryfinder.svg"
             className="h-6 w-auto"
@@ -94,7 +94,12 @@ export default function DashboardHeader() {
         </Link>
       </div>
       <div className="hidden sm:flex items-center gap-[13.1px]">
-        <div className="rounded-[8.72px] overflow-hidden flex flex-col items-center justify-center py-[7px] px-[10.5px] bg-gray-500">
+        <button
+          className={`cursor-pointer rounded-[8.72px] overflow-hidden flex flex-col items-center justify-center py-[7px] px-[10.5px] text-base ${
+            pathname === '/dashboard' ? 'bg-black' : 'hover:bg-gray-500'
+          }`}
+          onClick={() => router.push('/dashboard')}
+        >
           <div className="flex items-center gap-[8.7px]">
             <div className="flex items-center gap-[4.4px]">
               <AISearchIcon />
@@ -108,19 +113,15 @@ export default function DashboardHeader() {
               </div>
             </div>
           </div>
-        </div>
+        </button>
         <Link
           href="/save-searches"
-          className="cursor-pointer rounded-[8.72px] overflow-hidden flex flex-col items-center justify-center py-[7px] px-[10.5px]"
+          className={`cursor-pointer rounded-[8.72px] overflow-hidden flex flex-col items-center justify-center py-[7px] px-[10.5px] text-base ${
+            pathname === '/save-searches' ? 'bg-black' : 'hover:bg-gray-500'
+          }`}
         >
           <div className="self-stretch flex items-center">
-            <div
-              className={`flex items-center gap-[8.7px] transition-colors duration-200 ${
-                pathname === '/save-searches'
-                  ? 'text-gray-1100'
-                  : 'text-gray-10 hover:text-gray-1100'
-              }`}
-            >
+            <div className="flex items-center gap-[8.7px] transition-colors duration-200 text-gray-10">
               <SavedSearchesIcon />
               <div className="relative tracking-[-0.01em] leading-[13.08px] font-medium">
                 Saved Searches

@@ -146,11 +146,11 @@ export default function Dashboard() {
   };
 
   return (
-    <main className="w-full bg-gray-500 text-white font-inter-variable text-sm overflow-x-hidden">
+    <main className="w-full bg-gray-500 text-white font-inter-variable text-base overflow-x-hidden">
       {/* Main Content Area */}
       <section className="w-full flex flex-col lg:flex-row gap-6">
         {/* Filters Sidebar */}
-        <aside className="w-full lg:w-[300.8px] flex flex-col items-start gap-[15.3px] text-num-10.46 text-gray-10">
+        <aside className="w-full lg:w-[300.8px] flex flex-col items-start gap-[15.3px] text-sm text-gray-10">
           {/* Applied Filters */}
           <div
             className={`w-full rounded-num-13.08 bg-gray-200 border-gray-1300 border-solid border-[0.7px] flex flex-col items-start p-[15.7px] transition-all duration-300 ${
@@ -178,7 +178,7 @@ export default function Dashboard() {
               <div className="w-full flex items-start flex-col gap-[5.2px]">
                 {/* Name Filter Applied */}
                 {nameFilter && (
-                  <div className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center p-[5.2px] gap-[4.4px] text-xs text-white font-inter transition-all duration-300">
+                  <div className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center p-[5.2px] gap-[4.4px] text-base text-white font-inter transition-all duration-300">
                     <UserCircleIcon />
                     <span className="tracking-num--0_01 leading-num-13.95">
                       <span className="font-medium">{`Name : `}</span>
@@ -195,7 +195,7 @@ export default function Dashboard() {
 
                 {/* Location Filter Applied */}
                 {locationFilter && (
-                  <div className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center p-[5.2px] gap-[4.4px] text-xs text-white font-inter transition-all duration-300">
+                  <div className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center p-[5.2px] gap-[4.4px] text-base text-white font-inter transition-all duration-300">
                     <UserCircleIcon />
                     <span className="tracking-num--0_01 leading-num-13.95">
                       <span className="font-medium">{`Location : `}</span>
@@ -212,7 +212,7 @@ export default function Dashboard() {
 
                 {/* Location Options Applied */}
                 {selectedLocationOptions.length > 0 && (
-                  <div className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center p-[5.2px] gap-[4.4px] text-xs text-white font-inter transition-all duration-300">
+                  <div className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center p-[5.2px] gap-[4.4px] text-base text-white font-inter transition-all duration-300">
                     <UserCircleIcon />
                     <span className="tracking-num--0_01 leading-num-13.95">
                       <span className="font-medium">{`Location Options : `}</span>
@@ -229,7 +229,7 @@ export default function Dashboard() {
 
                 {/* Radius Applied */}
                 {radius > 0 && (
-                  <div className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center p-[5.2px] gap-[4.4px] text-xs text-white font-inter transition-all duration-300">
+                  <div className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center p-[5.2px] gap-[4.4px] text-base text-white font-inter transition-all duration-300">
                     <UserCircleIcon />
                     <span className="tracking-num--0_01 leading-num-13.95">
                       <span className="font-medium">{`Radius : `}</span>
@@ -246,7 +246,7 @@ export default function Dashboard() {
 
                 {/* Contact Methods Applied */}
                 {selectedContactMethods.length > 0 && (
-                  <div className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center p-[5.2px] gap-[4.4px] text-xs text-white font-inter transition-all duration-300">
+                  <div className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center p-[5.2px] gap-[4.4px] text-base text-white font-inter transition-all duration-300">
                     <UserCircleIcon />
                     <span className="tracking-num--0_01 leading-num-13.95">
                       <span className="font-medium">{`Contact Methods (${contactMethodLogic.toUpperCase()}) : `}</span>
@@ -298,7 +298,7 @@ export default function Dashboard() {
                     <input
                       type="text"
                       placeholder="Enter Name"
-                      className="flex-1 bg-transparent tracking-num--0_01 leading-[17.44px] text-white placeholder:text-gray-10 placeholder:opacity-num-0.5 focus:outline-none"
+                      className="flex-1 bg-transparent tracking-num--0_01 leading-[17.44px] text-base text-white placeholder:text-gray-10 placeholder:opacity-num-0.5 focus:outline-none"
                       value={nameFilter}
                       onChange={handleNameFilterChange}
                     />
@@ -344,7 +344,7 @@ export default function Dashboard() {
                       <input
                         type="text"
                         placeholder="Enter Location"
-                        className="flex-1 bg-transparent tracking-num--0_01 leading-[17.44px] text-white placeholder:text-gray-10 placeholder:opacity-num-0.5 focus:outline-none"
+                        className="flex-1 bg-transparent tracking-num--0_01 leading-[17.44px] text-base text-white placeholder:text-gray-10 placeholder:opacity-num-0.5 focus:outline-none"
                         value={locationFilter}
                         onChange={handleLocationFilterChange}
                       />
@@ -377,7 +377,7 @@ export default function Dashboard() {
                     ].map(option => (
                       <div
                         key={option.id}
-                        className="w-full rounded-num-6.98 flex items-center justify-between gap-5"
+                        className="w-full rounded-num-6.98 flex items-center justify-between gap-5 text-base"
                       >
                         <div className="flex items-center gap-[8.7px]">
                           <ArrowRightSmallWhiteIcon />
@@ -418,7 +418,7 @@ export default function Dashboard() {
 
                   {/* Radius Slider */}
                   <div className="w-full space-y-[8.7px]">
-                    <div className="tracking-num--0_01 leading-[13.08px] font-medium opacity-num-0.75">
+                    <div className="tracking-num--0_01 leading-[13.08px] font-medium opacity-num-0.75 text-base">
                       Radius (km)
                     </div>
                     <div className="w-full h-[30.5px] relative">
@@ -475,7 +475,7 @@ export default function Dashboard() {
 
               {/* Contact Method Filter Content - Expanded State */}
               <div
-                className={`w-full transition-all duration-300 ease-in-out ${
+                className={`w-full transition-all duration-300 ease-in-out text-base ${
                   isContactMethodFilterOpen
                     ? 'overflow-visible max-h-[300px] opacity-100 mt-[8.7px]'
                     : 'overflow-hidden max-h-0 opacity-0 mt-0'
@@ -483,7 +483,7 @@ export default function Dashboard() {
               >
                 <div className="w-full space-y-3.5">
                   {/* Or/And Logic Toggle */}
-                  <div className="w-full flex items-start gap-[8.7px]">
+                  <div className="w-full flex items-start gap-[8.7px] text-lg font-medium text-white">
                     <div className="flex-1 flex flex-col items-center justify-center">
                       <button
                         onClick={handleContactMethodLogicToggle}
@@ -555,7 +555,7 @@ export default function Dashboard() {
         </aside>
 
         {/* Results Area */}
-        <div className="flex-1 flex flex-col items-center justify-center gap-[15px] text-center text-md min-h-[500px] overflow-x-hidden w-full">
+        <div className="flex-1 flex flex-col items-center justify-center gap-[15px] text-center text-base min-h-[500px] overflow-x-hidden w-full">
           {/* Search Section */}
           <section className="w-full flex flex-col items-center gap-4 px-1">
             <div className="w-full flex flex-col lg:flex-row items-end gap-4">
@@ -564,7 +564,7 @@ export default function Dashboard() {
                 <label className="w-full tracking-num--0_01 text-left leading-[13.08px] font-medium opacity-num-0.75">
                   Search for any business contact
                 </label>
-                <div className="w-full rounded-[10.46px] bg-[#151515] border-gray-1500 border-solid border-[0.9px] flex items-center justify-between py-[8.7px] px-[10.5px] gap-5 text-sm focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
+                <div className="w-full rounded-[10.46px] bg-[#151515] border-gray-1500 border-solid border-[0.9px] flex items-center justify-between py-[8.7px] px-[10.5px] gap-5 text-base focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
                   <div className="flex items-center gap-[8.7px] flex-1">
                     <AISearchIcon />
                     <input
@@ -586,7 +586,7 @@ export default function Dashboard() {
               </div>
 
               {/* Tag Filter */}
-              <div className="w-full lg:max-w-[250px] rounded-[10.46px] bg-[#151515] border-gray-1500 border-solid border-[0.9px] flex items-center justify-between py-[8.7px] px-[10.5px] gap-5 text-sm">
+              <div className="w-full lg:max-w-[250px] rounded-[10.46px] bg-[#151515] border-gray-1500 border-solid border-[0.9px] flex items-center justify-between py-[8.7px] px-[10.5px] gap-5 text-base">
                 <div className="flex items-center">
                   <span className="tracking-num--0_01 leading-[19.62px] opacity-[0.4]">
                     No Active Tag
