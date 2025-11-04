@@ -12,12 +12,12 @@ export default function Home() {
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-gray-500">
       <div className="bg-gray-500">
-        <div className="container mx-auto">
+        <div className="container max-w-[1400px] mx-auto">
           <Header />
         </div>
       </div>
       <div className="bg-gray-500">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-12 xl:pt-4">
+        <div className="container max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-12 xl:pt-4">
           <Hero />
         </div>
       </div>

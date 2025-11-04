@@ -38,10 +38,10 @@ export default function Hero() {
   };
 
   return (
-    <main className="flex flex-col mt-12 lg:mt-0 lg:flex-row items-center justify-between text-white font-inter">
+    <main className="flex flex-col mt-12 lg:mt-0 lg:flex-row gap-12 items-center justify-between text-white font-inter">
       {/* Hero Content Section */}
       <motion.section
-        className="flex-3/5 flex flex-col items-center lg:items-start gap-6 lg:gap-[25px] text-left text-sm px-4 lg:px-0"
+        className="flex-3/5 flex flex-col items-center lg:items-start gap-6 lg:gap-[25px] text-left text-sm px-4 lg:px-0 mt-20"
         initial="hidden"
         animate="visible"
         variants={staggerContainer}
@@ -84,9 +84,19 @@ export default function Hero() {
           <motion.p className="m-0" variants={staggerItems}>
             Combine that with real-time verified multi-channel contacts.
           </motion.p>
-          <motion.p className="m-0" variants={staggerItems}>
-            Better than RocketReach, Pipl, and more, all in one place.
-          </motion.p>
+          <motion.div
+            variants={staggerItems}
+            className="flex lg:flex-row flex-col items-center justify-start"
+          >
+            <Image
+              src="/auth/group.png"
+              className="h-[50px] w-[220px] lg:h-[85.7px] lg:w-[382.2px]"
+              width={148.2}
+              height={33.7}
+              sizes="100vw"
+              alt=""
+            />
+          </motion.div>
         </motion.div>
 
         {/* Search Input */}
@@ -115,7 +125,7 @@ export default function Hero() {
 
         {/* Feature List */}
         <motion.div
-          className="flex flex-col md:flex-row flex-wrap items-center gap-[15px] text-xs xl:text-sm 2xl:text-base text-gray-1100"
+          className="flex flex-col md:flex-row flex-wrap items-center gap-[15px] text-num-12 xl:text-num-14 2xl:text-num-14 text-gray-1100"
           variants={staggerContainer}
         >
           <motion.div

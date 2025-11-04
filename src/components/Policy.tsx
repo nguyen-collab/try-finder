@@ -22,7 +22,7 @@ export default function Policy({ title }: PolicyProps) {
             Effective Date : October 25, 2025
           </div>
         </div>
-        <div className="flex items-center justify-end text-base text-gray-100 font-inter-variable">
+        <div className="flex items-center justify-end text-num-16 text-gray-100 font-inter-variable">
           <button
             onClick={handlePrint}
             className="space-x-2 shadow-[0px_0px_0px_4px_rgba(255,_255,_255,_0.25)] rounded-xl [background:linear-gradient(180deg,_rgba(0,_0,_0,_0),_rgba(0,_0,_0,_0.2)),_#fafafa] flex items-center justify-center p-3 text-base text-gray-300 hover:[background:linear-gradient(180deg,_rgba(0,_0,_0,_0.3),_rgba(0,_0,_0,_0.1)),_#fafafa] transition-[background] duration-300 ease-in-out cursor-pointer"
@@ -39,7 +39,7 @@ export default function Policy({ title }: PolicyProps) {
           <div className="self-stretch relative tracking-num--0_03 leading-num-32">
             1. The Service
           </div>
-          <div className="self-stretch relative text-base tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
+          <div className="self-stretch relative text-num-16 tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
             Tryfinder providet platforma nubila communicationis et engagementis.
             Clientes sunt responsabiles pro Submissionibus Usoris. Tryfinder
             praebere potest templates, APIs, et integrationes ad usum
@@ -48,7 +48,7 @@ export default function Policy({ title }: PolicyProps) {
         </div>
         <div className="self-stretch flex flex-col items-start justify-center gap-[15px]">
           <div className="self-stretch relative tracking-num--0_03 leading-num-32">{`2. Subscriptions & Payments`}</div>
-          <div className="self-stretch relative text-base tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
+          <div className="self-stretch relative text-num-16 tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
             <p className="m-0">
               Subscriptiones renovantur automatice nisi cancellatae sint.
             </p>
@@ -83,7 +83,7 @@ export default function Policy({ title }: PolicyProps) {
           <div className="self-stretch relative tracking-num--0_03 leading-num-32">
             3. Ownership
           </div>
-          <div className="self-stretch relative text-base tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
+          <div className="self-stretch relative text-num-16 tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
             Tryfinder retinet proprietatem Servitii. Clientes possident suas
             Submissiones Usoris et Tryfinder concedunt licentiam limitatam ad
             hospitandum, tractandum, et transmittendum eas, solum ut Servitium
@@ -95,9 +95,8 @@ export default function Policy({ title }: PolicyProps) {
           <div className="self-stretch relative tracking-num--0_03 leading-num-32">
             4. Restrictions
           </div>
-          <div className="self-stretch relative text-base tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
-            <ul className="m-0 font-inherit text-[length:inherit] pl-[21px]">
-              <li className="mb-0">Non licet tibi:</li>
+          <div className="self-stretch relative text-num-16 tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
+            <ul className="m-0 font-inherit text-[length:inherit] pl-[21px] list-disc">
               <li className="mb-0">
                 Copiare, mutare, re-engineerare, sublicentiare, revendere, aut
                 Servitium perturbare.
@@ -118,7 +117,7 @@ export default function Policy({ title }: PolicyProps) {
           <div className="self-stretch relative tracking-num--0_03 leading-num-32">
             5. Third-Party Services
           </div>
-          <div className="self-stretch relative text-base tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
+          <div className="self-stretch relative text-num-16 tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
             Integrationes possunt connecti ad plataformas tertiarum partium,
             quae suis condicionibus reguntur. Tryfinder non est responsalis pro
             earum operatione.
@@ -128,7 +127,7 @@ export default function Policy({ title }: PolicyProps) {
           <div className="self-stretch relative tracking-num--0_03 leading-num-32">
             6. Confidentiality
           </div>
-          <div className="self-stretch relative text-base tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
+          <div className="self-stretch relative text-num-16 tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
             Utraque pars convenit tueri Informationem Confidencialem alterius
             eodem gradu curae quo propriam, sed non minus quam rationabiliter.
             Informatio publica, independenter evoluta, vel legitime obtenta non
@@ -138,7 +137,7 @@ export default function Policy({ title }: PolicyProps) {
         </div>
         <div className="self-stretch flex flex-col items-start justify-center gap-[15px]">
           <div className="self-stretch relative tracking-num--0_03 leading-num-32">{`7. Data & Privacy`}</div>
-          <div className="self-stretch relative text-base tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
+          <div className="self-stretch relative text-num-16 tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
             Data Clientis tractantur secundum Addendum de Processione Datae.
             Aggregata et anonymata Data Servitii uti possunt ad analytics et
             emendationem producti. Tryfinder possidet Data Servitii anonymata.
@@ -146,14 +145,14 @@ export default function Policy({ title }: PolicyProps) {
         </div>
         <div className="self-stretch flex flex-col items-start justify-center gap-[15px]">
           <div className="self-stretch relative tracking-num--0_03 leading-num-32">{`8. Intellectual Property & DMCA`}</div>
-          <div className="self-stretch relative text-base tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
+          <div className="self-stretch relative text-num-16 tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
             Tryfinder cum DMCA conformatur. Agentem Copyright dedicatum et
             politicam repetitorum violatorum servat.
           </div>
         </div>
         <div className="self-stretch flex flex-col items-start justify-center gap-[15px]">
           <div className="self-stretch relative tracking-num--0_03 leading-num-32">{`9. AI Features & Beta Services`}</div>
-          <div className="self-stretch relative text-base tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
+          <div className="self-stretch relative text-num-16 tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
             Quaedae functiones utuntur AI ad contentum generandum. Exitūs AI
             possunt esse inaccurati nec consilium professionalem constituunt.
             Recognitio humana commendatur ante usum. Functiones Beta sunt
@@ -164,7 +163,7 @@ export default function Policy({ title }: PolicyProps) {
           <div className="self-stretch relative tracking-num--0_03 leading-num-32">
             10. Warranty Disclaimer
           </div>
-          <div className="self-stretch relative text-base tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
+          <div className="self-stretch relative text-num-16 tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
             Servitium praebetur “UT EST”, sine ullis warrantis. Tryfinder negat
             omnes warrantias implicitas, etiam mercantabilitatis, idoneitatis ad
             certum finem, et non-violations.
@@ -174,7 +173,7 @@ export default function Policy({ title }: PolicyProps) {
           <div className="self-stretch relative tracking-num--0_03 leading-num-32">
             11. Limitation of Liability
           </div>
-          <div className="self-stretch relative text-base tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
+          <div className="self-stretch relative text-num-16 tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
             Responsabilitas Tryfinder limitatur ad feoda soluta in duodecim
             mensibus prioribus. Tryfinder non tenetur pro damnis indirectis,
             incidentalibus, specialibus, vel consequentibus (interclusis lucris
@@ -183,7 +182,7 @@ export default function Policy({ title }: PolicyProps) {
         </div>
         <div className="self-stretch flex flex-col items-start justify-center gap-[15px]">
           <div className="self-stretch relative tracking-num--0_03 leading-num-32">{`12. Term & Termination`}</div>
-          <div className="self-stretch relative text-base tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
+          <div className="self-stretch relative text-num-16 tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
             Utraque pars terminare potest propter gravem violationem (cura 30
             dierum). Post terminationem, Data Clientis delebitur intra 30 dies,
             cum retentione cryptata in subsidiis usque ad 90 dies. Clientes
@@ -194,7 +193,7 @@ export default function Policy({ title }: PolicyProps) {
           <div className="self-stretch relative tracking-num--0_03 leading-num-32">
             13. Compliance
           </div>
-          <div className="self-stretch relative text-base tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
+          <div className="self-stretch relative text-num-16 tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
             Tu spondes te conformem esse legibus sanctionum et exportationis.
           </div>
         </div>
@@ -202,7 +201,7 @@ export default function Policy({ title }: PolicyProps) {
           <div className="self-stretch relative tracking-num--0_03 leading-num-32">
             14. Governing Law
           </div>
-          <div className="self-stretch relative text-base tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
+          <div className="self-stretch relative text-num-16 tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
             Haec Conventio regitur legibus Delaware, USA. Controversiae
             solventur in iudiciis civitatis vel foederalibus New Castle County,
             Delaware.
@@ -212,7 +211,7 @@ export default function Policy({ title }: PolicyProps) {
           <div className="self-stretch relative tracking-num--0_03 leading-num-32">
             15. Modifications
           </div>
-          <div className="self-stretch relative text-base tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
+          <div className="self-stretch relative text-num-16 tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
             Possumus renovare hos Terminos cum saltem 30 dierum
             praenotificatione per email aut notificationem in app. Si dissentis,
             potes terminare antequam mutationes effectum capiant.
@@ -222,7 +221,7 @@ export default function Policy({ title }: PolicyProps) {
           <div className="self-stretch relative tracking-num--0_03 leading-num-32">
             16. Entire Agreement
           </div>
-          <div className="self-stretch relative text-base tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
+          <div className="self-stretch relative text-num-16 tracking-num--0_01 leading-num-24 font-inter opacity-num-0_6">
             Haec Conventio, Privacy Policy, et Data Processing Addendum
             constituunt totam conventionem inter te et Tryfinder.
           </div>

@@ -60,7 +60,7 @@ export default function Pricing() {
           </ScrollAnimationWrapper>
 
           {/* Features Grid */}
-          <div className="w-full max-w-4xl flex flex-col gap-6 sm:gap-8 lg:gap-10">
+          <div className="w-full max-w-5xl flex flex-col gap-6 sm:gap-8 lg:gap-10">
             {/* Top Features */}
             <motion.div
               className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 lg:gap-[15px]"

@@ -53,11 +53,11 @@ export default function Feature() {
                 <div className="flex-1 w-full sm:max-w-[675px] flex flex-col gap-1 sm:gap-2 lg:gap-[5px]">
                   <div className="flex items-center gap-2">
                     <GlobalSearch />
-                    <h3 className="text-sm sm:text-base lg:text-lg tracking-num--0_01 leading-num-24 font-medium">
+                    <h3 className="text-num-14 sm:text-num-16 lg:text-num-16 tracking-num--0_01 leading-num-24 font-medium">
                       AI-Powered Algorithm
                     </h3>
                   </div>
-                  <p className="text-xs sm:text-sm lg:text-base tracking-num--0_01 leading-num-24 font-medium opacity-num-0_6">
+                  <p className="text-num-12 sm:text-num-14 lg:text-num-16 tracking-num--0_01 leading-num-24 font-medium opacity-num-0_6">
                     Smart matching that connects you with the people who
                     matter—buyers, sellers, or anyone relevant to your business.
                   </p>
@@ -72,12 +72,12 @@ export default function Feature() {
                 <div className="flex-1 w-full sm:max-w-[675px] flex flex-col gap-1 sm:gap-2 lg:gap-[5px]">
                   <div className="flex items-center gap-2">
                     <CheckBadge />
-                    <h3 className="text-sm sm:text-base lg:text-lg tracking-num--0_01 leading-num-24 font-medium">
+                    <h3 className="text-num-14 sm:text-num-16 lg:text-num-16 tracking-num--0_01 leading-num-24 font-medium">
                       Real-Time Verification
                     </h3>
                   </div>
                   <motion.div
-                    className="text-xs sm:text-sm lg:text-base tracking-num--0_01 leading-num-24 font-medium opacity-num-0_6"
+                    className="text-num-14 sm:text-num-16 lg:text-num-16 tracking-num--0_01 leading-num-24 font-medium opacity-num-0_6"
                     variants={staggerContainer}
                     initial="hidden"
                     whileInView="visible"
@@ -123,11 +123,11 @@ export default function Feature() {
               <div className="flex flex-col gap-1 sm:gap-2 lg:gap-[5px]">
                 <div className="flex items-center gap-2">
                   <FilterMailCircle />
-                  <h3 className="text-sm sm:text-base lg:text-lg tracking-num--0_01 leading-num-24 font-medium">
+                  <h3 className="text-num-14 sm:text-num-16 lg:text-num-16 tracking-num--0_01 leading-num-24 font-medium">
                     Advanced Search Filters
                   </h3>
                 </div>
-                <p className="text-xs sm:text-sm lg:text-base tracking-num--0_01 leading-num-24 font-medium opacity-num-0_6">
+                <p className="text-num-14 sm:text-num-16 lg:text-num-16 tracking-num--0_01 leading-num-24 font-medium opacity-num-0_6">
                   Hunt by job title, industry, company size, location, or
                   seniority level. Find the exact decision-makers you need, not
                   just random contacts.
@@ -143,11 +143,11 @@ export default function Feature() {
               <div className="flex flex-col gap-1 sm:gap-2 lg:gap-[5px]">
                 <div className="flex items-center gap-2">
                   <Mentoring />
-                  <h3 className="text-sm sm:text-base lg:text-lg tracking-num--0_01 leading-num-24 font-medium">
+                  <h3 className="text-num-14 sm:text-num-16 lg:text-num-16 tracking-num--0_01 leading-num-24 font-medium">
                     Smart Lead Enrichment
                   </h3>
                 </div>
-                <p className="text-xs sm:text-sm lg:text-base tracking-num--0_01 leading-num-24 font-medium opacity-num-0_6">
+                <p className="text-num-14 sm:text-num-16 lg:text-num-16 tracking-num--0_01 leading-num-24 font-medium opacity-num-0_6">
                   Drop in just an email address. Get back their full profile -
                   current title, direct phone, manager&apos;s name, tech stack,
                   company size, and all available contacts.
@@ -163,11 +163,11 @@ export default function Feature() {
               <div className="flex flex-col gap-1 sm:gap-2 lg:gap-[5px]">
                 <div className="flex items-center gap-2">
                   <EmailSearch />
-                  <h3 className="text-sm sm:text-base lg:text-lg tracking-num--0_01 leading-num-24 font-medium">
+                  <h3 className="text-num-14 sm:text-num-16 lg:text-num-16 tracking-num--0_01 leading-num-24 font-medium">
                     Email Pattern Detection
                   </h3>
                 </div>
-                <p className="text-xs sm:text-sm lg:text-base tracking-num--0_01 leading-num-24 font-medium opacity-num-0_6">
+                <p className="text-num-14 sm:text-num-16 lg:text-num-16 tracking-num--0_01 leading-num-24 font-medium opacity-num-0_6">
                   Discovered one email at a company? Our AI instantly learns
                   their format and unlocks every other email address at that
                   organization. One find becomes hundreds.

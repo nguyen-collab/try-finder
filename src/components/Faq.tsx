@@ -143,7 +143,7 @@ export default function Faq() {
                 <h3 className="tracking-num--0_01 leading-num-24 font-medium text-xs sm:text-sm md:text-base lg:text-lg text-center sm:text-left flex-1">
                   Couldn&apos;t find an answer you&apos;re looking for?
                 </h3>
-                <button className="rounded-[9px] border-gray-1300 border-solid border flex items-center justify-center py-1.5 sm:py-2 md:py-3 lg:py-[9px] px-3 sm:px-4 md:px-6 lg:px-[18px] gap-1.5 sm:gap-2 md:gap-3 lg:gap-[11.3px] text-xs sm:text-sm md:text-sm lg:text-sm hover:bg-gray-700 transition-colors w-full sm:w-auto cursor-pointer">
+                <button className="rounded-[9px] border-gray-1300 border-solid border flex items-center justify-center py-1.5 sm:py-2 md:py-3 lg:py-[9px] px-3 sm:px-4 md:px-6 lg:px-[18px] gap-1.5 sm:gap-2 md:gap-3 lg:gap-[11.3px] text-num-12 sm:text-num-14 md:text-num-14 lg:text-num-14 hover:bg-gray-700 transition-colors w-full sm:w-auto cursor-pointer">
                   <span className="tracking-num--0_01 leading-5 font-medium">
                     Contact Us
                   </span>

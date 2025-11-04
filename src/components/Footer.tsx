@@ -31,7 +31,7 @@ export default function Footer() {
                     Launch Offer
                   </div>
                 </div>
-                <div className="flex items-center text-sm sm:text-base lg:text-base text-white">
+                <div className="flex items-center text-num-12 sm:text-num-14 lg:text-num-14 text-white">
                   <div className="flex items-center gap-1 sm:gap-2 lg:gap-[5px]">
                     <div className="tracking-num--0_01 leading-num-20 font-medium">
                       Welcome to tryfinder.ai
@@ -54,14 +54,15 @@ export default function Footer() {
 
             {/* Description */}
             <ScrollAnimationWrapper variants={fadeInUp}>
-              <div className="max-w-[751px] text-sm sm:text-base lg:text-[20px] tracking-num--0_01 leading-relaxed sm:leading-relaxed lg:leading-7 text-center opacity-[0.9] space-y-2">
+              <div className="max-w-[751px] text-sm sm:text-base lg:text-[20px] tracking-num--0_01 leading-relaxed sm:leading-relaxed lg:leading-9 text-center opacity-[0.9]">
                 <p>
                   Join 10,000+ sales teams closing more deals with TryFinder.
                 </p>
                 <p>
                   Stop wasting time on tools that don&apos;t work. Start finding
-                  real emails that convert. Your first two searches are on us.
+                  real emails that convert.
                 </p>
+                <p>Your first two searches are on us.</p>
               </div>
             </ScrollAnimationWrapper>
 
@@ -77,7 +78,7 @@ export default function Footer() {
 
             {/* Features */}
             <motion.div
-              className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 lg:gap-[15px] text-sm sm:text-base lg:text-base"
+              className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 lg:gap-[15px] text-num-12 sm:text-num-14 lg:text-num-14"
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
