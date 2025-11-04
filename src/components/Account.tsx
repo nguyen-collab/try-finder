@@ -103,7 +103,7 @@ export default function Account() {
           </div>
 
           <button className="rounded-[5.23px] bg-gray-1300 border-gray-1200 border-solid border-[0.9px] flex items-center justify-center py-[5px] px-2.5 gap-[5px] text-xs font-inter hover:outline-none hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_0_0_4px_rgba(255,255,255,0.1)] transition-all duration-200 cursor-pointer">
-            <span className="tracking-num--0_01 leading-[13.95px] font-medium text-num-12">{`Signed up via `}</span>
+            <span className="tracking-num--0_01 leading-[13.95px] font-medium text-num-14">{`Signed up via `}</span>
             <GoogleIcon className="w-[14px] h-[14px]" />
           </button>
         </div>

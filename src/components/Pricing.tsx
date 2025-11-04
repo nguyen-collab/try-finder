@@ -144,7 +144,7 @@ export default function Pricing() {
         {/* CTA Section */}
         <ScrollAnimationWrapper variants={fadeInBottom} viewportAmount={0.4}>
           <footer className="w-fit mt-8">
-            <div className="rounded-xl bg-gray-100 border-gray-1200 border-solid border flex flex-col items-center p-3 lg:p-[15px] text-sm sm:text-base lg:text-base text-white">
+            <div className="rounded-xl bg-gray-100 border-gray-1200 border-solid border flex flex-col items-center p-3 lg:p-[15px] text-num-12 sm:text-num-14 lg:text-num-14 text-white">
               <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 lg:gap-[15px]">
                 <div className="tracking-num--0_01 leading-num-24 font-medium opacity-[0.75] text-center sm:text-left">
                   Ready to supercharge your searches?
