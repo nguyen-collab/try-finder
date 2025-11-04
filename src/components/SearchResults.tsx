@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import {
+  ArrowBackIcon,
+  ArrowRightSmallIcon,
   BackPack02Icon,
   Briefcase02Icon,
   Building02Icon,
@@ -423,23 +425,49 @@ export default function SearchResults() {
   const [selected, setSelected] = useState<number[]>([]);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const [loadingIndex, setLoadingIndex] = useState<number | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // Pagination settings
+  const resultsPerPage = 5;
+  const totalPages = Math.ceil(searchResults.length / resultsPerPage);
+  const startIndex = (currentPage - 1) * resultsPerPage;
+  const endIndex = startIndex + resultsPerPage;
+  const paginatedResults = searchResults.slice(startIndex, endIndex);
+  const startResultNumber = startIndex + 1;
+  const endResultNumber = Math.min(endIndex, searchResults.length);
 
   const allChecked =
-    selected.length === searchResults.length && searchResults.length > 0;
+    paginatedResults.length > 0 &&
+    paginatedResults.every((_, idx) => selected.includes(startIndex + idx));
   const indeterminate =
-    selected.length > 0 && selected.length < searchResults.length;
+    selected.some(i => i >= startIndex && i < endIndex) && !allChecked;
 
   function handleSelectAll(checked: boolean) {
-    setSelected(checked ? searchResults.map((_, idx) => idx) : []);
+    if (checked) {
+      setSelected(paginatedResults.map((_, idx) => startIndex + idx));
+    } else {
+      setSelected(prev => prev.filter(i => i < startIndex || i >= endIndex));
+    }
   }
+
   function handleSelectRow(idx: number, checked: boolean) {
+    const actualIndex = startIndex + idx;
     setSelected(prev => {
       if (checked) {
-        return prev.includes(idx) ? prev : [...prev, idx];
+        return prev.includes(actualIndex) ? prev : [...prev, actualIndex];
       } else {
-        return prev.filter(i => i !== idx);
+        return prev.filter(i => i !== actualIndex);
       }
     });
+  }
+
+  function handlePageChange(page: number) {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page);
+      setExpandedIndex(null);
+      // Scroll to top of results when page changes
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
 
   function handleRequestToggle(idx: number) {
@@ -481,8 +509,8 @@ export default function SearchResults() {
                 aria-label="Select all results"
               />
               <span className="tracking-num--0_01 leading-tight font-medium opacity-75">
-                1 - {searchResults.length} of about {searchResults.length}{' '}
-                results. Selected: {selected.length}
+                {startResultNumber} - {endResultNumber} of about{' '}
+                {searchResults.length} results. Selected: {selected.length}
               </span>
             </div>
           </header>
@@ -494,30 +522,80 @@ export default function SearchResults() {
         {/* Results section with horizontal scroll on small screens */}
         <div className="w-full overflow-x-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent">
           <section className="flex flex-col min-w-[1200px]">
-            {searchResults.map((item, index) => (
-              <SearchResultItem
-                key={index}
-                item={item}
-                index={index}
-                checked={selected.includes(index)}
-                onChange={checked => handleSelectRow(index, checked)}
-                isExpanded={expandedIndex === index}
-                isLoading={loadingIndex === index}
-                onRequestToggle={() => handleRequestToggle(index)}
-              />
-            ))}
+            {paginatedResults.map((item, index) => {
+              const actualIndex = startIndex + index;
+              return (
+                <SearchResultItem
+                  key={actualIndex}
+                  item={item}
+                  index={actualIndex}
+                  checked={selected.includes(actualIndex)}
+                  onChange={checked => handleSelectRow(index, checked)}
+                  isExpanded={expandedIndex === actualIndex}
+                  isLoading={loadingIndex === actualIndex}
+                  onRequestToggle={() => handleRequestToggle(actualIndex)}
+                />
+              );
+            })}
           </section>
         </div>
 
         <hr className="w-full h-[1.3px] opacity-10 bg-gray-1100" />
 
-        {/* Footer with end of results message */}
+        {/* Footer with pagination navigation */}
       </main>
 
       <div className="px-4 overflow-x-auto scrollbar-none w-full">
-        <footer className="flex justify-center py-4 w-full">
-          <div className="text-base tracking-num--0_01 leading-tight font-medium opacity-75 w-full">
-            End of Results
+        <footer className="flex flex-col items-center gap-4 py-4 w-full">
+          {/* Pagination Navigation - Always shown */}
+          <div className="flex items-center justify-center gap-3">
+            {/* Previous Button */}
+            <button
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+              className="flex items-center justify-center gap-1 h-[34.9px] px-[10.5px] rounded-[10.46px] border-gray-200 border-[0.9px] bg-gray-100 text-white disabled:opacity-40 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors duration-200 cursor-pointer"
+              aria-label="Previous page"
+            >
+              <ArrowBackIcon className="w-4 h-4" />
+              <span className="text-base tracking-num--0_01 leading-num-20_93 font-semibold">
+                Previous
+              </span>
+            </button>
+
+            {/* Page Numbers */}
+            <div className="flex items-center gap-2">
+              {Array.from(
+                { length: Math.min(totalPages, 3) },
+                (_, i) => i + 1
+              ).map(page => (
+                <button
+                  key={page}
+                  onClick={() => handlePageChange(page)}
+                  className={`h-[34.9px] w-[34.9px] rounded-[10.46px] flex items-center justify-center text-base tracking-num--0_01 leading-num-20_93 font-semibold transition-colors duration-200 ${
+                    currentPage === page
+                      ? 'bg-gray-100 text-white border-gray-200 border-[0.9px]'
+                      : 'bg-transparent text-white opacity-75 hover:bg-gray-100 hover:opacity-100 border-gray-200 border-[0.9px]'
+                  }`}
+                  aria-label={`Go to page ${page}`}
+                  aria-current={currentPage === page ? 'page' : undefined}
+                >
+                  {page}
+                </button>
+              ))}
+            </div>
+
+            {/* Next Button */}
+            <button
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className="flex items-center justify-center gap-1 h-[34.9px] px-[10.5px] rounded-[10.46px] border-gray-200 border-[0.9px] bg-gray-100 text-white disabled:opacity-40 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors duration-200 cursor-pointer"
+              aria-label="Next page"
+            >
+              <span className="text-base tracking-num--0_01 leading-num-20_93 font-semibold">
+                Next
+              </span>
+              <ArrowBackIcon className="w-4 h-4 rotate-180" />
+            </button>
           </div>
         </footer>
       </div>

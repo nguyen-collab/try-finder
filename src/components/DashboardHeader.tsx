@@ -80,7 +80,7 @@ export default function DashboardHeader() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto relative rounded-[13.08px] bg-[#161616]  border-gray-1300 border-solid border-[0.7px] box-border flex items-center justify-between py-[10.9px] px-[16.4px] gap-5 text-left text-sm text-gray-10 font-inter-variable">
+    <div className="w-full mx-auto max-w-[1600px] relative rounded-[13.08px] flex items-center justify-between py-[10.9px] gap-5 text-left text-sm text-gray-10 font-inter-variable">
       <div className="flex items-center gap-[6.2px]">
         <Link href="/">
           <Image
@@ -95,8 +95,8 @@ export default function DashboardHeader() {
       </div>
       <div className="hidden sm:flex items-center gap-[13.1px]">
         <button
-          className={`cursor-pointer rounded-[8.72px] overflow-hidden flex flex-col items-center justify-center py-[7px] px-[10.5px] text-base ${
-            pathname === '/dashboard' ? 'bg-black' : 'hover:bg-gray-500'
+          className={`cursor-pointer rounded-[8.72px] overflow-hidden flex flex-col items-center justify-center py-[7px] px-[10.5px] text-base transition-colors duration-200 ${
+            pathname === '/dashboard' ? 'bg-gray-100' : 'hover:bg-gray-100'
           }`}
           onClick={() => router.push('/dashboard')}
         >
@@ -116,8 +116,8 @@ export default function DashboardHeader() {
         </button>
         <Link
           href="/save-searches"
-          className={`cursor-pointer rounded-[8.72px] overflow-hidden flex flex-col items-center justify-center py-[7px] px-[10.5px] text-base ${
-            pathname === '/save-searches' ? 'bg-black' : 'hover:bg-gray-500'
+          className={`cursor-pointer rounded-[8.72px] overflow-hidden flex flex-col items-center justify-center py-[7px] px-[10.5px] text-base transition-colors duration-200 ${
+            pathname === '/save-searches' ? 'bg-gray-100' : 'hover:bg-gray-100'
           }`}
         >
           <div className="self-stretch flex items-center">
@@ -135,10 +135,10 @@ export default function DashboardHeader() {
         <div className="relative" ref={notificationPopupRef}>
           <button
             onClick={handleNotificationClick}
-            className={`h-[34.9px] w-[34.9px] rounded-[11.89px] bg-gray-500 border-solid border-[1.1px] box-border overflow-hidden shrink-0 flex flex-col items-center justify-center transition-all duration-200 cursor-pointer ${
+            className={`h-[34.9px] w-[34.9px] rounded-[11.89px] overflow-hidden shrink-0 flex flex-col items-center justify-center transition-all duration-200 cursor-pointer ${
               isNotificationPopupOpen
-                ? 'border-gray-1300 shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)]'
-                : 'border-gray-1300 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_0_0_4px_rgba(255,255,255,0.1)]'
+                ? 'bg-gray-50 shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)]'
+                : 'bg-gray-100 hover:bg-gray-50'
             }`}
           >
             <div className="relative tracking-[-0.01em] leading-[26.64px] font-extrabold">
@@ -157,10 +157,10 @@ export default function DashboardHeader() {
         <div className="relative" ref={popupRef}>
           <button
             onClick={handleUserAvatarClick}
-            className={`h-[34.9px] w-[34.9px] rounded-[11.89px] bg-gray-500 border-solid border-[1.1px] box-border overflow-hidden shrink-0 flex flex-col items-center justify-center transition-all duration-200 cursor-pointer ${
+            className={`h-[34.9px] w-[34.9px] rounded-[11.89px] overflow-hidden shrink-0 flex flex-col items-center justify-center transition-all duration-200 cursor-pointer ${
               isUserPopupOpen
-                ? 'border-gray-1300 shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)]'
-                : 'border-gray-1300 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_0_0_4px_rgba(255,255,255,0.1)]'
+                ? 'bg-gray-50 shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)]'
+                : 'bg-gray-100 hover:bg-gray-50'
             }`}
           >
             <div className="relative tracking-[-0.01em] leading-[26.64px] font-extrabold">
@@ -172,7 +172,7 @@ export default function DashboardHeader() {
           {isUserPopupOpen && (
             <div className="absolute top-full right-0 mt-2 z-50">
               <UserPopup
-                onAccountClick={handleAccountClick}
+                // onAccountClick={handleAccountClick}
                 onSettingsClick={handleSettingsClick}
                 onLogoutClick={handleLogout}
               />
@@ -199,28 +199,28 @@ const NotificationPopup = () => {
 };
 
 interface UserPopupProps {
-  onAccountClick: () => void;
+  // onAccountClick: () => void;
   onSettingsClick: () => void;
   onLogoutClick: () => void;
 }
 
 const UserPopup = ({
-  onAccountClick,
+  // onAccountClick,
   onSettingsClick,
   onLogoutClick,
 }: UserPopupProps) => {
   return (
     <div className="relative rounded-[13.08px] bg-gray-500 border-gray-1300 border-solid border-[1.1px] box-border w-full overflow-hidden flex flex-col items-center py-[8.7px] px-0 gap-[5px] text-center text-base text-white font-geist">
-      <button
+      {/* <button
         onClick={onAccountClick}
-        className="w-[147.7px] flex items-center p-1 box-border rounded-md gap-[8.2px] hover:bg-gray-1300 mx-2 transition-opacity cursor-pointer"
+        className="w-[147.7px] flex items-center p-1 box-border rounded-md gap-[8.2px] hover:bg-gray-100 mx-2 transition-colors duration-200 cursor-pointer"
       >
         <UserCircleIcon />
         <div className="relative font-medium">Account</div>
-      </button>
+      </button> */}
       <button
         onClick={onSettingsClick}
-        className="w-[147.7px] flex items-center p-1 box-border rounded-md gap-[8.2px] hover:bg-gray-1300 mx-2 transition-opacity cursor-pointer"
+        className="w-[147.7px] flex items-center p-1 box-border rounded-md gap-[8.2px] hover:bg-gray-100 mx-2 transition-colors duration-200 cursor-pointer"
       >
         <SettingsIcon />
         <div className="relative font-medium">Settings</div>
@@ -228,7 +228,7 @@ const UserPopup = ({
       <div className="self-stretch h-[0.8px] bg-gray-10 opacity-[0.1]" />
       <button
         onClick={onLogoutClick}
-        className="w-[147.7px] flex items-center p-1 box-border rounded-md gap-[8.2px] text-orangered hover:bg-gray-1300 mx-2 transition-opacity cursor-pointer"
+        className="w-[147.7px] flex items-center p-1 box-border rounded-md gap-[8.2px] text-orangered hover:bg-gray-100 mx-2 transition-colors duration-200 cursor-pointer"
       >
         <LogoutIcon />
         <div className="relative font-medium">Log Out</div>

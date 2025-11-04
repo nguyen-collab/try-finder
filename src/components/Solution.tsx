@@ -27,7 +27,7 @@ export default function Solution() {
         transition={{ duration: 1, ease: 'easeOut' }}
       >
         <Image
-          className="w-full h-full object-cover rounded-[15px] scale-115"
+          className="w-full h-full object-cover rounded-[15px] scale-100"
           width={1350}
           height={566}
           sizes="100vw"
