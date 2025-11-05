@@ -66,10 +66,10 @@ export default function Account() {
       {/* Account Details Section */}
       <section className="w-full rounded-[13.08px] bg-gray-200 border-gray-1300 border-solid border-[0.7px] flex flex-col items-start p-[15px] gap-[15px]">
         <header className="w-full flex flex-col items-start justify-center gap-0.5 text-base font-inter">
-          <h2 className="tracking-num--0_01 leading-[22px] font-medium text-num-16">
+          <h2 className="tracking-num--0_01 leading-[22px] font-medium text-lg">
             Account Details
           </h2>
-          <p className="text-num-14 tracking-num--0_01 leading-5 font-inter-variable opacity-[0.5]">
+          <p className="text-base tracking-num--0_01 leading-5 font-inter-variable opacity-[0.5]">
             Details about your profile and ID
           </p>
         </header>
@@ -166,10 +166,10 @@ export default function Account() {
           onClick={() => setIsDangerZoneExpanded(!isDangerZoneExpanded)}
         >
           <div className="flex flex-col items-start justify-center gap-0.5">
-            <h2 className="tracking-num--0_01 leading-[22px] font-medium text-num-16">
+            <h2 className="tracking-num--0_01 leading-[22px] font-medium text-lg">
               Danger Zone
             </h2>
-            <p className="text-num-14 tracking-num--0_01 leading-5 font-inter-variable opacity-num-0.5">
+            <p className="text-base tracking-num--0_01 leading-5 font-inter-variable opacity-num-0.5">
               Delete your account and all related searches
             </p>
           </div>
@@ -221,7 +221,7 @@ export default function Account() {
               }`}
             >
               <DeleteIcon />
-              <span className="tracking-num--0_01 leading-[19.2px] font-semibold text-num-14">
+              <span className="tracking-num--0_01 leading-[19.2px] font-semibold text-base">
                 {isLoading ? 'Deleting...' : 'Yes, Delete my account'}
               </span>
             </button>

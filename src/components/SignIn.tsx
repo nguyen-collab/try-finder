@@ -89,7 +89,7 @@ export default function SignIn() {
                 <div className="space-y-[18px]">
                   {/* Email field */}
                   <div className="space-y-2.5">
-                    <label className="block text-base tracking-num--0_01 leading-[15px] font-medium opacity-[0.75]">
+                    <label className="block text-sm tracking-num--0_01 leading-[15px] font-medium opacity-[0.75]">
                       Email Address
                     </label>
                     <div className="group rounded-xl bg-gray-500 border-gray-1300 border border-solid flex items-center py-3.5 px-num-12 gap-2 text-base focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
@@ -112,7 +112,7 @@ export default function SignIn() {
                   {/* Password field */}
                   <div className="space-y-2.5">
                     <div className="flex items-start justify-between gap-5">
-                      <label className="text-base tracking-num--0_01 leading-[15px] font-medium opacity-[0.75]">
+                      <label className="text-sm tracking-num--0_01 leading-[15px] font-medium opacity-[0.75]">
                         Password
                       </label>
                       <Link
@@ -151,7 +151,7 @@ export default function SignIn() {
                   </div>
 
                   {/* Remember me checkbox */}
-                  <div className="rounded-lg flex items-center gap-3 text-base text-gray-10">
+                  <div className="rounded-lg flex items-center gap-3 text-sm text-gray-10">
                     <input
                       type="checkbox"
                       id="remember"
@@ -221,7 +221,7 @@ export default function SignIn() {
             </section>
 
             {/* Sign up link */}
-            <div className="mt-4 pb-4 text-base tracking-num--0_01 leading-num-20 text-gray-10 text-center">
+            <div className="mt-4 pb-4 text-sm tracking-num--0_01 leading-num-20 text-gray-10 text-center">
               <span className="font-medium">Don&apos;t have an account? </span>
               <Link
                 href="/sign-up"

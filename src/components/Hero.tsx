@@ -38,7 +38,7 @@ export default function Hero() {
   };
 
   return (
-    <main className="flex flex-col mt-12 lg:mt-0 lg:flex-row gap-12 items-center justify-between text-white font-inter">
+    <main className="flex flex-col mt-0 lg:mt-12 lg:flex-row gap-12 items-center justify-between text-white font-inter">
       {/* Hero Content Section */}
       <motion.section
         className="flex-3/5 flex flex-col items-center lg:items-start gap-6 lg:gap-[25px] text-left text-sm px-4 lg:px-0 mt-20"
@@ -74,7 +74,7 @@ export default function Hero() {
 
         {/* Description */}
         <motion.div
-          className="w-full text-center lg:text-left max-w-[751px] text-base xl:text-lg 2xl:text-xl tracking-num--0_01 leading-7 opacity-[0.6] flex flex-col gap-4 xl:gap-6 2xl:gap-8"
+          className="w-full text-center lg:text-left max-w-[751px] text-base xl:text-lg tracking-num--0_01 leading-7 opacity-[0.6] flex flex-col gap-4 xl:gap-6 2xl:gap-8"
           variants={staggerContainer}
         >
           <motion.p className="m-0" variants={staggerItems}>
@@ -174,7 +174,7 @@ export default function Hero() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="tracking-num--0_01 leading-5 font-medium text-sm xl:text-base 2xl:text-lg">
+            <div className="tracking-num--0_01 leading-5 font-medium text-sm xl:text-base">
               Vouched by 2.5k+ Business Owners
             </div>
           </div>

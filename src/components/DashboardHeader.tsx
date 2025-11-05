@@ -95,7 +95,7 @@ export default function DashboardHeader() {
       </div>
       <div className="hidden sm:flex items-center gap-[13.1px]">
         <button
-          className={`cursor-pointer rounded-[8.72px] overflow-hidden flex flex-col items-center justify-center py-[7px] px-[10.5px] text-base transition-colors duration-200 ${
+          className={`cursor-pointer rounded-[8.72px] overflow-hidden flex flex-col items-center justify-center py-[7px] px-[10.5px] text-sm transition-colors duration-200 ${
             pathname === '/dashboard' ? 'bg-gray-100' : 'hover:bg-gray-100'
           }`}
           onClick={() => router.push('/dashboard')}
@@ -116,7 +116,7 @@ export default function DashboardHeader() {
         </button>
         <Link
           href="/save-searches"
-          className={`cursor-pointer rounded-[8.72px] overflow-hidden flex flex-col items-center justify-center py-[7px] px-[10.5px] text-base transition-colors duration-200 ${
+          className={`cursor-pointer rounded-[8.72px] overflow-hidden flex flex-col items-center justify-center py-[7px] px-[10.5px] text-sm transition-colors duration-200 ${
             pathname === '/save-searches' ? 'bg-gray-100' : 'hover:bg-gray-100'
           }`}
         >
@@ -189,7 +189,7 @@ const NotificationPopup = () => {
     <div className="relative rounded-[13.08px] w-fit bg-gray-500 border-gray-1300 border-solid border-[1.1px] box-border overflow-hidden flex flex-col items-center p-2 text-left text-base text-white font-inter-variable">
       <div className="flex items-center gap-[8.7px]">
         <NotificationIcon />
-        <div className="relative tracking-[-0.01em] leading-[18px] opacity-[0.9]">
+        <div className="relative tracking-[-0.01em] leading-[20px] text-sm opacity-[0.9]">
           <p className="m-0 whitespace-nowrap">All Caught up!</p>
           <p className="m-0 whitespace-nowrap">No New Notifications</p>
         </div>
@@ -210,7 +210,7 @@ const UserPopup = ({
   onLogoutClick,
 }: UserPopupProps) => {
   return (
-    <div className="relative rounded-[13.08px] bg-gray-500 border-gray-1300 border-solid border-[1.1px] box-border w-full overflow-hidden flex flex-col items-center py-[8.7px] px-0 gap-[5px] text-center text-base text-white font-geist">
+    <div className="relative rounded-[13.08px] bg-gray-500 border-gray-1300 border-solid border-[1.1px] box-border w-full overflow-hidden flex flex-col items-center py-[8.7px] px-0 gap-1 text-center text-sm text-white font-geist">
       {/* <button
         onClick={onAccountClick}
         className="w-[147.7px] flex items-center p-1 box-border rounded-md gap-[8.2px] hover:bg-gray-100 mx-2 transition-colors duration-200 cursor-pointer"

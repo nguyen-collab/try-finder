@@ -49,7 +49,7 @@ export default function ForgotPassword() {
                 <div className="space-y-[18px]">
                   {/* Email field */}
                   <div className="space-y-2.5">
-                    <label className="block text-base tracking-num--0_01 leading-[15px] font-medium opacity-[0.75]">
+                    <label className="block text-sm tracking-num--0_01 leading-[15px] font-medium opacity-[0.75]">
                       Email Address
                     </label>
                     <div className="group rounded-xl bg-gray-500 border-gray-1300 border border-solid flex items-center py-3.5 px-num-12 gap-2 text-base focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
@@ -84,7 +84,7 @@ export default function ForgotPassword() {
                   </button>
                   <button
                     onClick={() => router.back()}
-                    className="cursor-pointer w-full relative flex items-center justify-center py-2 px-0 box-border gap-2 text-center text-[12.8px] text-gray-10 hover:text-white transition-all duration-200 font-inter-variable"
+                    className="cursor-pointer w-full relative flex items-center justify-center py-2 px-0 box-border gap-2 text-center text-base text-gray-10 hover:text-white transition-all duration-200 font-inter-variable"
                   >
                     <ArrowBackIcon />
                     <div className="relative tracking-[-0.01em] leading-4 font-medium">

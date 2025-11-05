@@ -34,7 +34,7 @@ export default function SaveSearches() {
           <div className="flex flex-col items-start gap-2">
             <div className="flex items-center gap-2.5 font-inter">
               <SearchCircleIcon />
-              <div className="tracking-num--0_01 leading-[22.67px] font-medium text-xl">
+              <div className="tracking-num--0_01 leading-[22.67px] font-medium text-lg">
                 Mark Cuban
               </div>
             </div>
@@ -75,7 +75,7 @@ export default function SaveSearches() {
           <div className="flex flex-col items-start gap-2">
             <div className="flex items-center gap-2.5 font-inter">
               <SearchCircleIcon />
-              <div className="tracking-num--0_01 leading-[22.67px] font-medium text-xl">
+              <div className="tracking-num--0_01 leading-[22.67px] font-medium text-lg">
                 Tim Cook
               </div>
             </div>
@@ -116,7 +116,7 @@ export default function SaveSearches() {
           <div className="flex flex-col items-start gap-2">
             <div className="flex items-center gap-2.5 font-inter">
               <SearchCircleIcon />
-              <div className="tracking-num--0_01 leading-[22.67px] font-medium text-xl">
+              <div className="tracking-num--0_01 leading-[22.67px] font-medium text-lg">
                 Kevin O’Leary
               </div>
             </div>

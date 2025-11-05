@@ -15,7 +15,7 @@ export default function PrivacyPolicyPage() {
 
       {/* Content */}
       <div className="bg-gray-500">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 sm:py-20 lg:py-28">
+        <div className="container max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 sm:py-20 lg:py-28">
           <Policy title="Privacy Policy" />
         </div>
       </div>

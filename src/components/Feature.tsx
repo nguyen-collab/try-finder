@@ -83,7 +83,7 @@ export default function Feature() {
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.3 }}
                   >
-                    <ul className="pl-4 sm:pl-5 lg:pl-[21px] space-y-1 list-disc">
+                    <ul className="pl-4 sm:pl-5 lg:pl-[21px] opacity-num-0_6 space-y-1 list-disc">
                       <motion.li variants={staggerItems}>
                         Every email is verified for accuracy.
                       </motion.li>

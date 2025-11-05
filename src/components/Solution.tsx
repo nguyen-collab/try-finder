@@ -18,10 +18,10 @@ import {
 
 export default function Solution() {
   return (
-    <section className="w-full h-auto xl:min-h-[575px] 2xl:min-h-[655px] text-left text-base text-white font-inter relative overflow-hidden">
+    <section className="w-full h-auto xl:min-h-[675px] 2xl:min-h-[755px] text-left text-base text-white font-inter relative overflow-hidden">
       {/* Background Image */}
       <motion.div
-        className="hidden xl:block absolute top-51 z-0"
+        className="hidden xl:block absolute top-44 z-0"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, ease: 'easeOut' }}
@@ -45,7 +45,7 @@ export default function Solution() {
               <div className="rounded-[15px] bg-gray-200 border-gray-1300 border-solid border-[1px] flex items-center justify-center py-1.5 px-num-10">
                 <div className="flex items-center gap-[5px]">
                   <div className="h-2 w-2 rounded-[50%] bg-darkorange" />
-                  <div className="tracking-num--0_01 leading-5 font-medium text-sm xl:text-base 2xl:text-lg">
+                  <div className="tracking-num--0_01 leading-5 font-medium text-sm xl:text-base">
                     Solutions
                   </div>
                 </div>
@@ -144,7 +144,7 @@ export default function Solution() {
 
                 {/* Testimonial Card */}
                 <motion.div
-                  className="rounded-[15px] bg-gray-500 border-gray-1200 border-solid border flex items-center p-4 sm:p-5 lg:p-5 text-num-12 xl:text-num-14 font-inter-variable"
+                  className="rounded-[15px] bg-gray-500 border-gray-1200 border-solid border flex items-center p-4 sm:p-5 lg:p-5 text-sm font-inter-variable"
                   variants={fadeInBottom}
                   initial="hidden"
                   whileInView="visible"

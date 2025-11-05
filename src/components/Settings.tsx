@@ -154,10 +154,10 @@ export default function Settings() {
       {/* Email Settings Section */}
       <section className="w-full rounded-[13.08px] bg-gray-200 border-gray-1300 border-solid border-[0.7px] flex flex-col items-start p-[15px] gap-[15px] font-inter">
         <header className="w-full flex flex-col items-start justify-center gap-0.5">
-          <h2 className="tracking-num--0_01 leading-[22px] font-medium text-num-16">
+          <h2 className="tracking-num--0_01 leading-[22px] font-medium text-lg">
             Settings
           </h2>
-          <p className="text-num-14 tracking-num--0_01 leading-5 font-inter-variable opacity-num-0.5">
+          <p className="text-base tracking-num--0_01 leading-5 font-inter-variable opacity-num-0.5">
             Manage your account preferences
           </p>
         </header>
@@ -189,10 +189,10 @@ export default function Settings() {
       <section className="w-full rounded-[13.08px] bg-gray-200 border-gray-1300 border-solid border-[0.7px] flex flex-col items-start p-[15px] gap-4 text-xs">
         <header className="w-full flex flex-col items-start justify-center text-base font-inter">
           <div className="flex flex-col items-start justify-center gap-0.5">
-            <h2 className="tracking-num--0_01 leading-[22px] font-medium text-num-16">
+            <h2 className="tracking-num--0_01 leading-[22px] font-medium text-lg">
               Reset Password
             </h2>
-            <p className="text-num-14 tracking-num--0_01 leading-5 font-inter-variable opacity-num-0.5">
+            <p className="text-base tracking-num--0_01 leading-5 font-inter-variable opacity-num-0.5">
               Change your account password
             </p>
           </div>
@@ -304,7 +304,7 @@ export default function Settings() {
       </section>
 
       {/* Action Buttons Section */}
-      <footer className="w-full flex items-center gap-2 text-num-14">
+      <footer className="w-full flex items-center gap-2 text-base">
         {/* <button
           onClick={handleSettingsClick}
           className="flex-1 rounded-lg bg-gray-1300 border-gray-1300 border-solid border-[0.8px] flex items-center justify-center p-[9.6px] gap-2 hover:outline-none hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_0_0_4px_rgba(255,255,255,0.1)] transition-all duration-200 cursor-pointer"
@@ -329,12 +329,12 @@ export default function Settings() {
       {unsavedChangesCount > 0 && (
         <div className="fixed bottom-0 left-0 right-0 z-10">
           <div className="container max-w-xl mx-auto px-4">
-            <div className="w-full h-[61px] rounded-[13.08px] bg-gray-200 border-gray-1300 border-solid border-[0.7px] flex items-center justify-between p-[15px] gap-5 text-base text-white font-inter mb-4">
+            <div className="w-full h-[61px] rounded-[13.08px] bg-gray-200 border-gray-1300 border-solid border-[0.7px] flex items-center justify-between p-[15px] gap-5 text-sm text-white font-inter mb-4">
               <div className="tracking-num--0_01 leading-4 font-medium opacity-[0.75]">
                 {unsavedChangesCount} Unsaved Change
                 {unsavedChangesCount !== 1 ? 's' : ''}
               </div>
-              <div className="flex items-center gap-2.5 text-base font-inter-variable">
+              <div className="flex items-center gap-2.5 text-sm font-inter-variable">
                 <button
                   onClick={handleReset}
                   className="h-[34.9px] rounded-[10.46px] border-gray-1300 border-solid border flex items-center justify-center py-[10.5px] px-4 gap-[4.4px] hover:outline-none hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_0_0_4px_rgba(255,255,255,0.1)] transition-all duration-200 cursor-pointer"

@@ -290,7 +290,7 @@ export default function SignUp() {
               <form className="space-y-4 sm:space-y-6" onSubmit={handleSignUp}>
                 {/* Email field */}
                 <div className="space-y-2 sm:space-y-2.5">
-                  <label className="block text-base tracking-num--0_01 leading-tight lg:leading-[15px] font-medium opacity-num-0_75">
+                  <label className="block text-sm tracking-num--0_01 leading-tight lg:leading-[15px] font-medium opacity-num-0_75">
                     Email Address
                   </label>
                   <div className="group rounded-xl bg-gray-500 border-gray-1300 border-solid border-[1px] flex items-center py-3 sm:py-3.5 px-3 sm:px-num-12 gap-2 text-sm sm:text-base focus-within:outline-none focus-within:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_0_0_4px_rgba(255,255,255,0.25)] transition-all duration-200">
@@ -313,7 +313,7 @@ export default function SignUp() {
                 {/* Password field */}
                 <div className="space-y-2 sm:space-y-2.5">
                   <div className="flex items-start justify-between gap-3 sm:gap-5">
-                    <label className="text-base tracking-num--0_01 leading-tight lg:leading-[15px] font-medium opacity-num-0_75">
+                    <label className="text-sm tracking-num--0_01 leading-tight lg:leading-[15px] font-medium opacity-num-0_75">
                       Password
                     </label>
                   </div>
@@ -348,7 +348,7 @@ export default function SignUp() {
                 {/* Confirm Password field */}
                 <div className="space-y-2 sm:space-y-2.5">
                   <div className="flex items-start justify-between gap-3 sm:gap-5">
-                    <label className="text-base tracking-num--0_01 leading-tight lg:leading-[15px] font-medium opacity-num-0_75">
+                    <label className="text-sm tracking-num--0_01 leading-tight lg:leading-[15px] font-medium opacity-num-0_75">
                       Confirm Password
                     </label>
                   </div>
@@ -383,7 +383,7 @@ export default function SignUp() {
                 </div>
 
                 {/* Terms and conditions */}
-                <div className="flex items-start gap-3 text-sm sm:text-base text-gray-10">
+                <div className="flex items-start gap-3 text-sm text-gray-10">
                   <input
                     type="checkbox"
                     id="remember"
@@ -441,7 +441,7 @@ export default function SignUp() {
               {/* Social login */}
               <div className="space-y-3 sm:space-y-4">
                 <div className="text-center">
-                  <p className="text-sm sm:text-base tracking-num--0_01 leading-relaxed lg:leading-[26px] opacity-num-0_6">
+                  <p className="text-sm tracking-num--0_01 leading-relaxed lg:leading-[26px] opacity-num-0_6">
                     Sign up with
                   </p>
                 </div>
@@ -464,7 +464,7 @@ export default function SignUp() {
 
             {/* Sign in link */}
             <div className="rounded-[20px] pb-4 sm:pb-6 text-center">
-              <p className="text-base tracking-num--0_01 leading-tight lg:leading-num-20">
+              <p className="text-sm tracking-num--0_01 leading-tight lg:leading-num-20">
                 <span className="font-medium text-gray-10">
                   Already have an account?{' '}
                 </span>

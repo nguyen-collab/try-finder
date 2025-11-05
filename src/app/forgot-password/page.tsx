@@ -15,7 +15,7 @@ export default function ForgotPasswordPage() {
         />
       </div>
 
-      <div className="container max-w-xl mx-auto bg-gray-500">
+      <div className="container max-w-lg mx-auto bg-gray-500">
         <ForgotPassword />
       </div>
     </div>
