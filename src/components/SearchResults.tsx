@@ -285,7 +285,7 @@ function SearchResultItem({
       {/* Divider line */}
       {index > 0 && <hr className="w-full h-[1.3px] opacity-10 bg-gray-1100" />}
 
-      <div className="grid w-full items-center py-4 px-4 gap-x-6 md:gap-x-8 grid-cols-[minmax(260px,1fr)_180px_240px_256px_180.5px]">
+      <div className="grid w-full items-center py-4 px-4 gap-x-6 md:gap-x-8 grid-cols-[minmax(260px,1fr)_180px_160px_256px_180.5px]">
         {/* Left column - Checkbox and profile */}
         <div className="flex items-center space-x-4">
           {/* Checkbox */}

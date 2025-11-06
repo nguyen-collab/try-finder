@@ -8,7 +8,6 @@ import {
   SavedSearchesIcon,
   SettingsIcon,
   LogoutIcon,
-  UserCircleIcon,
 } from './common/SvgIcon';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter, usePathname } from 'next/navigation';
@@ -80,14 +79,14 @@ export default function DashboardHeader() {
   };
 
   return (
-    <div className="w-full mx-auto max-w-[1600px] relative rounded-[13.08px] flex items-center justify-between py-[10.9px] gap-5 text-left text-sm text-gray-10 font-inter-variable">
+    <div className="w-full mx-auto max-w-[1800px] relative rounded-[13.08px] flex items-center justify-between gap-5 text-left text-sm text-gray-10 font-inter-variable px-4 sm:px-6 lg:px-8 xl:px-12">
       <div className="flex items-center gap-[6.2px]">
         <Link href="/">
           <Image
             src="/header/tryfinder.svg"
-            className="h-6 w-auto"
-            width={88.9}
-            height={21.8}
+            className="w-auto"
+            width={114.1}
+            height={28}
             sizes="100vw"
             alt=""
           />
