@@ -327,7 +327,7 @@ export default function Settings() {
 
       {/* Fixed Save Section - Only show when there are unsaved changes */}
       {unsavedChangesCount > 0 && (
-        <div className="fixed bottom-0 left-0 right-0 z-10">
+        <div className="fixed bottom-24 md:bottom-20 left-0 right-0 z-10">
           <div className="container max-w-xl mx-auto px-4">
             <div className="w-full h-[61px] rounded-[13.08px] bg-gray-200 border-gray-1300 border-solid border-[0.7px] flex items-center justify-between p-[15px] gap-5 text-sm text-white font-inter mb-4">
               <div className="tracking-num--0_01 leading-4 font-medium opacity-[0.75]">

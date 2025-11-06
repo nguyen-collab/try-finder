@@ -8,11 +8,11 @@ export default function SettingsPage() {
     <div className="min-h-screen w-full overflow-x-hidden bg-gray-500 flex flex-col">
       <div className="w-full mx-auto py-5 bg-gray-500">
         <DashboardHeader />
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-10 max-w-7xl mx-auto mt-10 sm:mt-12 lg:mt-16 bg-gray-500">
-          <div className="w-full lg:w-1/2 shrink-0">
+        <div className="flex flex-col lg:flex-row gap-10 max-w-7xl mx-auto mt-10 sm:mt-12 lg:mt-16 bg-gray-500 px-4 sm:px-6 lg:px-8 xl:px-12 items-start">
+          <div className="w-full min-w-lg lg:max-w-1/2">
             <Account />
           </div>
-          <div className="w-full lg:w-1/2 shrink-0">
+          <div className="w-full lg:max-w-1/2">
             <Settings />
           </div>
         </div>
