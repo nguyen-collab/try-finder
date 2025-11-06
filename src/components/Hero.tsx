@@ -111,7 +111,7 @@ export default function Hero() {
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder="Search for any Business Contact"
+              placeholder="Search for any business contact"
               className="flex-1 bg-transparent border-none outline-none tracking-num--0_01 leading-[26px] font-medium text-white focus:outline-none"
             />
           </div>
