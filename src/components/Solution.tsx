@@ -18,10 +18,10 @@ import {
 
 export default function Solution() {
   return (
-    <section className="w-full h-auto xl:min-h-[675px] 2xl:min-h-[755px] text-left text-base text-white font-inter relative overflow-hidden">
+    <section className="w-full h-auto xl:min-h-[685px] text-left text-base text-white font-inter relative overflow-hidden">
       {/* Background Image */}
       <motion.div
-        className="hidden xl:block absolute top-44 z-0"
+        className="hidden xl:block absolute top-46 z-0"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, ease: 'easeOut' }}
@@ -38,11 +38,11 @@ export default function Solution() {
 
       {/* Content Container */}
       <div className="relative z-10 flex flex-col items-center justify-center">
-        <div className="max-w-[1350px] w-full flex flex-col items-center gap-6 sm:gap-8 lg:gap-[28px]">
+        <div className="w-full flex flex-col items-center gap-6 sm:gap-8 lg:gap-[28px]">
           {/* Header Section */}
           <ScrollAnimationWrapper variants={fadeInUp}>
-            <header className="max-w-[942px] flex flex-col items-center gap-3 sm:gap-4 lg:gap-[15px] text-center">
-              <div className="rounded-[15px] bg-gray-200 border-gray-1300 border-solid border-[1px] flex items-center justify-center py-1.5 px-num-10">
+            <header className="flex flex-col items-center gap-3 sm:gap-4 lg:gap-[15px] text-center pb-3">
+              <div className="rounded-[15px] bg-gray-200 border-gray-1300 border-solid border flex items-center justify-center py-1.5 px-num-10">
                 <div className="flex items-center gap-[5px]">
                   <div className="h-2 w-2 rounded-[50%] bg-darkorange" />
                   <div className="tracking-num--0_01 leading-5 font-medium text-sm xl:text-base">
@@ -115,27 +115,33 @@ export default function Solution() {
           </motion.div>
 
           {/* Main Content Section */}
-          <main className="w-full max-w-[1350px] flex flex-col xl:flex-row items-center xl:items-stretch justify-between gap-6 sm:gap-8 lg:gap-12 mt-4 2xl:mt-8 px-4 sm:px-6 lg:px-8 xl:px-12">
+          <main className="w-full flex flex-col xl:flex-row items-center xl:items-stretch justify-between gap-6 sm:gap-8 lg:gap-12 mt-4 2xl:mt-8 px-4 sm:px-6 lg:px-8 xl:px-12">
             {/* Left Content */}
             <ScrollAnimationWrapper variants={fadeInUp} viewportAmount={0.1}>
-              <div className="flex-1 max-w-[606px] flex flex-col gap-4 lg:gap-10 2xl:gap-20 text-3xl 2xl:text-[38px] font-aeonik-pro">
+              <div className="w-full flex flex-col gap-4 lg:gap-10 2xl:gap-10 text-3xl 2xl:text-[38px] font-aeonik-pro">
                 <div className="flex flex-col text-center xl:text-left gap-2 sm:gap-3 lg:gap-2.5">
-                  <h3 className="tracking-[-0.03em] leading-tight sm:leading-tight lg:leading-[42px]">
+                  <h3 className="tracking-[-0.03em] leading-tight sm:leading-tight lg:leading-[42px] whitespace-nowrap">
                     Find decision-makers in seconds
                   </h3>
                   <motion.div
-                    className="text-num-14 xl:text-num-16 tracking-num--0_01 leading-num-24 font-inter opacity-[0.6] space-y-2"
+                    className="w-full text-num-14 xl:text-num-16 tracking-num--0_01 leading-num-24 font-inter opacity-[0.6] space-y-2"
                     variants={staggerContainer}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.3 }}
                   >
-                    <motion.p variants={staggerItems}>
-                      Stop wasting hours on research, verify their emails
-                      instantly, and sync directly to your CRM. More
-                      conversations, more pipeline, more closed deals.
+                    <motion.p
+                      variants={staggerItems}
+                      className="w-full leading-relaxed"
+                    >
+                      Stop wasting hours on research, verify emails instantly,
+                      and sync to CRM. More conversations, more pipeline, more
+                      closed deals.
                     </motion.p>
-                    <motion.p variants={staggerItems}>
+                    <motion.p
+                      variants={staggerItems}
+                      className="w-full leading-relaxed"
+                    >
                       Even hard-to-reach prospects are covered, with access to
                       Twitter, WhatsApp, Signal, and more.
                     </motion.p>
@@ -183,13 +189,22 @@ export default function Solution() {
 
             {/* Right Content - Decorative Element */}
             <motion.div
-              className="hidden xl:block flex-1"
+              className="hidden xl:block w-full"
               variants={fadeInUp}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
             >
-              <div className="rounded-[15px] bg-gray-500 border-gray-1200 border-solid border h-full" />
+              <div className="relative h-full overflow-hidden">
+                <Image
+                  src="/solution/Illustration3.webp"
+                  alt="Team collaborating around tryfinder platform"
+                  fill
+                  sizes="(min-width: 1280px) 480px, 100vw"
+                  className="object-contain"
+                  priority
+                />
+              </div>
             </motion.div>
           </main>
         </div>

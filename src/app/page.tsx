@@ -32,7 +32,7 @@ export default function Home() {
         </div>
       </div>
       <div id="pricing" className="bg-gray-500">
-        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 sm:py-20 lg:py-28">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pb-16 sm:pb-20 lg:pb-28">
           <Pricing />
         </div>
       </div>

@@ -14,6 +14,7 @@ import {
   staggerContainer,
   staggerItems,
 } from '@/utils/animations';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 export default function Feature() {
@@ -49,7 +50,16 @@ export default function Feature() {
             {/* AI-Powered Algorithm Feature */}
             <ScrollAnimationWrapper variants={fadeInUp}>
               <div className="rounded-num-15 bg-gray-500 border-gray-1300 border-solid border flex flex-col sm:flex-row items-center p-4 sm:p-6 lg:p-10 gap-4 sm:gap-6 lg:gap-[30px]">
-                <div className="flex-1 w-full sm:w-32 lg:w-auto min-h-24 sm:min-h-32 lg:min-h-[149px] rounded-[10px] bg-gray-1400" />
+                <div className="flex-1 w-full sm:w-32 lg:w-auto min-h-24 sm:min-h-32 lg:min-h-[149px] rounded-[10px] relative overflow-hidden">
+                  <Image
+                    src="/feature/Illustration1.svg"
+                    alt="Illustration representing the AI-powered algorithm"
+                    fill
+                    sizes="(min-width: 1024px) 420px, (min-width: 640px) 256px, 100vw"
+                    className="object-contain"
+                    priority
+                  />
+                </div>
                 <div className="flex-1 w-full sm:max-w-[675px] flex flex-col gap-1 sm:gap-2 lg:gap-[5px]">
                   <div className="flex items-center gap-2">
                     <GlobalSearch />
@@ -68,7 +78,15 @@ export default function Feature() {
             {/* Real-Time Verification Feature */}
             <ScrollAnimationWrapper variants={fadeInBottom}>
               <div className="rounded-num-15 bg-gray-500 border-gray-1300 border-solid border flex flex-col sm:flex-row items-center p-4 sm:p-6 lg:p-10 gap-4 sm:gap-6 lg:gap-[30px]">
-                <div className="w-full sm:w-32 lg:w-auto min-h-24 sm:min-h-60 lg:min-h-[249px] flex-1 rounded-[10px] bg-gray-1400" />{' '}
+                <div className="w-full sm:w-32 lg:w-auto min-h-24 sm:min-h-60 lg:min-h-[249px] flex-1 rounded-[10px] relative overflow-hidden">
+                  <Image
+                    src="/feature/Illustration2.svg"
+                    alt="Illustration showcasing real-time verification"
+                    fill
+                    sizes="(min-width: 1024px) 420px, (min-width: 640px) 300px, 100vw"
+                    className="object-contain"
+                  />
+                </div>
                 <div className="flex-1 w-full sm:max-w-[675px] flex flex-col gap-1 sm:gap-2 lg:gap-[5px]">
                   <div className="flex items-center gap-2">
                     <CheckBadge />
